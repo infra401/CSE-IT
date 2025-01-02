@@ -24,3 +24,83 @@ To provide an appropriate way to structure the data, we need to know about
 DATA STRUCTURES
 
 What is a Data Structure?
+A data structure is a systematic way to organize data so that it can be used efficiently.
+Ex: arrays
+
+Instead of creating multiple variables of same type, why not create an array to store all the values.
+Storing strings is equivalent of storing a sequence of characters. This requires an array.
+
+Some real life examples:
+
+1. Did you know?
+Stack data structure is used in implementing redo and undo feature.
+
+The primary goal of neso academy is to provide quality education
+  |              | 
+  |              |
+  | cation       |
+  | ed           |
+  | quality      |
+  ----------------
+    undo stack
+
+press ctrl+z (undo )
+
+it selects the element and pop it out
+into redo stack
+
+|        |
+|        |
+| cation |
+|        |
+----------
+ctrl+ y (redo)
+
+Ex 2:-
+Which data structure is used to store an image as a bitmap ?
+ARRAYS
+
+Bitmap images are stored as a series of tiny dots called pixels.
+Here each pixel is usually a small square that is assigned a color and then aranged in a pattern to form an image
+A 2 dimensional array of size 37 x 40 is enough to store this image.
+
+ex 3:-
+Storing the friendship information on a social networking site
+
+using graph
+
+ James-------------------------Mark
+  |                              |
+  |                              |
+  |                              |
+Lia----------------------------Lucy
+
+Graph ata structure is used to store this information
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+***************
+CLASS 2
+***************
+Data Types vs Abstract Data Types
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What is a Data Type?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
