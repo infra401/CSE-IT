@@ -1,1 +1,2657 @@
 
+INTRODUCTION
+OS is a program that manages computer hardware. Provides a basis for Application programs. Acts as an intermediary between computer User
+and computer Hardware.
+eg:- windows, linux, ubuntu, mac os , android
+
+    user1            user2                   user3
+     |                  |                       |
+ word processor      spreadsheets              text 
+                                               editor
+
+                system/application programs
+                  operating systems
+            computer hardware (resources like CPU, memory, I/O devices)
+***********************************************************************************************************************************
+
+TYPES OF OS:-
+1. BATCH OS
+2. TIME SHARING OS
+3. DISTRIBUTED OS
+4. NETWORK OS
+5. REAL TIME OS
+6. MULTI PROGRAMMING/ PROCESSING/ TASKING OS
+
+GOALS OF OS:-                 FUNCTIONS OF OS:
+1. CONVENIENCE - it is an intermediary b/w user and hardware
+2. EFFICIENCY  - allocation of resources
+3. BOTH        - management of memory, security etc.
+************************************************************************************************************************************
+
+COMPUTER SYSTEM OPERATION
+a modern general-purpose computer system consists of one or more CPUs and a number of device controllers  connected thhrough a common bus 
+that provides access to shared memory.
+
+       DISKS                   MOUSE       KEYBOARD        PRINTER                 MONITOR
+         |                      |............|...............|                       |   
+         |                                   |                                       | 
+CPU   disk controller                     USB controller                          VIDEO ADAPTER
+|       |                                    |                                        |
+|.......|....................................|........................................|
+                                             |
+                                             |
+                                           MEMORY
+
+each device controller is incharge of a specific type of device.
+CPU and device controller can execute concurrently, competing for memory cycles. 
+To ensure orderly access to shared memory, a memory controller is provided whose function is to synchronize access to the shared memory.
+***************************************************************************************************************************************
+
+IMPORTANT TERMS:-
+
+BOOTSTRAP PROGRAMS
+initial program that runs when a computer is powered up or rebooted.
+it is stored in ROM
+it must know how to load the OS and start executing that system.
+it must locate and load programs into memory the OS kernel.
+
+INTERRUPT
+occurence of an event is usually signalled by an Interrupt from hardware or software.
+hardware may trigger an interrupt at any time by sending a signal to the CPU, usually by way of system bus.
+
+kernel = heart of OS
+SYSTEM CALL (MONITOR CALL)
+software may trigger an interrupt by executing a special operation called system call.
+
+When CPU is interrupted, it stops what it is doing and immediately transfers execution to fixed location.
+                                                                                          ..............
+                                                                                              |
+the fixed location usually contains starting address where the service routine of interrupt is located
+
+The interrupt Service Routine executes.
+On completion, CPU resumes the interrupted computation.
+***************************************************************************************************************************************************************
+
+STORAGE STRUCTURE
+                                   Registers
+                                    ⬆   ⬇
+                                    Cache                 ^
+                                    ⬆   ⬇                 | 
+                                Main Memory               |  expensive but fast
+                                    ⬆   ⬇                 |   smaller size
+                               Electronic Disk
+                                    ⬆   ⬇
+                               Magnetic Disk              |
+                                    ⬆   ⬇                 |  cost per bit increases
+                              Optical Disk                |  access time increases
+                                    ⬆   ⬇                 ⬇  large size
+                              Magnetic Tapes
+
+
+registers = small storage devices, uses bits
+cache slow than registers but bigger than registers
+main memory= RAM, fast, size limited, volatile
+MS word stored in RAM but when we start it , it is loaded in register
+Large the RAM, fast is the computer.
+book= data; bookshelf=secondary memory; table = main memory(RAM)
+
+*REGISTERS, CACHE, MAIN MEMORY are volatile
+loses its content when power is removed
+
+* ELECTRONIC DISK, MAGNETIC DISK, OPTICAL DISK, MAGNETIC TAPES are non volatile.
+retains its contents when power is consumed.
+****************************************************************************************************************************************************************
+
+class 4
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+INPUT/OUTPUT STRUCTURE
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+~ storage is only one of many types of I/O devices within a computer
+~ a large portion of OS code is dedicated to managing I/O, both because of its importance to reliability and performance of a system and becausepf varying nature
+of devices.
+~ a general-purpose computer system consists of CPUs and multiple devices controllers that are conncected through a common bus.
+~ Each device controller is in charge of a specific type of device
+      |................|
+          |
+       maintains
+ .............|.............................
+|                                          |
+local buffer storage      set of special purpose registers
+
+~ operating systems have a device driver for each device controller.
+***************************************************************************************************************************************************************
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+COMPUTER SYSTEM OPERATIONS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~ a modem general-purpose computer system consists of one or more CPUs and a number of device controllers connected thorugh a common bus 
+that provides access to shared memory.
+
+        DISKS                  MOUSE        KEYBOARD     PRINTER                 MONITOR
+         |                      |.............|............|                      |
+CPU     DISK CONTROLLER                       |                                VIDEO ADAPTER
+|         |                          USB CONTROLLER                               |
+|.........|..................................|....................................|
+                                             |
+                                         MEMORY
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+WORKING OF AN I/O OPERATION
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+thread of    cache| <.......instruction execution cycle.........> |instructions and data |
+execution         | <........data movement......................> | memory               |
+                  |                                               ------------------------ 
+ CPU              |                                                    |
+-------------------                                                    |
+ |     |      |                                                        |  
+ |     |      |                                                        |
+i/o    data   |                                                        | 
+request  |    interrupt                                                | 
+|        |    |                                                        | 
+  device <.......................DMA...................................>
+
+~ To start an I/O operation, the device driver loads appropriate registers within the device controller.
+~ the device controller, in turn, examines the contents of these registers to dtermine what action to take.
+~ the controller starts the transfer of data from th device to its locall buffer.
+~ once the transfer of data in complete, the device controller informs the device driver via an interrupt that it has finished its operation
+~ the device driver then returns control to the operating system.
+
+this form of interupt-driven I/O is fine for moving small amounts of data but can produce high overhead when used for bulk data movement.
+~ after setting up buffers, pointers, and counters for I/O device, the device controller transfers an entire block of data directly
+to or from its own buffer storage to memory, with no intervention by the CPU.
+~ only one interrupt is generated per block, to tell the device driver that the operatiob has completed.
+~ while the device controller is performing these operations, the CPU is available to accomplish other works.
+****************************************************************************************************************************************************************
+CLASS 5
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+COMPUTER SYSTEM ARCHITECTURE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Types of computer systems based on number of General Purpose Processors:
+1. Single processor systems
+2. Multiprocessor systems
+3. Clustered systems
+
+SINGLE PROCESSOR SYSTEMS:-
+............................
+~ one main CPU capable of executing a general purpose instruction set including instructions from user processes.
+~ other special purpose processors are also present which perform device specific tasks.
+
+MULTIPROCESSOR SYSTEMS:-
+..............................
+~ also known as parallel systems or tightly coupled systems.
+~ has two or more processors in close communication, sharing the computer bus and sometimes the clock,memory and peripheral
+devices
+
+advantages:
+~ increased thorughput (measure of performance of system)
+~ economy of scale
+~ increased reliability
+
+types of multiprocessor systems:
+1. symmetric multiprocessing
+2. asymmetric multiprocssing
+
+Symmetric Multiprocessing
+CPU1.......|       P1 
+           | 
+CPU1.......|...... P2
+           |   
+CPU3.......|       P3
+
+Asymmetric Multiprocessing
+                   Master
+     ................|................
+     |               |                |
+  slave1           slave2            slave3
+     |               |                |
+     P1              P2               P3
+In asymmetric , one of the CPU acts as master and other act a sslave
+Master monitor other processor and assign them tasks.
+
+CLUSTERED SYSTEMS:-
+.......................
+~ like multiprocessor systems, clustered systems gather together CPUs to accomplish computational work.
+~ they are composed of two or more individual systems coupled together.
+~ provides high availability.
+~ can be structured asymmetrically or symmetrically
+                      |                   |  
+ *one machine in Hot-Standby mode        *two or more hosts run applications
+ *other run applications                 * monitor each other
+ *master-slave approach
+*******************************************************************************************************************************************************************
+
+CLASS 6
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OPERATING SYSTEM STRUCTURE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+(MULTIPROGRAMMING & MULTITASKING)
+~ operating systems vary greatly in their makeup internally
+~ COMMONALITIES:
+multiprogramming
+time sharing (multitasking)
+
+MULTIPROGRAMMING
+...................
+~ a single user cannot, keep either the CPU or I/O devices bust at all times.
+~ multiprogramming increases CPU utilization by organizing jobs (code and data) so that the CPU always has one to execute.
+
+Operatin system
+Job 1
+Job 2
+Job 3
+Job 4
+when CPU complete job 1, it is assigned to job2 and so on
+
+~ multiprogrammed systems provide an environment in which the various system resources (CPU, memory, peripheral devices) are utilized effectively, but they do not
+provide for user interation with the computer system.
+
+TIME SHARING (MULTITASKING)
+...............................
+~ CPU executes multiple jobs by switching among them.
+~ switches occur so frequently that the users can interact with each program while it is running
+~ time sharing requires an interactive (or hands-on) computer system, which provides direct communication b/w user and system
+~ a time-shared operating system allows many users to share the computer simultaneously
+
+~uses CPU scheduling and multiprogramming to provide each user with a small portion of a time-shared computer.
+~ each user has at least one separate program in memory.
+~ a program loaded into memory and executing is called a "PROCESS".
+******************************************************************************************************************************************************************
+
+CLASS 7
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OPERATING SYSTEM SERVICES
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~ An OS provides an environment for execution of programs.
+~ it provides certain services to programs and to users of those programs
+
+1. User Interface
+command line interface (CLI)
+graphical user interface (GUI)
+2. Program Execution
+source code ......> compiler ......> object code ..> executor .......> output
+
+3. I/O Operations
+keyboard ......|             CPU                 |......monitor
+mouse..........|....> Data|  | information       |.....printer      
+other input....|          |  |                   |.....speaker
+other output...|          Memory.................|.....other output 
+
+4. File System Manipulation
+it controls permisison that is given to certain programs or users
+copy file, paste file, create, search etc
+every file not accessible by all uses ; this restriction of access is also controlled by operating system.
+
+5. Communications
+6. Error Detection
+7. Resource Allocation
+8. Accounting (we want to keep track of which user use how much and what king of resources)
+9. Protection and Security
+*****************************************************************************************************************************************************************
+CLASS 8
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+USER OPERATING SYSTEM INTERFACE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+two fundamental approaches for users to interface with operating systems:
+1. Command-line Interface(CLI) or Command interpreter
+allows users to directly enter commands that are to be performed by operating system.
+2. Graphical user interface (GUI)
+allows user to interface with operating system
+
+COMMAND INTERPRETER
+..................
+~ some operating system include command interpreter in kernel.
+~ others such as windows XP, UNIX, treat the command interpreter as a special program.
+~ on systems with multiple command interpreter to choose from, the interpreters are known as shells.
+~ eg:- bourne shell, c shell, bourne-again shell (BASH), karn shell etc
+
+To open terminal in linux (ctrl+ alt + t)
+on windows , open cmd
+********************************************************************************************************************************************************************
+CLASS 9
+~~~~~~~~~~~~~~~~~
+SYSTEM CALLS
+~~~~~~~~~~~~~~~~
+system call is the programmatic way in which a computer program requests a service from the kerne; of the operating system
+these calls are generally available as routines written in C and C++
+
+provide an interface to the services made available by an Operating system
+          |---------------------------|      
+          |   Usermode                |
+          | | ..............|         |
+          | |kernel mode....|.........|.......> privileged mode
+          |                           |
+          |...........................|                           
+~ user mode and kernel mode are two modes in which a program can execute
+~ user mode = if program is running in user mode, that program doesn't have direct access to memory, hardware and such resources
+~ if program is running in user mode and if it has to crash then entire system doesn't crash
+~ user mode is safe
+~ user mode to switch is context switching (to access hardware, memory etc)
+~ call that program makes to access these resources is system calls.
+
+Example of system call:-
+sequence for writing a simple program to read data from one file and copy them to another file
+
+SOURCE FILE ...................................................>  DESTINATION FILE
+                             acquire input filename
+                              write prompt to screen
+                                accept input
+                           acquire output filename
+                           write prompt to screen
+                                accept input 
+                                 open input file
+                              if file doesn't exist, ABORT
+                               create output file
+                                if file exists, ABORT
+(in all these processes , system call is required)
+*********************************************************************************************************************************************************************
+CLASS 10
+~~~~~~~~~~~~~~~~~~~~~~~~
+TYPES OF SYSTEM CALLS
+~~~~~~~~~~~~~~~~~~~~~~~~
+1. Process Control
+2. File Manipulation
+3. Device Management
+4. Information Maintenance
+5. Communications
+
+1. PROCESS CONTROL
+...................
+end, abort
+load, execute
+create process, terminate process
+get process attributes, set process attributes
+wait for time
+wait event, signal event
+allocate and free
+memory
+
+2. FILE MANAGEMENT
+create file, delete file
+open , close
+read, write, reposition
+get file attributes, set file attributes
+
+3. DEVICE MANIPULATION
+...........................
+request device, release device
+read, write, reposition
+get device attributes, set device attributes
+logically attach or detach devices
+
+4. INFORMATION MAINTENANCE
+.............................
+get time or date, set time or date
+get system data, set system data
+get process, file, or device attributes
+set process, file, or device attributes
+
+5. COMMUNICATIONS
+.......................
+create, delete communication connection
+send, receive messages
+transfer status information
+attach or detach remote devices
+**********************************************************************************************************************************************************************
+CLASS 11
+~~~~~~~~~~~~~~~~~
+SYSTEM PROGRAMS
+~~~~~~~~~~~~~~~~~~~
+  user1            user2         user3       user4        .......  user n
+   |                |             |           |                     |
+word processor  spreadsheet  compilers  text editor             web browsers
+
+           .....Application Programs..................
+                 system programs
+                   OPERATING SYSTEM
+                      computer hardware...........> resouces lke CPU, memory, I/O devices
+
+~ system programs provice a convenient environment for program development ans execution
+~ some of them are simply user interfaces to system calls 
+~ others are considerably more complex
+
+categories of system calls:-
+-------------------------------
+1. FILE MANAGEMENT :- create, delete, copy, rename, print, dump, ist and generally manipulate files and directories
+
+2. STATUS INFORMATION :- ask the system for : date, time, amount of available memory or disk space, number of users, detailed
+                          performance, logging, and debugging information etc.
+
+3. FILE MODIFICATION :-  
+ several text editors may be available to create and modify content of files stored on disk or other storage devices
+there may also be special commands to search contents of files or perform transformations of text
+
+4. PROGRAMMING-LANGUAGE SUPPORT :-
+compilers, assemblers, debuggers, interpreters 
+for common programming languages (C, C++, Java, Visual Basic, PERL) are often provided to user with operating system
+
+5. PROGRAM LOADING AND EXECUTION :-
+once a program is assembles or compiled, it must be loaded into memory to be executed
+system may provide absolute loaders, relocatable loaders, linkage editors, overlay loaders
+Debugging systems for either high-level languages or machine language areneeded as well.
+
+6. COMMUNICATIONS :-
+these programs provide the mechanism for:
+creating virtual connections among processes, users, and computer systems.
+allowing users to send messages to one another's screens
+to browse web pages
+to send electronic-mail messages
+to log in remotely or to transfer files from one machine to another
+
+
+In additonal to system programs, most operating systems are supplied with programs that are useful in solving common problems or performing common 
+operations.
+
+web browsers................|
+word processors             |
+spreadsheets                |..........> Application Programs 
+database systems            |
+games etc...................|
+********************************************************************************************************************************************************************
+CLASS 12
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OPERATING SYSTEM DESIGN & IMPLEMENTATION
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+DESIGN GOALS:-
+................
+1st Problem:- defining goals and specifications
+~ choice of hardware
+~ type of system
+beyond this highest design level, the requirements may by much harder to specfy.
+
+requirements:-
+~ User goals
+~ System goals
+
+User Requirements (user goals):-
+system should be convenient to use, easy to learn & use, reliable, safe and fast
+
+Designer, Engineer Requirements (System Goals):-
+system should be easy to design, implemented, maintain, operate, it should be flexible, reliable, error free & efficient
+
+Mechanisms and Policies:-
+........................
+mechanisms determine how to do something
+Policies determine what will be done
+
+one important principle is the separation of policy from mechanism.
+
+Implementation:-
+....................
+~ once an operating system is designed, it must be implemented
+~ traditionally, operating systems have been written in assembly language
+~ Now, however, they are most commonly written in higher-level languages such as C or C++
+
+Advantages of writing high level languages:-
+................................................
+~ the code can be written faster
+~ it is more compact
+~ easier to understand and debug 
+~ easier to port
+
+Eg:- MS-DOS was written in Intel 8088 assembly language. Consequently, it is available on only the Intel family of CPUs
+Linux operating system, in contrast, is written mostly in C and is available as a number of diffeent CPUs, including Intel 80X86, Motorola 680X0 and MIPS RX000
+******************************************************************************************************************************************************************
+
+CLASS 13
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+STRUCTURE OF OPERATING SYSTEM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+SIMPLE STRUCTURE:-
+...........................
+
+          Applicaton Programs
+         ⬇                  |
+  Resident System Programs  | 
+         ⬇         |        | 
+Device Drivers     |        |
+         ⬇         ⬇        ⬇
+      ROM BIOS device drivers
+
+
+MONOLITHIC STRUCTURE:-
+..........................
+     ---------------------------------------------------------------------
+                        (The Users)
+     ---------------------------------------------------------------------
+                     Shells and commands
+                    Compilers and Interpreters
+                      System Libraries
+     ---------------------------------------------------------------------
+          system-call interface to the kernel                           -------|
+     ---------------------------------------------------------------------     |
+      signal, terminal | file system           | CPU scheduling                |
+     handling          | swapping block I/O    | page replacement              |
+ character I/O system  | system                | demand paging                 |  kernel
+     terminal drivers  | disk and tape drivers | virtual memory                | 
+    -----------------------------------------------------------------------    |
+                     kernel interface to the hardware                 .........|
+-  -----------------------------------------------------------------------
+terminal  controllers   |  device controllers     | memory controllers
+       terminals        |   disk and tapes        |  physical memory
+
+
+LAYERED STRUCTURE:-
+                      Layer N 
+                  user interface
+--------------------------------------------------
+                        |
+                        |
+-------------------------------------------------
+                   Layer 0
+                   hardware
+
+MICROKERNELS:-
+
+
+MODULES:-
+       
+                                           |........scheduling classes
+                                           |
+                                          ..............
+            miscellaneous.................| core kernel |.............loadable system calls
+               modules                    ..............
+                                          |    |    |    |..........executale formats
+                                          |    |    |.......stream modules
+                                          |    |...device & bus drivers
+                                          |......file systems
+
+*****************************************************************************************************************************************************************
+CLASS 14
+~~~~~~~~~~~~~~~~~~~~~~~~
+VIRTUAL MACHINES:-
+~~~~~~~~~~~~~~~~~~~~~~~~
+The fundamental idea behind a virtual machine is to abstract the hardware of a single computer (the CPU, memory, disk drivers, network interface cards
+and so forth) into several different execution environments, thereby creating the illusion that each separate execution environment is running its own private
+computer.
+
+| PROCESSS  |                                            |  PROCESSES | PROCESSES   |  PROCESSES  |
+|           |                                            |            |             |             |
+|           |                                            |            |             |             |
+|           |                                            |            |             |             |
+|...........|.                                           |  ..........|.............|.............|
+KERNEL       .........PROGRAMMING.......................    KERNEL         KERNEL       KERNEL
+|           |             INTERFACES                     |     VM1    |   VM2       |    VM2      |
+.............                                            ..........................................
+|  HARDWARE |                                            | VIRTUAL MACHINE IMPLEMENTATION         |  
+                                                         |........................................|
+                                                         |         HARDWARE                       |
+                                                         |........................................|
+
+IMPLEMENTATION:
+
+virtual machine software -    runs in kernel mode
+virtual machine itself   -    runs in user mode
+
+Just as the physical machine has two modes, however, so must the virtual machine.
+
+Consequently, we must have:
+~ a virtual user mode and
+~ a virtual kernel mode
+both of which run in  a physical user mode
+***************************************************************************************************************************************************************
+
+CLASS 15
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OPERATING SYSTEM GENERATION & SYSTEM BOOT
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~ design, code, and implement an operating system specifically for one machine at one site
+~ operating systems are designed to run on any class of machines at a variety of sites with a variety of peripheral configurations
+~ the site must then be configured or generated for each specific computer site, a process sometimes known as system generation (SYSGEN)
+is used for this.
+
+The following kind of information must be determined by the SYSGEN program:-
+what CPU is to be used?
+How much memory is available?
+what devices are available?
+what operating-system options are designed?
+
+RAM = volatile 
+Firmware = kind of rom
+
+
+SYSTEM BOOT
+..............
+~ the procedure of startinga computer by loading the kernel is known as booting the system
+~ on most computer system, a small piece of code known as bootstrap program or bootstrap loader loads the kernel.
+~ this program is in the form of read-only memory (ROM), because the RAM is in an unknown state at system startup. ROM is convenint bcoz
+it needs no initialization and cannot be affected by a computer virus.
+
+EPROM
+erasable programable read only memory
+in EPROM by giving some explicit commands it can be made writable.
+
+When the full bootstrap program has been loaded. it can traverse the file system to find the operating system kernel, load into memory and
+start its execution . It is only at this point that the system is said to be RUNNING.
+****************************************************************************************************************************************
+CLASS 16
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PROCESS MANAGEMENT (Processes and Threads)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+PROCESSES:-
+a process can be thought of as a program in execution.
+THREAD:- 
+A thread is the unit of execution within a process. A process can have anywhere from just one thread to many threads.
+
+           Process
+thread| thread | thread |
+      |        |        |  
+
+to see programs which are loaded and which processes are running in our system
+open task manager see under application and processes
+
+To see thread which are also running in your syste, use
+process explorer program (you can download it)
+right click ; properties; you will see threads
+
+*****************************************************************************************************************************************
+CLASS 17
+~~~~~~~~~~~~~~~~~~
+PROCESS STATE
+~~~~~~~~~~~~~~~~~
+~ As a process executes, it changes state
+~ the state of a process is defined in part by the current activity of that process.
+
+Each process may be in one of the following states:-
+NEW       ----->   the process is being created
+RUNNING  ------>   instructions are being executed
+WAITING  ------>   the process is waiting for some event to occur  
+                   (such as an I/O completion or reception of a signal)
+READY   ------->   the process is waiting to be assigned to a processor
+TERMINATED ---->   the process has finished execution
+                                                             ...................
+                                                            |    TERMINATED    |
+                                                            |..................|
+|-------|                                                        ⬆ 
+| NEW   |                interrupt                        exit   | 
+|-------|       |-----------------------------        -----------|  
+    .........|  |                            |        | 
+         ....⬇..⬇......                   |..|........|...|
+         |READY       |                   | RUNNING       |
+        ..............                     ................
+          ⬆      |............................⬆       |
+          |........  Scheduling dispatch   ...........|
+    I/O or        |                        |    I/O event wait
+event completion   ........................⬇...
+                  |      WAITING              |
+                   ...........................|
+********************************************************************************************************************************************************
+CLASS 18
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+PROCESS CONTROL BLOCK
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Each process is represented in the operating system by a Process Control Block(PCB) also called a task control block.
+
+|--------------------|
+| Process state      |             
+|--------------------|                                 CPU scheduling information
+|  Process number    |                    process ID                     Process state
+|--------------------|                                 Program Counter
+| Process counter    |     CPU registers         
+|--------------------|
+| Registers          |
+|--------------------|                                     Accounting information
+| Memory limits      |                   I/O status information        Memory management information
+|--------------------|
+| list of open files |
+|--------------------|
+|    ........        |
+|--------------------|
+******************************************************************************************************************************
+CLASS 19
+~~~~~~~~~~~~~~~~~~~~~~~
+PROCESS SCHEDULING
+~~~~~~~~~~~~~~~~~~~~~~~
+~ the objective of multiprogramming is to have some process running at all times, to maximize CPU utilization.
+~ The objective of time sharing is to switch the CPU among processes so frequnetly that users can interact with each program while 
+it is running
+~ To meet these objectives, the process schedular selects an available process (possible from a set of several available processes) for
+progam execution on the CPU.
+
+For a single-processor system, there will never be more than one running process.
+If there are more processes, the rest will have to wait until the CPU is free and can be rescheduled.
+
+Scheduling Queues
+..........................
+JOB QUEUE    : As processes enter the system, they are put into a job queue, which consists of all processes in the system
+READT QUEUE  : The processes that are residing in main memory and are ready and waiting to execute are kept on a list called ready queue
+
+
+        swap in                                                                    swap out
+   |-----------------------------------PARTISLLY EXECUTED SWAPPED-OUT PROCESSES-------------------------|
+   |                                                                                                    |
+   |                                                                                                    |
+   |                                                                                                    |
+---------> | ready queue|------------------------------------> |CPU |---------------------------------------------------> end
+---------> |            |                                      |    |-----------------------------------------------  
+   |                                                                                                               |
+   |                                                                                                               |
+   |-------------------------I/O <-----------------I/O waiting queues <--------------------------------------------|
+
+If another process of high priority came so our present process swap out
+*******************************************************************************************************************************************************************
+
+CLASS 20
+~~~~~~~~~~~~~~~~~
+CONTEXT SWITCH
+~~~~~~~~~~~~~~~~~
+~ Interrupts cause the operating system to change a CPU from its current task and to run a kernel routine.
+~ Such operations happen frequnetly on general-purpose systems
+
+When an interrupt occurs, the system needs to save the current context of the process currently running on the CPU so that it can
+restore that context when its processing is done, essentially suspending the process and then resuming it.
+
+~ The context is represented in the PCB(process control block) of the process
+
+Switching the CPU to another processes performing a state save of the current process and a state restore of a different process.
+this task is known as context switch.
+~ Context-switch time is pure overhead, because the system does no useful work while switching
+~ Its speed vaires from machine to machine , depending on the memory speed, the number of registers that must be copied, and the 
+existence of special instructions (such as a single instruction to load or store all registers)
+~ Typical speeds are a few milliseconds.
+***********************************************************************************************************************************************************************************************
+
+CLASS 21
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OPERATIONS ON PROCESSES
+(Process Creation)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~ A process may create several new processes, via a create-process system call, during the course of execution
+~ The creating process is called parent process, and the new processes are called the children of that process
+~ Each of these new processes may in turn create other processes, forming a tree of processes.
+
+A tree of processes on a typical Solaris System:-
+                                           Sched (pid = 0)
+                                               |
+                     --------------------------------------------------------------
+                     |                             |                              |
+                Init (pid = 1)              pageout (pid =2)                   f sf lush (pid = 3)
+                   |-
+       ----------------------------
+       |                           |
+inetd (pid = 140)                dtlogin (pid = 251)
+       |                           |
+telnetdaemon (pid = 7776)       Xsession (pid = 294)
+       |                           |
+     Csh (pid = 7778)            std_shel (pid = 340)
+       |                           |
+------------------              csh (pid = 1400)
+|                |                    |
+netscape       emacs          ---------------------------
+(pid = 7765)  (pid = 9108)    |                          |
+                          ls (pid = 2123)             cat (pid = 2536)
+
+Pid = parent process
+Pageout and f sh lush = processes t = take care of file and memory management
+Init = parent process
+Inetd = responsible for process function
+Dtlogin = serve as X window session for use
+Brings login screen
+Like telnet, ftp
+Csh = c shell, user can interact with system
+Nescape = browser
+Emacs = editor
+
+When a process creates a new process, two possibilities exist in terms of execution:-
+~ The parent continues to execute concurently with its children.
+~ The parent waits until some or all of its children have terminated
+
+There are also two possibilities in terms of the address space of the new process:-
+~ The child process is a duplicate of the parent process (it has the same program and data as the parent)
+~ The child process has a new program loaded into it.
+***************************************************************************************************************************************************************************************************
+
+CLASS 22
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OPERATIONS ON PROCESSES
+(PROCESS TERMINATION)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~ A process terminates when it finishes executing its final statement and asks the operating system to delete it by using the exit() system call.
+~ At that point, the process may return a status value (typically an integer) to its parent process (via the wait() system call).
+~ All the resources of the process- including physical and virtual memory, open files , and I/O buffers - are deallocated by th eoperating system.
+
+Termination can occur in other circumstances as well :-
+~ A process can cause the termination of another process via an appropriate system call.
+~ Usually, such a system call can be invoked only by the parent of the process taht is to be terminated
+~ Otherwise, users could arbitraily kill each other's jobs.
+
+A parent process may terminate the execution of one of its children for a variety of reasons:-
+~ The child has exceeded its usage of some of the resources that it has been allocated. (To determine whether this has
+occured, the parent must have a mechanism to inspect the state of its children)
+~ The task assigned to the child is no longer required
+~ The parent is exiting, and the operating system does not allow a child to continue it its parent terminates
+******************************************************************************************************************************************************************************************************
+
+CLASS 23
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INTERPROCESS COMMUNICATION
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Processes executing concurrently in the operating system may be either independent processes or cooperating processes
+
+Independent Processes :- They cannot affect or be affected by the other processes executing in the system
+Cooperating Processes :- They can affect or be affected by the other processes executing in the system.
+
+Any process that shares data with other processes is a cooperating process.
+
+Interprocess communication is required in cooperating processes.
+Computation Task = big task break into many processes, they need to concurrently done and interconnect communication.
+Modularity = designing system by dividing it into separate modules, later these are put together.
+
+There are several reasons for providing an environment that allows process cooperation:-
+~ information sharing
+~ computation speedup
+~ modularity
+~ convenience
+
+Cooperating processes require an interprocess communication (IPC) mechanism that will aloow them to exchange data and information
+There are two fundamental models of interprocess communication :
+1. Shared Memory
+~ In the shared-memory model, a region of memory that is shared by cooperating processes is established.
+ Processes can then exchange information by reading and writing data to the shared region.
+2. Message Passing
+~ In the message passing model, communication takes place by means of messages exchanged b/w the cooperating processes.
+
+--------------------
+|  Process  A       |-----
+--------------------     |  1
+| shared            | <...
+|                   | -----
+---------------------      |  2
+|  Process B        |  <...
+-------------------- 
+|                   |
+|                   |
+|                   |
+---------------------
+|  Kernel           |              SHARED MEMORY
+---------------------
+
+|--------------------|
+|  Process A       M | -------|
+----------------------        |
+|  Process B       M | <----| |
+---------------------       | |
+|                    |      | | 
+----------------------      | |
+|                    |      | |
+----------------------      | | 
+|  Kernel            |------- |
+|                    | <-------             MESSAGE PASSING
+----------------------
+*****************************************************************************************************************************************************************************************************************
+
+CLASS 24
+~~~~~~~~~~~~~~~~~~~~~~~~~
+SHARED MEMORY SYSTEMS
+~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------
+|  Process  A       |-----
+--------------------     |  1
+| shared            | <...
+|                   | -----
+---------------------      |  2
+|  Process B        |  <...
+-------------------- 
+|                   |
+|                   |
+|                   |
+---------------------
+|  Kernel           |              SHARED MEMORY
+---------------------
+
+~ Interprocess communication using shared memory requires communicating processes to establish a region of shared memory.
+~ Typically, a shared-memory region resides in the address space of the process creating the shared-memory segment.
+~ Other processes that wish to communicate using this shared-memory segment must attach it to their address space.
+~ Normally, the operating system tries to prevent one process form accessing another process's memory.
+~ Shared memory requires that two or more processes agree to  remove this restriction.
+
+PRODUCER CONSUMER PROBLEM
+------------------------------
+A producer produces information that is consumed by a consumer process.
+
+For example, a compiler may produce assembly code, which is consumed by an assembler. The assembler, in turn, may produce object modules, which are consumed by the loader.
+~ one solution to the producer-consumer problem uses shared memory.
+~ To allow producer and consumer processes to run concurrently, we must have available a buffer of items that can be fillled by the producer and emptied by the consumer
+~ This buffer will reside in a region of memory that is shared by the producer and consumer processes.
+~ A producer can produce one item while the consumer is consuming another item.
+~ The producer and consumer must be synchronized , so that the consumer does not try to consume an item that has yet been produced.
+
+TWO KINDS OF BUFFERS:
+-------------------------
+1. Unbounded buffer
+2. Bounded buffer
+
+1. UNBOUNDED BUFFER :-
+places no practical limit on the size of the buffer. The consumer may have to wait for new items, but the producer can always produce new items.
+2. BOUNDED BUFFER :-
+Assumes a fixed buffer size. In this case, the consumer must wait if the buffer is empty, and the producer must wait if the buffer is full.
+
+*****************************************************************************************************************************************************************************************
+CLASS 25
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+MESSAGE PASSING SYSTEMS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|--------------------|
+|  Process A       M | -------|
+----------------------        |
+|  Process B       M | <----| |
+---------------------       | |
+|                    |      | | 
+----------------------      | |
+|                    |      | |
+----------------------      | | 
+|  Kernel            |------- |
+|                    | <-------             MESSAGE PASSING
+----------------------
+Message passing provides a mechanism to allow processes to communicate and to synchronize their actions without sharing the same address space and is particularly useful in a distributed
+environment, where the communicating processes may reside on different computers connected by a network.
+
+A message-passing facility provides at least two operations:-
+- send  (message)
+- receive (message)
+
+Message sent by a process can be either fixed or variable size.
+Fixed Size :- the system-level implementation is straightforward . But makes the task of programming more difficult.
+Variable Size:- requires a more complex system-level implementation. But the programming task becomes simpler.
+
+
+If processes P and Q want to communicate, they must send messages to and receive messages from each other.
+A communication link must exist b/w them.
+This link can be implemented in a variety of ways. There are several methods for logically implementing a link and the send()/receive() operations, like :
+~ direct or indirect communication. ----------------------|
+~ synchronous or asynchronous communication.              |------There are several issues related with features like:
+~ automatic or explicit buffering.                        |       ~Naming
+                                                               ~ Synchronization
+                                                               ~ Buffering
+****************************************************************************************************************************************************************************************
+CLASS 26
+~~~~~~~~~~~~
+NAMING
+~~~~~~~~~~~~
+Processes that want to communicate must have a way to refer to each other. THey can use either direct or indirect communication.
+
+Under Direct Communication :--- Each processes that wants to communicate must explicitly name the recepient or sender of the communication.
+----------------------------     
+send (P, message) - Send a message to process P receive (Q, message) - Receive a message from process Q.
+
+A communication link in this scheme has the following properties:-
+~ A link is established automatically b/w every pair of processes that want to communicate.----------|
+The processes need to know only each other's identity to communicate.                                |
+~ A link is associated with exactly two processes.                                                   |-----this scheme exhibits symmetry in addressing: that is, both the sender process and 
+~ Between each pair of processes, there exists exactly one link.                                     |     receiver process must name the other to communicate
+
+Another Variant Of Direct Communication :- Here, only the sender names the recepient; the recepient is not required to name the sender.
+---------------------------------------
+send (P, message) - send a message to process P                                                                                                     -----|
+receive (id, message) - receive a message from any process; the variable id is set to the name of the process with which communication has taken place --|---this scheme employs asymmetry
+                                                                                                                                                                 in addresing   
+
+The disadvantage in both of these schemes (symmetric and asymmetric) is the limited modularity of the resulting process definitions. Changing the identifier of a process may necessitate
+examining all other process definitons.
+
+WITH INDIRECT COMMUNICATION :-
+------------------------------------
+The messages are sent to and received from mailboxes, or ports.
+
+~ A mailbox can be viewed abstractly as an object into which messages can be placed by processes and from which messages can be removed.
+~ Each mailbox has a unique identification.
+~ Two processes can communicate only if the processes have a shared mailbox.
+
+send (A, message) - send a message to mailbox A
+receive (A, message) = receive a message from mailbox A
+
+A communication link in this scheme has the following properties:-
+
+
+Now suppose that processes P1, P2, ans P3 all share mailbox A
+Process P1 sends a message to A, while both P2 and P3 execute a receive() from A.
+which process will receive the message sent by P1?
+
+The answer depends on following methods we choose:-
+~ allow a link to be associated with two processes at most.
+~ allow atmost one process at a time to execute a receive() operation.
+~ allow the system to select arbitrarily which process will receive the message (that is, either P2 or P3, but not both, will receive the message). The system may also define an algorithm 
+for selecting which process will receive the message (that is, round robin where processes take turns receiving messages). The system may identify the receiver yo the sender.
+
+A mailbox may be owned either by a process or by the operating system.
+******************************************************************************************************************************************************************************************
+CLASS 27
+~~~~~~~~~~~~~~~~~~~~~
+SYNCHRONIZATION
+~~~~~~~~~~~~~~~~~~~~~
+~ Communication b/w processes takes place through calls to send() and receive() primitives. There are different design options for implementing each primitive.
+~ Message passing may be either blocking or nonblocking - also known as synchronous and asynchronous.
+
+Blocking send:- the sending process is blocked until the message is received by the receiving process or by the mailbox.
+Nonblocking send :- the sending process sends the message and resumes operation.
+Blocking receive:- the receiver blocks until a message is available.
+Nonblocking receive :- the receiver retrieves either a valid message or a null.
+
+~~~~~~~~~~~~~~
+BUFFERING
+~~~~~~~~~~~~~
+Whether communication is direct or indirect, messages exchanged by communicating processes reside in a temporary queue.
+Basically, such queues can be implemented in three ways:
+
+Zero Capacity :- The queue has a maximum length of zero; thus the link cannot have any messages waiting in it.
+In this case, the sender must block until the recepient receives the message
+
+Bounded Capacity:- The queue has finite length n; thus, at most n messages can reside in it. If the queue is not full when a new message is sent, the message is placed in the queue
+and the sender can continue execution without waiting. The links capacity is finite, however. If the link is full, the sender must block until space is available in the queue.
+
+Unbounded Capacity :- The queues length is potentially infinite; thus, any number of messages can wait in it. The sender never blocks.
+**********************************************************************************************************************************************************************************************8
+CLASS 28
+~~~~~~~~~~~~~~~~~`
+SOCKETS
+~~~~~~~~~~~~~~~~~
+Used for communication in Client-Server Systems
+
+~ A socket is defined as an endpoint for communication.
+~ A pair of processes communicating over a network employ a pair of sockets- one for each process.
+~ A socket is identified by an IP address concatenated with a port number.
+~ The server waits for incoming client requests by listening to a specified port. Once a request is received, the server accepts a connection from the client socket to complete the 
+connection.
+~ Servers implementing specific services (such as telnet, ftp, and http) listen to well-known ports
+(a telnet server listens to port 23, an ftp server listens to port 21, and a web, or http, server listens to port 80)
+~ All ports below 1024 are considered well known; we can use them to implement standard services.
+
+Communication Using Sockets
+-------------------------------
+
+  Host                                                      web server
+(146.86.5.20)                                            (161.25.19.8)
+-----------------------                               ------------------------------|
+| Socket              |                              |   Socket                     |
+|(146.86.5.20:1625)   | -----------------------------|  (161.25.19.8:80)            |
+-----------------------                              |-------------------------------
+~ When a client process initiates a request for a connection, it is assigned a port by the host computer
+~ This port is some arbitriry number greater than 1024
+~ The packets traveling b/w the hosts are delivered to the appropriate process based on the destination port number.
+******************************************************************************************************************************************************************************************
+
+CLASS 29
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+REMOTE PROCEDURE CALLS (RPC)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Remote Procedure Call (RPC) is a protocol that one program can use to request a service from a program located in another computer on  a network without having to understand the 
+network's details.
+~ It is similar in many respects to the IPC mechanism
+~ However, because we are dealing with an environment in which the processes are executing on separate systems, we must use a message based communication scheme to provide remote service.
+~ In contrast to the IPC facility, the messages exchanged in RPC communication are well structured and are no longer just packets of data.
+~ In contrast to the IPC facility, the messages exchanged in RPC communication are well structured and are thus no longer just packets of data.
+~ Each message is addressess to an RPC daemon listening to a port on the remote system, and each containes an identifier of the function to execute and the parameters to pass to that
+function.
+~ The function is then executed as requested, and any output is sent back to the requester in a separate message.
+
+The semantics of RPCs allow a client to invoke a procedure on a remote host as it would invoke a procedure locally
+_________________________________________________________________________________________________________________________
+~ The RPC system hides the details that allow communication to take place by providing a stub on the client side.
+~ Typically, a separate stub exists for each separate remote procedure.
+~ When the client invokes a separate procedure, the RPC system calls the appropriate stub, passing it the parameters provided to the remote procedure. This stub locates the port on the 
+server and marshals the parameters.
+~ Parameter marshalling involves packaging the parameters into a form that can be transmitted over a network.
+~ The stub then transmits a message to the server using message passing.
+~ A similar stub on the server side receives this message and invokes the procedure on the server.
+~ If necessary, return values are passed back to the client using the same technique.
+***************************************************************************************************************************************************************************************
+
+CLASS 30
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Issues In RPC And How They Are Resolved
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Issues 1:-
+Differences in data representation on the client and server machines.
+eg:- representation of 32-bits integers:
+Some systems (known as big-endian) use the high memory address to store the most significant byte, while other systems (known as little-endian) store the least significant byte at the 
+high memory address.
+Resolved :-
+RPC systems define a machine-independent representation of data. One such representation is known as external data representation (XDR).
+On the client side, parameter marshalling involves converting the machine dependent data into XDR before they are sent to the server.
+On the server side, the XDR data are unmarshalled and converted to the machine-dependent representation for the server.
+--------------------------------------------------------------------
+
+Issues 2:-
+Whereas local procedure calls fail only under extreme circumstances, RPCs can fail, or be duplicated and executed more than once, as a result of common network errors.
+Resolved:-
+The operating system must ensure that messages are acted on exactly once,  rather than atmost once. Most local procedure calls have the "exactly once" functionality, but it is more 
+difficult to implement.
+-------------------------------------------------------------------
+
+Issues 3:-
+With standard procedure calls, some form of binding takes place during link, load, or execution time so that a procedure call's name is replaced by the memory address of the procedure 
+call. The RPC scheme requires a similar binding of the client and the server port, but how does a client know the port numbers on the server? Neither system has full information about 
+the other because they do not share memory.
+Resolved :-
+1. The binding information may be predetermined, in the form of fixed port addresses. At compile time, an RPC call has a fixed port number associated with it. Once a program is 
+compiled, the server cannot change the port number of the requested service.
+2. Binding can be done dynamically by a rendezvous mechanism. Typically, an operating system provides a rendezvous (also called a matchmaker) daemon on a fixed RPC port. A client then
+sends  a message containing the name of the RPC to the rendezvous daemon requesting the port address of the RPC it needs to execute. The port number is returned, and the RPC calls can 
+be sent to that port until the process terminates (or the server crashes)
+------------------------------------------------------------------
+
+Execution Of a Remote Procedure Call (RPC)
+
+client                                                             messages                                             server
+
+User calls kernel to send RPC messages      
+ to procedure X
+       |
+       |
+kernel sends message to matchmaker to find ----------------- FROM: client  -------------------------------->  matchmaker receives message, looks up
+port number                                                  To: server                                                  answer
+                                                             Port: matchmaker                                              |
+                                                             Re: address for RPC X                                         |
+                                                                                                                           |
+                                                                                                                           |
+                                                                                                                           ⬇
+kernel places port P in user <---------------------------- FROM: server ---------------------------------- matchmaker replies to client with port P
+RPC mesage                                                 To: client
+    |                                                       Port: kernel
+    |                                                       Re: Port no. P
+    |
+Kernel sends RPC     ------------------------------------ FROM: client ----------------------------------> Daemon listening to port P receives message
+                                                          To : server                                                     |
+                                                          Port: port P                                                    | 
+                                                          <contents>                                                      |
+                                                                                                                          ⬇
+
+Kernel receives reply, passes it to user --------------- FROM: RPC port P ------------------------------ Daemon processes request and processes send output
+                                                         To: client
+                                                         Port: kernel
+                                                         <output>
+**************************************************************************************************************************************************************************************
+CLASS 31
+~~~~~~~~~~~~~~~~~~~~~~~~~
+INTRODUCTION TO THREADS
+~~~~~~~~~~~~~~~~~~~~~~~~~
+THREADS
+-----------
+A thread is a basic unit of CPU utilization.
+
+It comprises:
+a thread ID
+a program counter
+a register set
+a stack
+
+~ It shared with other threads belonging to the same process its code section, data section, and other operating-system resources, such as open files and signals.
+~ A traditional/ heavyweight process has a single thread of control.
+~ If a process has multiple threads of control, it can perform more than one task at a time.
+
+------------------------------ 
+|  code      data    files   |
+|  registers         stack   |
+|                            |
+|                            |
+------------------------------
+|                            |
+|                            |
+|thread 1                    |        |
+------------------------------
+single-threaded process
+
+--------------------------------
+|  code      data      files    |
+| registers registers registers |
+| stack       stack      stack  |
+---------------------------------
+|                               |
+|                               |
+| thread 1 thread 2    thread 3 |
+---------------------------------
+Multi-threaded process
+
+process thread view -> choose process(select a process) 
+
+BENEFITS
+----------
+The benefits of multithreaded programming can be broken down into four major categories:-
+
+RESPONSIVENESS :- Multithreading an interactive application may allow a program to continue running even if it part of it is blocked or is performing a lengthy
+                  operation, thereby increasing responsiveness to the user.
+
+RESOURCE SHARING :- By default, threads share the memory and the resources of the process to which they belong. The benefit of sharing code and data is that it allows an application to 
+                    have several different threads of activity within the same address space.
+
+ECONOMY :- Allocating memory and resources for process creation is costly. Because threads share resources of the process to which they belong, it is more economical to create and
+           context-switch threads.
+
+UTILIZATION OF MULTIPROCESS ARCHITECTURE :- The benefits of multithreading can be greatly increased in a multiprocessor architecture, where threads may be running in parallel on different
+                                             processors. A single-threaded process can only run on one CPU, no matter how many are available. Multithreading on a multi-CPU machine increases 
+                                            concurrency.
+*****************************************************************************************************************************************************************************************************
+
+CLASS 32
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+MULTITHREADING MODELS AND HYPERTHREADING
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Types of Threads:
+1. USER THREADS :- supported above the kernel and are managed without kernel suport.
+2. KERNEL THREADS :- supported and managed directly by the operating system.
+
+Ultimately, there must exist a relationship between user threads and kernel threads.
+
+There are three common ways of esablishing this relationship:-
+1. Many-to-One Model
+2. One-to-One Model
+3. Many-to-Many Model
+
+
+MANY-TO-ONE MODEL
+--------------------
+
+thread1    thread2    thread3   thread4 <-- user thread
+   |          |         |           |
+   |          |         |           |
+   ----------------------------------
+                  |
+                  |
+              kernel thread
+
+~ Maps many user-level htreads to one kernel thread
+~ Thread management is done by the thread library in user space, so it is efficient.
+~ The entire process will block if a thread makes a blocking system call.
+~ Because only one thread can access the kernel at a time, multiple theads are unable to run in parallel on multiprocessors.
+
+ONE-TO-ONE MODEL
+-----------------
+
+thread1    thread2    thread3   thread4 <-- user thread
+   |          |         |           |
+   |          |         |           |
+kernel    kernel    kernel      kernel
+thread      thread   thread    thread
+
+~ Maps each user thread to  a kernel thread.
+~ Provides more concurrency than the many-to-one model by allowing another thread to run when a thread makes a blocking system call
+~ also allows multiple threads to run in parallel on multiprocessors.
+~ Creating a user thread requires creating the coresponding kernel thread.
+~ Beacuse the overhead of creating kernel threads can burden the performances of an application, most implemantations of this model 
+restrict the number of threads supported by the system.
+
+MANY-TO-MANY MODEL
+----------------------
+thread1 thread2 thread3 thread4  <-- user thread
+  |        |      |       |
+  -------------------------
+              |
+              |
+  --------------------
+ |         |         |
+kernel  kernel    kernel
+thread   thread   thread
+
+~ Multiplexes many user-level threads to a smaller  or equal number of kernel threads.
+~ The numbr of kernel threads may be specific to either a particular application or a paticular machine.
+~ Developers can create a smany user threads as necessary, and the corresponding kernel threads can run 
+in parallel on a multiprocessor.
+~ Also, when a thread performs a blocking system call, the kernel can schedule another thread for execution.
+
+~~~~~~~~~~~~~~~~~~~~~
+HYPERTHREADING
+OR
+SIMULTANEOUS MULTITHREADING (SMT)
+
+~ Hyerthreaded systems allow their processor cores' resources to become multiple logical processors for performances
+~ It enables the processor to execute two threads, or set of instructions, at the same time. Since hyper-threading 
+allows two streams to be executed in parallel, it is almost like having two separate processors working together.
+
+control panel -> all control panel items -> system 
+properties of system
+
+to find whether our system is hyperthreaded or not
+open cmd
+command: wmic 
+
+WMI - windows management instrumentation
+It is a management infrastructure that provides access to control over a system.
+
+2 cores in system means 2 cores can be supported
+
+If more no. of logical cores then physical cores then hyperthreading is happening in our system.
+command: CPU Get NumberOfCores.NumberOfLogicalProcessors
+********************************************************************************************************************************************************
+
+CLASS 33
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The fork() and exec() System Calls 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+fork(): The fork() system call is used to create a separate, duplicate process.
+exec(): When an exec() system call is invoked, the program specified in the parameter to exec() will replace the 
+entire procss - including all threads.
+
+COMPLETE IT
+*************************************************************************************************************************************************************************************************************
+CLASS 34
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+THREADING ISSUES (PART - 1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The fork() exec() System Calls
+
+The semantics of the fork() and exec() system calls change in a multithreaded program.
+
+Issue
+----------
+If one thread in a program calls fork(), does the new process duplicate all threads, or is the new process single-threaded?
+solution
+------------
+Some UNIX systems have chosen to have two versions of fork(), one that duplicates all threads and another that duplicates only
+thread that invoked the fork() system call.
+
+But which version of fork() to use and when?
+
+Also, if the thread invokes the exec() system call, the program specified in the parameter to exec() will replace the entire process - including all threads.
+
+Which of the two versions of fork() to use depends on the application.
+
+If exec() is called immediately after forking
+-----------------------------------------------
+Then duplicating all threads is necessary, as the program specified n the parameters to exec() will replace the process.
+In this instance, duplicating only the calling thread is approriate.
+
+If the separate process does not exec() after forking
+----------------------------------------------------
+Then the separate process should duplicate all threads.
+******************************************************************************************************************************************************************************************************************
+CLASS 35
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+THREADING ISSUES (PART -2)
+THREAD CANCELLATION
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Thread cancellation is the task of terminating a thread before it has completed.
+
+~If multiple threads are concurrently searching through a database and one thread returns the result, the remaining threads might be canceled.
+~When a user presses a button on a web browser that stops a web page from loading any further, all threads loading the page are canceled.
+
+A thread that is to be canceled is often referred to as the target thread.
+
+Cancelation of a thread may occur in two different scenarios:-
+------------------------------------------------------------------
+1. Asynchronous cancellation :- One thread immediately terminates the target thread.
+2. Deferred cancellation     :- The target thread immediately checks whether it should terminate, allowing it an opportunity to terminate itself in an orderly fashion.
+
+Where the difficulty with cancellation lies:-
+---------------------------------------------
+In situation where:
+~ Resources have been allocated to a canceled thread
+~ A thread is canceled while in the midst of updating data it is sharing with other threads.
+
+Often, the operating system will reclaim system resources from a canceled thread but will not reclaim all resources.
+Therefore, canceling a thread asynchronously may not free a necessary system-wide resource.
+
+With deferred cancellation:-
+-------------------------------
+One thread indicates that a target is to be cancelled.
+But cancellation occurs only after the target thread has checked a flag to determine if it should be canceled or not.
+
+This allows a thread to check whether it should be canceled at a point when it can be canceled safely.
+**************************************************************************************************************************************************************************************************************
+CLASS 36
+~~~~~~~~~~~~~~~~~~~~~
+CPU Scheduling
+~~~~~~~~~~~~~~~~~~~~~
+CPU scheduling is the basis of multiprogrammed operating systems.
+By switching the CPU among processes, the operatin system can make the computer more productive
+
+~ In a single-processor system, only one process can run at a time
+~ Any others must wait until the CPU is free and can be rescheduled.
+
+~ The objective of multiprogramming is to have some process running at all times, to maximize CPU utilization.
+~ A process is executed until it must wait, typically for the completion of some I/O request.
+~ In a simple computer system, the CPU then just sits idle All this waiting time is wasted; no useful workuful is accomplished.
+
+~ With multiprogamming, we try to use this time productively.
+~ Several processes are kept in memory at one time.
+~ When one process has to wait, the operating syste takes the CPU away from that and gives the CPU to anothe process and this pattern continues.
+************************************************************************************************************************************************************************
+CLASS 37
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CPU and I/O Burst Cycles
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Process execution consists of a cycle of CPU execution amd I/O wait.
+                                            |--------|--------|
+               Processes alternate between these two states
+
+
+Process execution begins with a
+CPU burst that is followed by an
+I/O burst, which is followed by another
+CPU burst, then anothe
+I/O burst.
+and so on........
+
+~ Eventually the final CPU burst ends with a system request to terminateexecution
+~ CPU burst is when the process is being executed in the CPU
+~ I/O burst is when the CPU is waiting for I/O for further execution
+
+         load store  ---------
+         add store           |-- CPU burst
+     read from file  ---------     
+
+      wait for I/ O ---------| I/O burs
+
+         store increment  ---------
+        index                     |-- CPU burst
+         write to file    ---------     
+
+      wait for I/ O ---------| I/O burs
+
+         load store  ---------
+         add store           |-- CPU burst
+     read from file  ---------     
+
+      wait for I/ O ---------| I/O burs
+
+Alternating sequence of CPU & I/O bursts
+**************************************************************************************************************************************************************************************************************8
+CLASS 38
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PREEMPTIVE AND NON-PREEMPTIVE SCHEDULING
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+                         CPU Schedular
+                              |
+Whenever the CPU becomes idle, the operting system must select one of the processes in the ready queue to be executed. The selection process is carried out 
+by the short-term schedular (or CPU schedular). The schedular selects a process from the processes in memory that are ready to execute and allocates 
+the CPU to that process.
+
+                  Dispatcher
+                      |
+The dispatcher is the module that gives control of the CPU to the proces selected by the short-term schedular. The time it takes for the dispatcher 
+to stop one process and start another running is known as the dispatch latency.
+
+CPU-scheduling decisions may take place under the following four circumstances:-
+--------------------------------------------------------------------------------------
+1. When a process switches from the running state to the waiting state
+                                    -------------        --------------
+2. When a process switches from the running state to the ready state (for example, when an interrupt occurs )
+                                   ---------------       ----------------
+3. When a process switches from the waiting state to the ready state (for example, at completion of I/O)
+                                   --------------       -------------
+4. When a process terminates.
+
+For situations 1 and 4, there is no choice in terms of scheduling. A new process (if one exists in the ready queue) must be selected for execution. However, there is a 
+choice for situations 2 and 3
+
+When scheduling takes place only under circumstances 1 and 4, we say that the scheduling scheme is nonpreemptive or cooperative otherwise, it is preemptive.
+***************************************************************************************************************************************************************************************************************8
+CLASS 39
+~~~~~~~~~~~~~~~~~~~~~~~~~~``
+SCHEDULING CRITERIA
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+CPU utilization
+----------------
+We want to keep the CPU as busy as possible. Conceptually, CPU utilization can range from 0 to 100 percent. Ina real system,
+it should range from 40 percent (for a lightly loaded system) to 90 percent (for a heavily used system)
+
+Throughput
+---------------
+If the CPU is busy executing processes, then work is being done. One measure of work is the number of processes that are
+completed per time unit, called throughput.
+
+Turnaround time
+-----------------
+From the point of view of a particular process, the important criteria is that how long it takes to execute that process.
+The interval from the time of submission of a process to the time of completion is the turnaround time. Turnaround time
+is the sum of the peiods spent waiting to get into memory, waiting in the ready queue, executing on the CPU, and doing I/O.
+
+Waiting time
+---------------
+The CPU scheduling algorithm does not affect the amount of time during which a process executes or does I/O; it affects
+only the amount time that aprocess spends waiting in the readyqueue. Waiting time is the sum of the periods spent waiting
+in the ready queue.
+
+Response time
+----------------
+In an interactive system, turnaround time may not be the best criteria. Often, a process cn produce some output fairly early
+and can continue computing new results while previousresults are being output to the user. Thus, another measure is the time 
+from the submission of a request until the first submission is produced. This measure, called response time, is the time it 
+takes to start responding, not the time is takes to output the response. The turnaround time is generally limited by the speed
+of the output device.
+************************************************************************************************************************************************************************************8
+CLASS 40
+
+FIFO = first in first out
+PCB = process control block
+~~~~~~~~~~~~~~~~~~~~~~~~~
+SCHEDULING ALGORITHMS
+(First-Come, First-Served Scheduling)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~ By far the simplest CPU-scheduling algorithm.
+~ The procss that requests the CPU first is allocated the CPU first.
+~ The implementation of the FCFS policy is easily managed with a FIFO queue.
+~ When a process enters a ready queue, its PCB is linked onto the tail of the queue.
+~ When the CPU is free, it is allocated to the process at the head of the queue.
+~ The running process is then removed from the queue.
+
+The average waiting time under the FCFS policy, however, is often quite long.
+
+
+
+Consider the following set of processes that arrive at time 0
+-----------------------------
+| Process | Burst time (ms) |
+-----------------------------
+|   P1   |    24            |
+-----------------------------
+|   P2   |    3             |
+-----------------------------
+|   P3   |    3             |
+-----------------------------
+If the processes arrive in the order P1. P2, P3 and are served in FCFS order, we get the result shown in the following Gantt chart:
+------------------------------------------------------
+|         P1                       |    P2  |   P3   |
+------------------------------------------------------
+0                                  24       27      30
+
+Waiting time for P1 = 0 ms
+Waiting time for P2 = 24 ms
+Waiting time for P3 = 27 ms
+Average waiting time = (0 + 24 + 27) / 3 = 17 ms
+
+This reduction is substantial. Thus, the average waiting time under an FCFS policy is generally not minimal and may vary substantially if the process's CPU burst times 
+vary greatly.
+
+The FCFS scheduling algorithm is nonpreemptive.
+~ Once the CPU has been allocated to a process, that process keeps the CPU until it releases the CPU, either by terminating or by requesting I/O.
+~ The FCFS algorithm is thus particularly troublesome for time-sharing systems, where it is important that each user get a share of the CPU 
+at regular intervals.
+~ It would be disastrous to allow one process to keep the CPU for an extended period.
+**********************************************************************************************************************************************************************************************************
+CLASS 42
+First-Come, First-Served Scheduling
+---------------------------------------------
+Solved Problem - 1
+
+Convay Effect
+If proces with higher burst time arrived before the processes with smaller burst time, hen, smallr processes have to ait for a 
+long time for longer processes to release the CPU.
+
+
+Consider the set of 5 processes whose arrival time and burst time are given below:
+-------------------------------------------------
+|  Process ID  |  Arrival Time  |  Burst Time  |
+------------------------------------------------
+|    P1        |        4       |     5        |
+------------------------------------------------
+|    P2        |        6       |     4        |
+------------------------------------------------
+|    P3        |        0       |     3        |
+------------------------------------------------
+|    P4        |        6       |     2        |
+------------------------------------------------
+|    P5        |        5       |     1        |
+------------------------------------------------
+Calculate the average waiting time and average turnaround  time, if FCFS scheduling algorithm is followed.
+
+Gantt Chart:
+0      3      4       9         13     17     19
+-----------------------------------------------
+|  P3  ||||||||  P1   |   P5    |  P2  |  P4  |
+-----------------------------------------------
+The shaded box represents the idle time of CPU
+
+Turn around time = completion time - arrival time
+Waiting time = Turn around time - burst time
+
+------------------------------------------------------------------------
+| Process ID  |  Completion time  |  Turnaround time  |  Waiting time  |
+------------------------------------------------------------------------
+|   P1        |      9            |  9-4 = 5          |  5 - 5 = 0     |
+------------------------------------------------------------------------
+|   P2        |      17           |  17-6 = 11        |  11 - 4 = 7    |
+------------------------------------------------------------------------
+|   P3        |      3            |  3-0 = 3          |  3 - 3 = 0     |
+------------------------------------------------------------------------
+|   P4        |      19           |  19-6 = 15        |  13 - 2 = 11   |
+------------------------------------------------------------------------
+|   P5        |      13           |  13-5 = 8         |  8 - 4 = 4     |
+------------------------------------------------------------------------
+now, average turn around time  = (5 + 11 + 3 + 13 + 8)/ 5
+                               = 40 / 5
+                               = 8 units
+Average waiting time = (0 + 7 + 0 + 11 + 4)/ 5
+                     = 22 / 5
+                     = 4.4 units
+*****************************************************************************************************************************************************************************************
+CLASS 43
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SCHEDULING ALGORITHMS
+(Shortest-Job-First_scheduling)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~ This algorithm associates with each process the length of the process's next CPU burst.
+~ When the CPU is available, it is aaigned to the process that has the smallest next CPU burst.
+~ If the next CPU bursts of two processes are the same, FCFS scheduling is used to break the tie.
+
+The SJF algorithm can be either preemptive or nonpreemptive
+
+A more appropriate term for this scheduling method would be the SHortest-Next-CPU-Burst Algorithm.
+because scheduling depends on the length of the next CPU burst of a process, rather than its total length.
+
+Example of SJF Scheduling (Non-Preemptive)
+----------------------------------------------
+consider the following se of processes, with the length of the CPU burst given in milliseconds:
+
+Process ID          Burst time
+  P1                     6
+  P2                     8
+  P3                     7
+  P4                     3
+
+Waiting time for P1 = 3 ms
+Waiting time for P2 = 16 ms
+Waiting time for P3 = 9 ms
+Waiting time for P4 = 0 ms
+Average waiting time = (3 + 16 + 9 + 0) / 4 = 7 ms
+
+Gantt Chart:
+0      3      9        16     24
+-------------------------------
+|  P4  |  P1  |  P3    |  P2  |
+-------------------------------
+
+By comparison, if we were using the FCFS scheduling scheme, the average waiting time would be 10.25 milliseconds.
+
+Example of SJF Scheduling (Preemptive)
+--------------------------------------------
+Consider the following four processes, with the length of the CPU burst given in milliseconds and the processes arrive at the ready
+queue at the times shown:
+
+Process ID    Arrival time    Burst Time
+  P1              0               8
+  P2              1               4
+  P3              2               9
+  P4              3               5
+
+Gantt Chart:
+0       1      5        10           17         26
+-------------------------------------------------
+|  P1  |   P2  |  P4    |   P1       |   P3     |
+-------------------------------------------------
+Waiting time = total waiting time - no. of milliseconds process executed - arrived time
+
+Preemptive SJF scheduling is sometimes called Shortest-Remaining-Time-First Scheduling.
+
+Problems with SJF scheduling:-
+---------------------------------
+~ The real difficulty with the SJF algorithm is knowing the length of the next CPU request.
+~ Although the SJF algorithm is optimal, it cannot be implemented at the level of short-term CPU scheduling.
+~ There is no way to know the length of the next CPU burst.
+
+One approach is :-
+~ To try to approximate SJF scheduling.
+~ We may not know the length of the next CPU burst, but we may not be able to protect its value.
+~ We expect that the next CPU burst will be similar in length of the previous ones.
+~ Thus, by computing an approximation of the length of the next CPU burst, we can pick the process with the shortest predicted CPU 
+  burst.
+***************************************************************************************************************************************************************************************************************
+
+CLASS 44
+***********
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SHORTEST-JOB-FIRST SCHEDULING
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+An operating system uses shortest ramaining time first scheduling algorithm for pre-emptive scheduling of processes. 
+Consider the following set of processes with their arrival times and CPU burst times (in milliseconds):
+
+-------------------------------------------
+| Process ID |  Arrival Time | Burst Time |
+-------------------------------------------
+| P1         |      0        |   12       |   
+-------------------------------------------
+| P2         |      2        |   4        |
+-------------------------------------------
+| P3         |      3        |   6        |
+-------------------------------------------
+| P4         |      6        |   5        |
+------------------------------------------
+The average waiting time (in milliseconds) of the processes is -----------.
+
+gantt chart:
+0    2    6      12       17        27
+-------------------------------------
+| P1 | P2 |  P3  |  P4    |   P1    |
+-------------------------------------
+Waiting time = total waiting time - no of milliseconds process executed - arrival time
+
+waiting time for P1 = (17-2-0) = 15 ms
+waiting time for P2 = (2-0-2) = 0 ms
+waiting time for P3 = (6-0-3) = 3 ms
+waiting time for P4 = (12-0-8) = 4 ms
+
+Average waiting time = (15+0+3+4) / 4 = 5.5 ms
+                                       ---------
+******************************************************************************************************************************
+CLASS 45
+Consider the following processes, with the arrival time and the length of the CPU burst given in milliseconds. 
+The scheduling algorithm used in preemptive shortest remaining time first
+
+-------------------------------------------
+| Process ID |  Arrival Time | Burst Time |
+-------------------------------------------
+| P1         |      0        |   10       |   
+-------------------------------------------
+| P2         |      3        |   6        |
+-------------------------------------------
+| P3         |      7        |   1        |
+-------------------------------------------
+| P4         |      8        |   3        |
+------------------------------------------
+The average turn around time of these processes is -------- milliseconds
+
+0     3       7    8     10    15         20
+-------------------------------------------
+| P1  |  P2   | P3 | P2  | P4  |      P1  |
+-------------------------------------------
+Turn around time = completion time - arrival time
+
+Turnaround time for P1 = (20-0) = 20 ms
+Turnaround time for P2 = (1-=3) = 7 ms
+Turnaround time for P3 = (8-7) = 1 ms
+Turnaround time for P4 = (13-8) = 5 ms
+
+Average turnaround time = (20+7+1+5) / 4 = 33 / 4 
+                        = 8.25 ms
+
+*************************************************************************************************************************************************************************************
+CLASS 46
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SCHEDULING ALGORITHMS
+(PRIORITY SCHEDULING)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~ A priority is associated with each process, and the CPU is allocated to the process with the highest priority.
+~ Equal-priority processes are scheduled in FCFS order.
+~ An SJF algorithm is simply a priority algorithm where the priority is the inverse of the (predicted) next CPU burst.
+  The larger the CPU burst, the lower the priority, and vice versa
+
+Priority scheduling can be either preemptive or non preemptive
+
+A preemptive priority scheduling algorithm will preempt the CPU if the priority of the newly arrived process is higher than 
+the priority of the currently running process.
+
+A non preemptive priority algorithm will simply put the new process at the head of the ready queue.
+
+
+Consider the followinf set of processes, assumed to have arrived at time 0, in the order P1, P2, P3, P4, P5 with 
+the length of the CPU burst given in milliseconds:
+
+--------------------------------------
+| Process ID | Burst time | Priority |
+--------------------------------------
+|   P1       |   10       |   3      |
+--------------------------------------
+|   P2       |   1        |   1      |
+--------------------------------------
+|   P3       |   2        |   4      |
+--------------------------------------
+|   P4       |   1        |   5      |
+--------------------------------------
+|   P5       |   5        |   2      |
+--------------------------------------
+
+Using priority scheduling, we would schedule these proceses according to the following Gantt Chart:
+0      1         6             16    18    19
+--------------------------------------------
+|  P2  |  P5     |   P1        |  P3 | P4  |
+--------------------------------------------
+
+Waitting time for P1 = 6 ms
+Waitting time for P2 = 0 ms
+Waitting time for P3 = 16 ms
+Waitting time for P4 = 18 ms
+Waitting time for P5 = 1 ms
+
+Average waiting time = (6 + 0 + 16 + 18 + 1) / 5
+= 14 / 5ms
+= 8.2 ms
+
+PROBLEM WITH PRIORITY SCHEDULING
+------------------------------------
+~ A major problem with priority scheduling algorithms is indefinite blocking, or starvation
+~ A process that is ready to run but waiting for the CPU can be considered blocked.
+~ A priority scheduling algorithm can leave some low priority process waiting indefinitely
+~ In a heavily loaded computer system, a steady stream of higher-priority processes can prevent a low-priority process from ever getting the CPU
+
+SOLUTION TO THE PROBLEM 
+------------------------
+~ A solution to the problem of indefinite blockage of low-priority processes is aging
+~ Aging is a technique of gradually increasing the priority of processes that wait in the system for a long time
+~ For example, 
+  If priorities range from 127(low) to 0(high), we could increase the priority of a waiting process by 1 every 15 minutes
+~ Eventually, even a process with an initial of 127 would have the highest priority in the sysem and would be executed.
+
+***********************************************************************************************************************************************************************
+CLASS 47
+~~~~~~~~~~~~~~~~~~~~~~~~~
+PRIORITY SCHEDULING
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Consider the set of processes with arrival time (in milliseconds), CPU burst time (in milliseconds), and priority (0 is the highest priority) shown below. None of the processes have I/O 
+burst time.
+
+Process ID    Arrival Time      Burst Time     Priority
+  P1              0                   11          2
+  P2              5                   28          0
+  P3              12                  2           3
+  P4              2                   10          1
+  P5              9                   16          4
+The average waiting time (in milliseconds) of all the processes using preemptive priority scheduling algorithm is ------------
+
+ANS:-
+Gantt CHart :
+0     2    5         33    40     49     51       67
+---------------------------------------------------
+|  P1 |  P4 |  P2   |  P4  |  P1  |  P3  |  P5    |
+---------------------------------------------------
+
+Waiting time = total waiting time - no of milliseconds process executed - arrival time
+
+waiting time for P1 = (40-2-0) = 38 ms
+waiting time for P2 = (5-0-5) = 0 ms
+waiting time for P3 = (49-0-12) = 37 ms
+waiting time for P4 = (33-3-2) = 28 ms
+waiting time for P5 = (51-0-9) = 42 ms
+                                                         
+No of milliseconds process executed before
+Average waiting time = (38+0+37+28+42) / 5
+                      = 145 / 5 ms
+                     = 29 ms
+*****************************************************************************************************************************************************************************************************************
+CLASS 48
+~~~~~~~~~~~~~~~~~~~~~~~
+PRIORITY SCHEDULING
+~~~~~~~~~~~~~~~~~~~~~~~
+Consider he set of processes with arrival time (in milliseconds), CPU burst time (in milliseconds), and priority shown below: (Higher number represents
+higher priority)
+
+Process ID     Arrival Time    Burst Time   Priority
+   P1               0              4           2
+   P2               1              5           3
+   P3               2              1           4
+   P4               3              5           5  
+   P5               4              2           5
+If the CPU scheduling is priority non-preemptive, calculate the average waiting time and average turn around time
+
+ANS:-
+Gantt Chart:-
+0       4      9      11     12     13
+ ------------------------------------
+ |  P1  |  P4  |  P5  |  P3  |  P2  |
+ ------------------------------------
+
+Turn around time = completion time - arrival time
+watiting time = turn around time - burst time
+
+Process ID    Completion Time    Turnaround Time    Waiting time
+  P1                 4            4-0 = 4             4 - 4 = 0
+  P2                 15           15-1=14             14 - 3 = 11
+  P3                 12           12-2=10             10 - 1 = 9
+  P4                 9            9-3=6               6 - 5 = 1
+  P5                 11           11-4=7              7 - 2 = 5
+
+Turn around time = completion time - arrival time
+Waiting time = turn around time - burst time
+
+Average turn around time = (4+14+10+6+7) / 5
+                         = 41/5
+                         = 8.2 ms 
+
+Average waiting time = (0+11+9+1+5) / 5
+                     = 26/5
+                    = 5.2 ms
+****************************************************************************************************************************************************************************************************************
+
+CLASS 49
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SCHEDULING ALGORITHMS (ROUND-ROBIN SCHEDULING)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~ The round-robin (RR) scheduling algorithm is designed especially for timesharing systems.
+~ It is similar to FCFS scheduling, but preemption id added to switch b/w processes.
+~ A small unit of time, called a time quantum or time slice, is defined (generally from 10 to 100 millseconds)
+
+~ The ready queue is treated as a circular queue.
+
+The CPU schedular goes around the ready queue, allocating the CPU to each process for a time interval of upto 1 time quantum.
+
+Implementation of Round Robin Scheduling:-
+-------------------------------------------------
+~ We keep the ready queue as a FIFO queue of processes.
+~ New processes are added to the tail of the ready queue.
+~ The CPU schedular picks the first process from the ready queue. sets a timer to interrupt after 1 time quantum, and dispatches the process.
+
+
+                                                    One Of Two Things WIll Then Happen
+                                                                      ⬇
+                      ------------------------------------------------------------------------------------------
+                     ⬇                                                                                         ⬇
+The process may have a CPU burst of less                                     The CPU burst of the currently running process is longer than 1 time
+than 1 time quantum                                                          quantum, the timer will go off and will cause an interrupt to the OS
+                     ⬇                                                                                         ⬇
+The process itself will release the CPU                                       A context switch will be executed, and the process will be put at the  
+voluntarily                                                                   tail of the ready queue
+                     ⬇                                                                                         ⬇
+The CPU schedular will then proceed to the                                     The CPU schedular will then select the next process in the ready queue
+next process in the ready queue
+
+******************************************************************************************************************************************************************************************************************
+CLASS 50
+
+Round-Robin Scheduling
+(Turnaround Time and Waiting Time)
+
+Consider the following set of processes that arrive at time 0, with the length of the CPU burst given in milliseconds and 
+time quantum taken as  4 milliseconds for RR Scheduling:
+
+Process ID     Burst TIme
+    P1             24
+    P2             3
+    P3             5
+
+Gantt Chart:-
+0    4    7   10    14   18   22   26   30
+-----------------------------------------
+| P1 | P2 | P3 | P1 | P1 | P1 | P1 | P1 |
+-----------------------------------------
+
+To calculate both turn around time and waiting time
+
+Method 1:- 
+Trun around time = completion time - arrival time
+Waiting time = turn around time - burst time
+
+Process ID    Completion Time   Turnaround Time    Waiting Time
+  P1              30             30-0=30            30-24=6
+  P2              7              7-0=7               7=3=4
+  P3              10             10-0=10            10-3=7
+
+
+To calculate only waiting time
+Method 2
+-----------
+Waiting time = last start time  - arrival time - (Preemption x time quantum)
+
+Process ID        Waiting time
+  P1            26-0-(5x4) = 6
+  P2            4-0-(0x4) = 4
+  P3            7-0-(0x4) = 7
+
+Average turn around time 
+= (30+7+10) / 3
+= 47 / 3
+= 15.66 ms
+
+Average waiting time
+= (6+4+7) / 3
+= 17/3 
+= 5.66 ms
+
+***************************************************************************************************************************
+CLASS 51
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+ROUND ROBIN SCHEDULING
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+Consider the set of 5 processes whose arrival time and burst time are given below:
+
+Process ID      Arrival Time     Burst Time
+P1                 0                 5
+P2                 1                 3
+P3                 2                 1
+P4                 3                 2
+P5                 4                 5
+
+If the CPU scheduling is Round Robin with time quantum = 2 units, calculate the average waiting time and average turn
+around time.
+
+Gantt chart:
+0    2    4    5    7    9    11   12   13   14
+----------------------------------------------
+| P1 | P2 | P3 | P1 | P4 | P5 | P2 | P1 | P5 |
+----------------------------------------------
+
+class 52
+turn around time = completion time - arrival time
+waiting time = turn around time - burst time
+
+Process ID     Completion time    Turnaround time    Waiting time
+ P1               13               13-0=13            13-5=8
+ P2               12               12-1=11            11-3=8
+ P3               5                5-2=3              3-1=2
+ P4               9                9-3=6              6-2=4
+ P5               14               14-4=10            10-3=7
+
+Average turnaround time = (13+11+3+6+10) / 5
+                        = 43/5
+                        = 8.6 units
+Average waiting time = (8+8+2+4+7) / 5
+                     = 29 / 5
+                     5.8 units
+
+*************************************************************************************************************************************************
+CLASS 53
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SCHEDULING ALGORITHM
+(MULTILEVEL QUEUE SCHEDULING)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A class of scheduling algorithm has been created for situations in which processes are easily classified into different groups.
+
+example:-
+-------------------------              -------------------------
+| forgeground processes |              | background processes  |
+| (interactive)         |              | (back)                |
+-------------------------              -------------------------
+
+They have:
+~ different response-time requirements
+~ different scheduling needs
+
+In addition, foreground processes may have priority (externally defined) over background processes.
+
+A multilevel queue scheduling algorithm partitions the ready queue into several separate queues.
+
+~ The processes are permanently assigned to one queu, generally based on some property of the process, such as memory size, process priority, or
+process type. 
+~ Each queue has its own scheduling algorithm.
+
+Example:-
+Separate queues might be used for foreground and background processes.
+
+The foreground queue might be scheduled by an RR algorithm, while the background queue is scheduled by an FCFS algorithm.
+
+In addition, there must be scheduling among the queues, which is commonly implemented as fixed-priority preemptive scheduling.
+
+For example, the foreground queue may have absolute priority over the background queue.
+
+An example of a multilevel queue scheduling algorithm with five queues, listed below in order of priority :
+
+highest priority    
+------------------> | System processes              | -------------------->
+
+------------------> | Interactive processes         | -------------------->
+
+------------------> | Interactive editing processes | -------------------->
+
+------------------> | Batch processes               | -------------------->
+
+------------------> | Student processes             | -------------------->
+lowest priority
+
+************************************************************************************************************************************************
+CLASS 54
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SCHEDULING ALGORITHM 
+(Multilevel Feedback-Queue Scheduling)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The multilevel feedback-queue scheduling algorithm allows a process to move between queues.
+
+~ The idea is to separate processes according to the characteristics of their CPU bursts.
+~ If a process uses too much CPU time, it will be moved to a lower-priority queue.
+~ This scheme leaves I/O-bound and interactive processes in the higher-priority queues.
+~ In addition, a process that waits too long in a lower-priority queue may be moved to a higher-priority
+queue.
+
+This form of aging prevents starvation.
+
+
+highest priority
+           ---------------  QUEUE - 0
+ --------> | Quantum = 8 | --------->
+           |             |------|             
+           ---------------      |
+     |--------------------------|              
+     |     ---------------- QUEUE - 1
+     |---> | Quantum = 16 |---------->
+           ---------------- --------| 
+        |---------------------------|
+        |      ---------  QUEUE - 2
+        |-----> | FCFS | ---------->
+                --------
+lowest priority
+
+Multilevl feedback queues
+
+
+In general, a multilevel feedback-queue schedular is defined by the following parameters :
+______________________________________________________________________________________________
+~ The number of queues
+~ The scheduling algorithm for each queue
+~ The method used to determine when to upgrade a process to a higher priority queue
+~ The method used to determine when to demote a process to a lower priority queue.
+~ The method used to determine which queue a process will enter when that process needs service..
+
+*****************************************************************************************************************
+CLASS 55
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SCHEDULING ALGORITHMS
+(SOLVED PROBLEMS)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ques:- Consider a set of n tasks with known runtimes r1, r2, --- rn to be run on a uniprocessor machine. Which
+of the following processor scheduling algorithms will result in the maximum throughput ?
+
+a. Round-Robin
+b. Shortest-Job-First
+c. Highest-Response-Ratio-Next
+d. First-Come-First-Served
+
+ans:- Shortest-Job-First
+
+Ques:- WHich of the following scheduling algorithms is non-preemptive ?
+a. Round-Robin
+b. First In First Out
+c. Multilevel Queue Scheduling
+d. Multilevel Queue Scheduling with Feedback
+
+ans:- First In FIrst Out
+
+pre emptive = CPU can be taken away and given to another process
+
+--------------------------------------------------------
+~ Shortest remaining time first scheduling may cause starvation.
+~ Preemptive scheduling may cause starvation
+~ Round Robin is better than FCFS in terms of response time.
+
+***************************************************************************************************************************************************************
+CLASS 56
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PROCESS SYNCHRONIZATION
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A cooperating process is one that can affect or be affected by other processes executing in the system.
+
+                                                Cooperating processes can either
+                                                              |
+                                  ----------------------------------------------------------------------------
+                                  |                                                                          |
+directly shared a logical address space (i.e both code and data)         or be allowed to share data only through files or messages
+
+Concurrent access to shared data may result in data inconsistency!
+
+In this chapter, we discuss variuos mechanisms to ensure the orderly execution of cooperating processes that share a logical space so that data consistency 
+is maintained
+
+
+
+Producer Consumer Problem
+_____________________________________
+A producer process produces information that is consumed by a consumer process.
+
+For example, a compiler may produce assembly code, whic is consumed by an assembler. THe assembler, in turn, may produce object modules, which
+are consumed by the loader.
+
+~ One solution to the producer-consumer problem uses shared memory.
+~ To allow producer and consumer processes to run concurrently, we must have available a buffer of items that can be filled by the producer and
+ emptied by the consumer.
+~ This buffer will reside in a region of memory that is shared by the producer and consumer processes.
+
+
+
+Two Kinds of buffers :-
+_______________________________
+1. Unbounded Buffer :- Places no practical limit on the size of the buffer. The consumer may have to wait for new items, but the producer can 
+                       always produce new items.
+2. Bounded Buffer :- Assumes a fixed buffer size. In this case, the consumer must wait if the buffer is emptied, and the producer must wait 
+                    if the buffer is full.
+
+
+
+counter variable = 0
+counter is incremented every time we add a new item to the buffer                 counter++
+counter is decremented every time we remove one item from the buffer              counter--
+
+EXAMPLE :-
+------------
+~ Suppose that the value of the variable counter is currently 5
+~ The producer and consumer processes execute the statements "counter++" and "counter--" concurrently
+~ Following the execution of these two statements, the value of the variable counter may be 4, 5, or 6!
+~ The only correct result, though, is counter == 5, which is generated correctly if the producer and consumer executes separately.
+
+
+"couner++" may be implemented in machine language (on a typical machine) as:
+register1 = counter
+register1 = register1 + 1
+counter = register1
+
+"counter--" may be implemented in machine language (on a typical machine) as:
+register2 = counter
+register2 = register2 - 1
+counter = register2
+
+--------------------------------------------------------------------------------
+| T0:  |  producer | execute | register1  = counter        |  {register1 = 5}  | 
+--------------------------------------------------------------------------------
+| T1:  |  producer | execute | register1  = register1 + 1  |  {register1 = 6}  | 
+--------------------------------------------------------------------------------
+| T2:  |  consumer | execute | register2  = counter        |  {register1 = 5}  | 
+--------------------------------------------------------------------------------
+| T3:  |  comsumer | execute | register2  = register2 - 1  |  {register1 = 4}  | 
+--------------------------------------------------------------------------------
+| T4:  |  producer | execute | counter  = register1        |  {register1 = 6}  | 
+--------------------------------------------------------------------------------
+| T5:  |  consumer | execute | counter  = register2        |  {register1 = 4}  | 
+--------------------------------------------------------------------------------
+
+We would arrive at this incorrect state because we allowed both processes to manipulate the variable counter concurrently.
+
+A situation like this, where several processes access and manipulate the same data concurrently and the outcome of the execution depends on th eparticular order 
+in which the access takes place, is called a race condition.
+
+Clearly, we want the resulting changes not to interfere with one another. Hence we need process synchronization.
+
+*************************************************************************************************************************************************************************
+CLASS 57
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The Critical-Section Problem
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+COnsider a system consisting of n processes {P0, P1, ...., Pn}
+Each rpcoess has a segment of code, called a critical section in which the process may be changing common vairalbes, updating a table, writing a file, and so on.
+
+When one process is executing in its critical section, no other process is to be allowed to execute n its critical section.
+That is , no two processes are executing in their critical sections at the same time.
+
+THe critical-section problem is to design a protocol that the processes can use to cooperate.
+
+
+~ Each process must request permission to enter its critical section
+~ The section of code implementing this request is the entry section
+~ The critical section may be followed by an exit section
+~ The remaining code is the remainder section
+
+do {
+         entry section
+             critical section
+         exit section
+             remainder section
+   }  while (TRUE);
+Fig: General structure of a typical process.
+
+
+A solution to the critical-section problem must satisfy the following three requirements:
+__________________________________________________________________________________________________
+
+1. Mutual exclusion:
+If process Pi is executing in its critical section, then no other processes can be executing in their critical sections.
+
+2. Progress :
+If no process is executing in its critical section and some processes wish to enter their critical sections, then only those processes that are not 
+executing in their remainder sections can participate in the decision on which will enter its critical section nex, and this selection cannot be
+postponed indefinitely.
+
+3. Bounded waiting:
+There exists a bound, or limit, on the number of imes that other processes are allowed to enter their critical sections after a process has made a request
+to enter its critical section and before that request is granted.
+
+*******************************************************************************************************************************************************************
+CLASS 58
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**********************************************************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
