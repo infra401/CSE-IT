@@ -1,1 +1,26 @@
+*******************
+CLASS 1
+*******************
 
+Introdunction to Data Structures
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What is Data?
+The quantities, characters or symbols on which operations are performed by a computer, which may be stored and transmitted in the form of electrical signals
+and recorded on magnetic , optical or mechanical recording media. 
+ ex:- c = a + b
+
+WHen Data becomes information?
+
+Data: ANIANUS SI EMAN YM
+Information : MY NAME IS SUNAINA
+
+If data is structured in a systematic way then it gets a structure and become meaningful. 
+This meaningful or processed data is called information.
+
+Its not difficult to understand that the data needs to be managed in such a way so that it can produce some meaningful information.
+
+To provide an appropriate way to structure the data, we need to know about
+DATA STRUCTURES
+
+What is a Data Structure?
