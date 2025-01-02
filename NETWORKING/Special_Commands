@@ -1,0 +1,27 @@
+IP ADRESS range 0.0.0.0 to 255.255.255.255 
+PORT number range (0 - 65535)
+
+to see IP address our device, open cmd
+type ipconfig
+to see Mac address , open cmd
+type ipconfig/all 
+to see PORT numbers, search for resmon= resource monitoring application
+******************************************************************************************************************************************************************
+
+OPEN CMD
+C:\Users\Sunaina> color c
+C:\Users\Sunaina> help color
+C:\Users\Sunaina> color b
+C:\Users\Sunaina> ipconfig (IP address shown)
+C:\Users\Sunaina> ipconfig/all (Mac address shown)
+C:\Users\Sunaina> cls (to clear screen)
+
+C:\Users\Sunaina> ns lookup
+> www.nesoacademy.org
+(IP address shown)
+> ping IP address 
+
+C:\Users\Sunaina> ping www.facebook.com
+C:\Users\Sunaina> cls
+C:\Users\Sunaina> tracert IP address (to trace that packet is reaching from our computer to destination computer)
+*********************************************************************************************************************************************************************
