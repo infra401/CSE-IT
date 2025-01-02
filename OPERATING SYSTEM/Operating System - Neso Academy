@@ -1,3 +1,5 @@
+CLASS 1
+**********************
 
 INTRODUCTION
 OS is a program that manages computer hardware. Provides a basis for Application programs. Acts as an intermediary between computer User
@@ -14,6 +16,7 @@ eg:- windows, linux, ubuntu, mac os , android
             computer hardware (resources like CPU, memory, I/O devices)
 ***********************************************************************************************************************************
 
+
 TYPES OF OS:-
 1. BATCH OS
 2. TIME SHARING OS
@@ -27,6 +30,8 @@ GOALS OF OS:-                 FUNCTIONS OF OS:
 2. EFFICIENCY  - allocation of resources
 3. BOTH        - management of memory, security etc.
 ************************************************************************************************************************************
+CLASS 2
+******************
 
 COMPUTER SYSTEM OPERATION
 a modern general-purpose computer system consists of one or more CPUs and a number of device controllers  connected thhrough a common bus 
@@ -45,9 +50,10 @@ CPU   disk controller                     USB controller                        
 each device controller is incharge of a specific type of device.
 CPU and device controller can execute concurrently, competing for memory cycles. 
 To ensure orderly access to shared memory, a memory controller is provided whose function is to synchronize access to the shared memory.
-***************************************************************************************************************************************
 
-IMPORTANT TERMS:-
+
+SOME IMPORTANT TERMS:-
+----------------------------------
 
 BOOTSTRAP PROGRAMS
 initial program that runs when a computer is powered up or rebooted.
@@ -72,6 +78,8 @@ The interrupt Service Routine executes.
 On completion, CPU resumes the interrupted computation.
 ***************************************************************************************************************************************************************
 
+CLASS 3
+*********************
 STORAGE STRUCTURE
                                    Registers
                                     ⬆   ⬇
