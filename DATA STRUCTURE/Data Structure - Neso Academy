@@ -86,8 +86,77 @@ Data Types vs Abstract Data Types
 
 What is a Data Type?
 
+Two important things about data types:
+1. Defines a certain domain of values
+2. Defines Operations allowed on those values.
+
+Example:-
+
+int type
+- takes only integer values
+- Operations: addition,subtraction, multiplication, bitwise operations etc.
+
+float type
+- Takes only floating point values
+- Operations: addition, subtractions, multiplication, division etc (bitwise and % operations are not allowed).
 
 
+USER DEFINED DATA TYPES
+-------------------------
+In contrast to primitive data types, there is a concept of user defined data types.
+The operations and values of user defined data types are not specified in the language but is specified by the user.
+
+example: structure, union and enumeration
+
+By using structures, we are defining our own type by combining other data types.
+
+   struct point {
+          int x;
+          int y;
+   };
+
+
+ABSTRACT DATA TYPES (ADT)
+-----------------------------
+ADTs are like user defined data types which defines operations on values using functions without specifying 
+what is there inside the function and how the operations are performed.
+
+example: Stack ADT
+
+Operations:
+initialize() - initializing it to be empty
+Push() - insert an element into the stack
+Pop() - Delete an element from the stack
+isEmpty() - checks if stack is empty
+isFull() - checks if stack is full
+
+
+Think of ADT as a black box which hides the inner structure and design of the data type from the user.
+There are multiple ways to implement an ADT.
+
+example: 
+A stack ADT can be implemented using arrays or linked lists.
+
+
+Why ADT ?
+-----------------
+The program which uses data strucutre is called client program
+It has access to the ADT i.s interface.
+The program which implements the data structure is known as the implementation.
+
+Advantage:-
+Let say, if someone wnats to use the stack in the program, then he can simply use push and pop operations 
+without knowing its implementation.
+Also, in future, the implementation of stack is changed from array to linked list, then the client program will work in the 
+same way without being affected.
+
+Conclusion
+ADT provies ABSTRACTION.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+******************
+CLASS 3
+*******************
 
 
 
