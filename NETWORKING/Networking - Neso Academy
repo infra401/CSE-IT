@@ -1,1 +1,2708 @@
 
+SCOPE OF NETWORK 
+it supports the way we learn , communicate, work play , it is everywhere
+***********************************************************************************************************
+
+COMPUTER NETWORK
+................
+set of nodes connected by communication links. 
+communication link can be wired or wireless, link carries information
+node - can be computer , printer, router, or any other device capable of sending or receiving data 
+
+BASIC CHARACERISTIC 
+1. FAULT TOLERANCE - ability to continue working despite failure , ensure no loss of service
+2. SCALABILITY - ability to grow based on needs, have good performance after growth 
+3. QUALITY OF SERVICE (QoS) - ability to set priorities , manage data traffic to reduce loss delay etc
+4. SECURITY - ability to prevent unauthorized access , misuse , forgery ; ability to provide confidentiality, integrity, availability
+**************************************************************************************************************
+
+DATA COMMUNICATION
+exchange of data between two nodes via some form of link (transmission medium) like cable
+*****************************************************************8
+
+DATA FLOW 
+1. SIMPLEX - one direction only , communication always unidirectional , one device transmit and other receive, (eg, keyboard, monitor) 
+2. HALF DUPLEX - two directions, one at a time ;if one is sending other can only receive and vice versa (eg walkies-talkies)
+3. FULL DUPLEX- two directions at the same time ; device can send and receive at the same time (eg telephone line)
+*******************************************************************************************************************
+
+PROTOCOLS
+set of rules that govern data communication
+
+ELEMENTS:
+1.Message encoding
+message source ->  encoder(signal) -> transmitter -> receiver -> decoder(signal) -> message destination
+2.Message formatting and encapsulation
+agredd format; encapsulate the information to identify the sendrer and receiver tightly
+3.Message timing
+flow control; response timeout
+4.Message size
+long message broken to small to travel across network
+5.Message delivery options
+unicast, multicast, broadcast
+***********************************************************************************************************************
+
+PEER TO PEER NETWORK
+no centralized administration , all peers are equal , simple sharing applications not scalable
+  comp1 -----------comp2
+*********************************************************88
+CLIENT SERVER NETWORK 
+centralized administration, request-response model, scalable, sever may be overloaded
+                  comp1------------central adminis--------------comp2
+                                        |
+                                        |
+                                    comp3
+***********************************************************************************************************************
+
+COMPONENTS OF COMPUTER NETWORK
+1. NODE
+end nodes(end devices) and intermediary nodes
+End Nodes- computer, printers , phones, telepresence endpoint, security cameras, smart phones.tablets, PDAs, wireless debit/credit card reader,
+barcode scanner
+Intermediary Nodes - switches, wireless access point, routers, security devices(firewall), bridge , hub, repeaters, cell towers
+
+2. MEDIA
+
+Wired Medium(guided medium)
+ethernet straight through cable, ethernet crossover cable, fiber optic cable, coaxial cable, USB cable
+
+Wireless Medium (unguided medium)
+infrared(eg short range communication- tv remote control)
+radio (eg bluetooth, wifi)
+microwaves (eg cellular system)
+satellite (eg: long range communication-GPS)
+
+3 service
+e-mail, storage devices, file sharing, instant messaging, online game, voice over IP, video telephony, world wide web
+*******************************************************************************************************************************************************
+
+CLASSIFICATION OF COMPUTER NETWORKS
+
+1. LOCAL AREA NETWORK (LAN)
+interconnects computer within a limited area (eg: residence, school, laboratory, university campus, office building)
+LAN-devices
+wired LAN (ethernet-hub , switch)
+wireless LAN (eg: wifi)
+
+                                comp1--------router---------comp2
+                                             |
+                                             |
+                                          comp4
+
+2. METROPOLITAN AREA NETWORK (MAN)
+interconnects computers within a in a geographic region of sixe of a metropolitan area(city)
+MAN devices
+switches/hubs   routers/bridges
+                                         LAN1
+                                           |
+                                           |
+                                  LAN2---- MAN --- LAN3
+                                           |
+                                           | 
+                                          LAN4
+
+3. WIDE AREA NETWORK (WAN)
+it is a telecommunication network that extends over a large geographical area for the primary purpose of computer networking
+WAN devices
+end devices and intermediary devices
+
+
+                                          WAN
+                          inter device-----------------------------inter device
+                             |                                          |
+                             |                                          | 
+                             LAN1(delhi)                               LAN2(chennai)   
+*******************************************************8
+THE INTERNET
+
+*NEW TRENDS
+BRING YOUR OWN DEVICE (BYOD)
+ONLINE COLLABORATION
+CLOUD COMPUTING
+
+cloud computing- on-demand availability of computer system resources, especially data storage, computing power, without direct active management by the user
+******************************************************************************************************************************************************
+
+NETWORK TOPOLOGY
+arrangement of nodes of a computer network
+topology=layout
+
+physical topology= placement of various nodes
+logical topology = deals with data flow in network
+
+NETWORK TOPOLOGY TYPES:-
+
+1. BUS
+all data transmitted b/w nodes in network is transmitted over this common transmission medium and is able to be
+receive by all nodes in network simultaneously
+A signal containing address of intended receiving machine travels from a source machine in both directions to all 
+machines connected to bus until it finds intended recipient
+
+                 comp1     comp2        comp3 
+                 |          |            |
+*terminator.......................................terminator* 
+                    |            | 
+                comp4          comp5
+
+advantages: 
+~only 1 wire - less expensive
+~ suited for temporary network 
+~ node failure does not affect others
+disadvantages:-
+~ not fault tolerant (no redundancy)
+~limited cable length
+~no security
+
+2. RING
+bus topology in closed loop ; peer to peer LAN topology
+2 connections one to each of its nearest neighbors
+unidirectional
+sending and receiving takes place with help of TOKEN
+
+          |........comp1................|
+       comp2                           comp
+          |                              | 
+         comp                           comp
+           |                            |
+           .............comp.............
+advantages:-
+~ better than bus
+~ can cause bottleneck due to weak links
+~ all nodes with equal access
+disadvantages:- 
+unidirectional , single point of failure will affect whole network
+increase in load , decrease in performance
+no security
+
+3. STAR
+every node connected to cenral node(hub or switch)
+centralized management
+all traffic must pass through hu or switch
+                          comp1
+                             |
+            comp2...........central..........comp3
+                             |
+                          comp4
+
+advantages:-
+~easy to design and implement
+~ centralized administration
+~ scalable
+disadvantages:-
+~ single point of failure affect whole network
+~bottlenecks due to overloaded switch/hub
+~ increased cost due to switch /hub
+
+Imagine a highway with a single lane. If there's a lot of traffic, cars will slow down and back up. This is like a bottleneck in a network.
+
+In a network, a bottleneck is a point where the performance is significantly limited. It's like a narrow bridge or a traffic jam on a highway.
+
+EXTENDED STAR TOPOLOGY
+   star .....................repeater.......................star topology
+  topology                           
+
+4. MESH
+each node is directly connected to evry other node in network
+fault tolerant and reliable
+                |..............comp......................|
+             comp...............|.......................comp
+                |               |                       | 
+                ........comp....|.......................| 
+advantages:-
+~fault tolerant
+~reliable
+disadvantages:-
+~issues with broadcasting messages
+~expensive and impractical for lorge networks
+
+5. HYBRID
+   bus topology...................star topology...................mesh topolgy
+******************************************************************************************************************************************************************
+
+DETERMINE NO OF LINKS(CABLES) AND PORTS REQUIRED FOR A GIVEN TOPOLOY
+
+RING TOPOLOGY
+no of nodes(N)   = N
+no of cables(=N) = N
+no of ports/devices(NOP) = 2 
+total no of ports in network (TNOP) = N * NOP = N * 2  
+
+     computer
+     |      |
+    computer
+.......................................................
+traffic can be minimized using mesh topology
+......................................................
+
+STAR TOPOLOGY
+No of nodes = N
+no of cables = N
+no of ports /device(NOPD) = 1
+total no of ports in network (TNOP) = 2*N
+ 
+                            comp1
+                             |
+            comp2...........central..........comp3
+                             |
+                          comp4
+*******************************************************************************************************************************************************************
+BASICS OF IP ADDRESSING
+
+IP ADDRESS
+~IP= internet protocol
+~every node in computer network is identified with help of IP address
+~logical address
+~can change based on location of device
+~assigned manually or dynamically
+~represented in decimal and has 4 octects(xxxx)
+~ 0.0.0.0  to 255.255.255.255 (32 bits)
+.......................................................................
+HOW TO SEE IP ADDRESSING IN REAL DEVICE
+
+open cmd
+c:\users/shrikha> ipconfig
+******************************************************************************************************************************************************************
+MAC ADDRESS
+
+MAC = media access control
+~every node in LAN is identified with Mac address
+~physical or hardware address; unique
+~cannot be changed
+~assigned by manufacturer
+~representation in hexadecimal
+~ very important in LAN
+example:- 70-20-84-ED-FC (48 bits)
+~separator: hyphen(-), period() and colon(:)
+~IP address (router friendly addresses)= location of person
+~Mac address(switch friendly addresses) = name of person
+
+
+Router takes forward decision based on IP addresses
+
+IP ADDRESS                                  MAC ADDRESS
+32 bits                                       48 bits
+represented in decimal                      hexadecimal
+router needs IP to forward data       switch need Mac to forward data
+ex:- 10.10.23.56                        ex:- 70-20-84-00-ED-FC
+...........................................................
+HOW TO SEE MAC ADDRESS
+open cmd
+c:\users\sunaina> ipconfig/all
+physical address is Mac address
+***************************************************************************************************************************************************************
+
+BASICS OF PORT ADDRESSING(PORT NUMBER)
+~ in a node, many processes will be running
+~ data which are sent/received must reach the right person
+~every process in node is uniquely identified using port numbers
+~port= communication endpoint
+~fixed port numbers and dynamic port numbers (0- 65535)
+fixed port numbers:- 25,80 etc
+OS assigned dynamic port numbers:- 62414
+
+Derivations from analogy
+reaching our city = reaching our network (IP address)
+reaching our apartment = reaching the host (Mac address)
+reaching the right person = reaching the right process (Port address)
+......................................................................
+HOW TO SEE PORT NUMBERS??
+in windows, search for resmon 
+resmon = resource monitoring 
+go to network, port numbes are visible
+....................................................
+3 KEY POINTS TO PONDER
+before sending the data, any node must
+~attach source IP addres and destination IP address
+~attach source MAC address and destination MAC address
+~attach source port number and destination port number
+******************************************************************************************************************************************************************
+
+SWITCHING TECHNIQUES
+~In computer network, it helps in deciding best route for data transmission if there are multiple pathe in larger network.
+~one-to-one connection
+                                 SWITCHING TECHNIQUES
+      |...............................|............................|
+       CIRCUIT SWITCHING         MESSAGE SWITCHING          PACKET SWITCHING
+                                                            |
+                                                            |......DATAGRAM APPROACH
+                                                            |  
+                                                            |.....VIRTUAL CIRCUIT APPROACH
+
+CIRCUIT SWITCHING
+~ dedicated path is established b/w sender and receiver
+~ before data transfer, connection will be established first
+ex:- telephone network
+
+3 phases in circuit switching:
+~ connection establishment
+~ data transfer
+~ connection disconnection
+
+MESSAGE SWITCHING
+~ store and forward mechanism
+~ message is transferred as a complete unit and forwarded using store and forward mechanism at the intermediary node.
+~ not suited for streaming media and real-time applications.
+
+PACKET SWITCHING
+~ the internet is a packet switched network.
+~message is broken into individual chunks called packets
+~ each packet is sent individually
+~each packet will have source and destination IP address with sequence number
+~sequence number will help receiver to
+ reorder the packets
+ detect missing packets
+send acknowledgements
+
+PACKET SWITCHING - DATAGRAM APPROACH
+~aka connectionless switching
+~each independent entity is called datagram
+~datagram contains destination information and intermediary devices uses this information to forward diagrams to right destination
+~path is not fixed
+~intermediate nodes take the routing decisions to forward packets.
+~ reordering done by receiver
+
+PACKET SWITCHING - VIRTUAL CIRCUIT APPROACH
+~ aka connection-oriented approach
+~a preplanned route is established before messages are sent
+~ call request and call accept packets are used to establish the connction b/w sender and receiver
+~path is fixed for duration of a logical connection
+*******************************************************************************************************************************************************************
+
+CLASS 13
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+LAYERING IN COMPUTER NETWORKS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+LAYERING
+decomposing the problem into more managable components(layers).
+advantages:
+~ it provides more modular design.
+~ easy to troubleshoot
+
+PROTOCOLS
+~ set of rules that govern data communication
+~ protocols in each layer governs the activities of data communication
+
+LAYERED ARCHITECTURES
+~ The OSI Reference Model
+~ The TCP/IP Model
+
+THE OSI MODEL
+..............
+~ OSI= open system interconnection
+~ model for understanding and designing architet i.e flexible, robust, and interoperable
+~ developed by international standards for organiations (ISO)
+~ it is not a protocol
+~ it is only a guidance and hence referred as OSI reference model.
+~ Purpose is to show how to facilitate communication b/w different systems without requiring changes to the logic of underlying hardware and software.
+~ OSI model was never fully implemented.
+
+THE TCP/IP MODEL
+..................
+~ TCP/IP = transmission control protocol/ internet protocol
+~ TCO/IP protocol suite was develooped prior to OSI model.Therefore, layers in TCP/IP protocol suite do not exactly match those in OSI model
+~ It is a hierarchical protocol made up of interactive modules, each of which provides a specific functionality.
+
+CLASS 14
+THE OSI REFERENCE MODEL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+LAYERS in the OSI reference model
+1. APPLICATION LAYER
+2. PRESENTATION LAYER
+3. SESSION LAYER
+4. TRANSPORT LAYER
+5. NETWORK LAYER
+6. DATA LINK LAYER
+7. PHYSICAL LAYER
+
+CLASS 15
+1. APPLICATION LAYER    => my password is nesoacademy@989#
+2. PRESENTATION LAYER   => odfkd23mdfypp1jf*enhaoi
+3. SESSION LAYER        => odfkd23mdfypp1jf*enhaoi
+4. TRANSPORT LAYER      =>  TL INFO-odfkd23mdfypp1jf*enhaoi
+5. NETWORK LAYER        => NL INFO- TL INFO -odfkd23mdfypp1jf*enhaoi
+6. DATA LINK LAYER      => DL INFO - NL INFO - TL INFO - odfkd23mdfypp1jf*enhaoi
+7. PHYSICAL LAYER       => 1010100100100100001001001001010101100
+
+APPLICATION LAYER:-
+.......................
+enables user to access the network resources
+
+services provided :
+~ file transfer and access management (FTAM)
+~ mail services
+~ directory services
+
+
+PRESENTATION LAYER:-
+.........................
+concerned with syntax and semantics of information exchanged b/w two systems
+
+services provided:-
+~ translation
+~ encryption  (encryption = readable message into unreadable message)
+~ compression
+
+
+SESSION LAYER:-
+...................
+establishes, maintains and synchronizes the interation among communicating devices
+
+services provided:
+~ dialog control
+~ synchronization (synchronization = making things happen at the same time, it's about coordination and alignment )
+ in a movie, music and on-screen action are synchronized to create a cohesive experience
+
+CLASS 16
+TRANSPORT LAYER:-
+..................
+responsible for process to process deliver entire message
+
+services provided:-
+~ port addressing
+~ segmentation and reassembly
+~ connection control
+~ end-to-end flow control
+~ error control
+
+NETWORK LAYER:-
+.................
+responsible for delivery of data from original source to destination network.
+
+services provided:
+~ logical addressing
+~ routing
+
+DATA LINK LAYER:-
+.....................
+responsible for movind data (frames) from one node to another node
+
+services provided:
+~ framing
+~ physical addressing
+~ flow control
+~ error control
+~ access control
+
+PHYSICAL LAYER:-
+...................
+responsible for transmitting bits over a medium, it also provides electrical and mechanical specifications.
+
+services provided:-
+~ physical characteristics of media
+~ representation of bits
+~ data rate
+~ synchronization of bits
+~ line configuration
+~ physical topology
+
+CLASS 17
+SERVICES OFFERED BY EACH LAYER:-
+APPLICATION LAYER  => FTAM, mail services, directory services
+PRESENTATION LAYER => trnaslation, encryption, compression
+SESSION LAYER      => dialog control and synchronization
+TRANSPORT LAYER    => port addressing, segmentation and reassembly, connection control, flow control , error control
+NETWORK LAYER      => logical addressing and routing
+DATA LINK LAYER    => framing, physical addressing, flow control, error control, acces control
+PHYSICAL LAYER     => physical characteristics of media, representation of bits, data rate, synchronization of bits, line configuration, physical topology,
+                      transmission mode
+
+WORKING OF THE OSI REFERENCE MODEL:-
+   COMPUTER1                                     COMPUTER2
+     |                                               |
+   H7|D7                                         H7|D7
+   H6|D6                                         H6|D6
+   H5|D5                                         H5|D5
+   H4|D4                                         H4|D4
+   H3|D3                                         H3|D3
+   H2|D2|T2                                      H2|D2|T2
+010|010101000010000000                           010|010101000010000000
+      |                                            |
+      |...............transmission medium..........|
+
+
+
+
+a      b       c                                            j       k
+⬜    ⬜     ⬜                                           ⬜      ⬜
+ |                                                           |
+ |                                                           |
+💻A sender                                                  💻 P receiver
+   |                                                               |
+   data...........application layer..............................Data
+    |                                                              |        
+   a|j|data...................transport layer..................a|j|daa                  
+    |                                                              |
+A|P|a|j|data..................network layer.................A|P|a|j|data
+   |                                                               |
+H2|A|P|a|j|data|T2...........data link layer................H2|A|P|a|j|data|T2
+   |                                                                |
+   |...........................internet.............................|                   
+
+*******************************************************************************************************************************************************************
+CLASS 18
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ADDRESSING IN NETWORKING
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+a      b       c                                            j       k
+⬜    ⬜     ⬜                                           ⬜      ⬜
+ |                                                           |
+ |   (IP address)                                            |(IP address)
+💻A sender                                              💻 P receiver
+   |                                                               |
+   data...........application layer..............................Data
+    |                                                              |        
+   a|j|data...................transport layer..................a|j|daa                  
+    |                                                              |
+A|P|a|j|data..................network layer.................A|P|a|j|data
+   |                                                               |
+H2|A|P|a|j|data|T2...........data link layer................H2|A|P|a|j|data|T2
+   |                                                                |
+   |...........................internet.............................|                   
+
+three processes are running with port number a, b, and c in computer A
+Port related things are done in transport layer.
+IP related things are done in Network Layer. 
+
+
+IP ADDRESSING AND MAC ADDRESSING
+...................................
+  A/10 💻 sender
+        |
+        |upper layers
+      DATA
+        |
+    A|P|data  (network layer)
+        |                                                                                  |to another network 
+20 10 | A|P | DATA | T2 (data link layer)                    A|P|DATA                      |  X\44  
+        |                                                    20 10|A|P|DATA|T2             |
+        |........................................LAN 1................................... 🌐........T/99................|
+                                                                                                                        | A|P|DATA
+                                                                                                                        |     33 99|A|P|DATA|T2
+                                                                                                                        |    |....|    
+                                                                                                                        |        |
+                                                                                                                        |       physical address changed 
+                                                                                                                      LAN 2
+    data link layer                                                                                                      |
+         | ..............................LAN 3......................................................... 🌐 .........................|  
+         |                            95 66|A|P|DATA|T2                                     Z/66       router2        33 99|A|P|DATA|T2
+        95 66|A|P|DATA|T2             ......  A|P|DATA                                         |                         A|P|DATA
+         |                               |                                                     |to another network
+         |                           physical address changed                                 Y/55
+      A|P|DATA (network layer)
+         |
+       DATA  (upper layers)
+         |
+          💻 receiver
+
+A/10 (A= IP address; 10 = Mac address)
+Mac address = 48 bits
+*******************************************************************************************************************************************************************
+CLASS 19
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+THE TCP/IP PROTOCOL SUITE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+OSI REFERENCE MODEL VS TCP/IP MODEL
+
+APPLICATION
+PRESENTATION            HTTP, DNS, DHCP, FTP                           APPLICATION
+SESSION
+......................................................................................
+TRANSPORT              TCP, UDP                                        TRANSPORT
+......................................................................................
+NETWORK                IPv4, IPv6, ICMPv4, ICMPv6                     INTERNET
+......................................................................................
+DATA LINK              PPP, Frame Relay, Ethernet                      NETWORK ACCESS
+PHYSICAL
+
+THE TCP/IP MODEL
+1. APPLICATION:- represents data to user, plus encoding and dialog control
+2. TRANSPORT  :- supports communication b/w diverse devices across diverse networks
+3. INTERNET   :- determines best path through the network
+4. NETWORK ACCESS:- controls hardware devices and media that make up the network
+
+
+PROTOCOL DATA UNIT (PDU)
+............................
+named according to protocols of the TCP/IP suite: data, segment, packet, frame and bits.
+
+APPLICATION LAYER    - data 
+TRANSPORT LAYER      - segment
+NETWORK LAYER        - packet
+DATA LINK LAYER      - frame
+PHYSICAL LAYER       - bits
+*******************************************************************************************************************************************************************
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+BASIC NETWORKING COMMANDS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+open cmd
+C:\Users\Sunaina> color c
+C:\Users\Sunaina> help color
+C:\Users\Sunaina> color b
+
+C:\Users\Sunaina> ipconfig (IPv4 address visible)
+here, default gateway is router IP address (router our computer first hits)
+*LAYER 3 means NETWORK layer, network layer uses IP addresses.
+*LAYER 2 means DATA LINK layer, data link layer used Mac addresses.
+
+C:\Users\Sunaina> ipconfig/all
+(physical address i.e. Mac address visible)
+C:\Users\Sunaina> cls (to clear screen)
+
+C:\Users\Sunaina> ns lookup
+> www.nesoacademy.org
+(IP address shown)
+> ping IP address 
+(ctrl c = aborted operation on ns lookup)
+
+C:\Users\Sunaina> ping www.facebook.com
+C:\Users\Sunaina> cls
+C:\Users\Sunaina> tracert IP address (to trace that packet is reaching from our computer to destination computer)
+*******************************************************************************************************************************************************************
+CLASS 21
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+BASICS OF CISCO PACKET TRACER
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Cisco = leaders in networking
+~ an innovative and powerful networking simulation tool used for practice, discovery and troubleshooting
+~ helps to understand networks practically
+
+    HOW TO DOWNLOAD CISCO PACKET TRACER????
+    .........................................
+(netacad.com)
+packet tracer -> enroll to download cisco packet tracer -> learn cisco packet tracer of 10 hers -> sign up today -> english -> enroll -> submit -> open cisco packet tracer
+
+~ to connect two different devices , we need ethernet straight through cable
+~ to connect two devices of same kind, we need ethernet cross over cable
+
+click on pc -> desktop -> assign ip address 
+pc -> desktop -> terminal -> ipconfig(IP address visible)
+> ipconfig /all (Mac address visible)
+
+~ Cisco uses dot as separator in addresses
+~ Windows uses hyphen as separator in addresses
+~ open command prompt >ping IP(other pc)
+*********************************************************************************************************************************************************************
+CLASS 22
+~~~~~~~~~~
+HUB
+~~~~~~~~~~
+~ a.k.a network hub
+~ hub works at the physical layer of the OSI model
+~ used to set up LAN
+~ Has multiple ports
+~ star topology
+~ when a packet arives at one port, it is copied to the other ports so that all segments of the LAN can see all packets.
+~ hub and pc connected through ethernet straight through cable
+
+PROS:-
+........
+~ cheaper than switches
+~ works good for smaller network
+
+CONS:-
+.........
+~ issues with broadcast
+~ no memory
+~ normally runs in half duplex mode
+*********************************************************************************************************************************************************************
+
+CLASS 23
+~~~~~~~~~~~
+SWITCH
+~~~~~~~~~~~
+~ a switch is a networking hardware that connects devices on a computer network to establish a local area network
+~ unlike hub, swithc has memory
+~ stores MAC addresses TABLE
+~ layer 2 device for setting up LAN
+~ two types of ports: fast ethernet port and gigabit port
+~ does unicasting
+
+HOW TO SEE MAC ADDRESS TABLE IN SWITCH
+go to CLI -> press enter -> EN = to enable 
+switch> EN
+switch# show mac-address
+switch# show mac-address-table
+
+HUB vs SWITCH
+.................
+ HUB                                             SWITCH
+1. Layer 1 device                               layer 2 device
+2. works at physical layer                      works at data link layer
+3. has no memory                                has memory and stores MAC address table
+4. not an intelligent device                    intelligent device
+5. floods the network du to broadcasting        can do unicasting, multicasting and broadcasting
+6. security risks are high                      security risks are low
+7. less efficient                               more efficient
+8. half duplex                                  full duplex
+********************************************************************************************************************************************************************
+CLASS 24
+~~~~~~~~~~~~~~~~~~~
+BASICS OF ROUTER
+~~~~~~~~~~~~~~~~~~~
+~ router is a networking device that forwards data packets b/w computer networks
+~ router is connected to at least two networks, commonly two LANs or WANs or a LAN and its ISP's network
+~ it is a layer 3 (network layer) device
+~ storing routing table
+                      10.0.0.10         192.168.1.10
+                  |.............ROUTER.............|
+                  |                                |
+              LAN 1                            LAN 2
+             10.0.0.0                          192.168.1.0
+           255.0.0.0                           255.255.255.0
+                |                                    |
+              comp                                comp
+              10.0.0.8                          192.168.15.0
+
+SWITCH vs ROUTER:-
+
+SWITCH:-
+..........
+~a network switch is a computer networking device that is used to connect many devices together on a computer network
+~ operates at data link layer (layer 2 device)
+~ has memory and stores MAC address table
+~ decisions are taken based on Mac address
+~ half/full duplex
+~ LAN
+
+ROUTER:-
+.........
+~ a router is a networking device that connects to a local network to other local networks.
+~ operates at network layer (layer 3 device)
+~ has memory and stores routing table
+~ decisions are taken based on IP address
+~ full duplex
+~ LAN, MAN and WAN
+*********************************************************************************************************************************************************************
+
+CLASS 25
+
+router - inevitable device in the internet
+                            10.0.0.4              192.18.1.4
+                        |............router(2911)............|
+                        |                                    |
+                    switch1(2960)                       switch2(290)
+                     |   |     |                        |    |      |
+                   pc1   pc2   pc3                     pc4   pc5    pc6
+             10.0.0.1  10.0.0.2  10.0.0.3        192.168.1.1   |    192.168.1.3     
+                                                               192.168.1.2
+router configuration:
+it has 3 interfaces - GigaEthernet0/0   GigaEtherent0/1   GigaEtherent0/2
+here, in this case we need only 2 interfaces
+*********************************************************************************************************************************************************************
+CLASS 26
+~~~~~~~~~~~~~~~
+REPEATER
+~~~~~~~~~~~~~~~
+~ data signals generally become weak or corrupted if they tend to travel a long distance
+~ repeater generates the signal over some network
+~ it operates at the physical layer
+~ they do not amplify the signal
+~ it is a 2 port device
+  
+                |..........REPEATER.......|
+                |                         | 
+              LAN 1 (BUILDING 1)        LAN1 (BUILDING 2)
+               10.0.0.0                  10.0.0.0
+                 255.0.0.0                255.0.0.0
+*******************************************************************************************************************************************************************
+
+CLASS 27
+~~~~~~~~~~~~~~~~~~~
+BASICS OF BRIDGE
+~~~~~~~~~~~~~~~~~~~
+~ bridge = repeater + functionality of reading MAC address
+~ layer 2 device
+~ also used for interconnecting two LANs on the same protocol
+~ also a two port device
+
+TYPES OF BRIDGES:-
+......................
+1. TRANSPARENT BRIDGES
+~ these are bridges in which the stations are completely unaware of the bridge's existence
+~ reconfiguration of the station is unnecessary even if bridge is added or removed from network
+
+2. SOURCE ROUTING BRIDGES
+~ in these bridges, routing operation is performed by source station and the frame specifies which route to follow
+
+                           ..............bridge............
+                          |                                |
+                       LAN 1                             LAN 2
+                                  (same protocols)
+
+bridge deals with Mac address
+
+                        ..........router.............
+                        |                           |
+                      LAN 1                       LAN 2
+                               (diffenrent protocols)
+************************************************************************************************************************************
+
+CLASS 28
+VARIOUS NETWORK DEVICES
+~ repeater
+~ hub
+~ switch
+~ bridge
+~ router
+~ multi-layer switch (layer 3 switch)
+~ brouter
+~ modem
+~ firewall (security device)
+************************************************************************************************************************************
+
+CLASS 29
+QUESTIONS:-
+~ NIC card is a device which is a component of PC hthat connects PC to networking devices
+~ MODEM is a device that modulates digital signals into analog signals that can be transmitted over traditional telephone lines.
+~ HUB is a device that takes data semt from one network device broadcasts the same to allthe devices regardless of intended recipient
+~Switch is recommended for security as a primary concern as compared to hub
+~ switch is used in a medium-sized network
+~ BRIDGE is a network device that connects teo lan segments of same protocol
+~ ROUTER  is a network device that can connect any two or more different networks that has two or more different protocols
+~ BRIDGE and SWITCH are OSI layer 2 network devices
+~ BROUTER is a network device that has the functionality of a bridge and router
+
+question 10 
+******************************************************************************************************************************************************
+CLASS 30
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+PHYSICAL LAYER AND MEDIA
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Physical layer - Data and Signals
+data and signa;s
+source/destination ---->  data ---> signals
+
+~ one of the major functions of the physical layer is to move data in the form of electromagneticsignals across a transmission medium.
+~ the data usable to a person or an application are not in a form that can be transmitted over a network
+~ ex:- an image must first be changed to a form that transmitted media can accept
+~ to be transmitted, data must be transformed to elctromagnetic signals.
+***************************************************************************************************************************************************
+
+CLASS 31
+PHYSICAL LAYER AND MEDIA
+
+SIGNAL
+............
+~ it is a function that represents the variation of a physical quantity with respect to time
+~ ex:- variation in temperature of a city in one day i.e 24 hours
+~ analog signal and digital signal
+
+ANALOG SIGNAL
+................
+~ it is the signal that can take away value in the defined range.
+~ All real-life signals are analog in nature.
+
+DIGITAL SIGNAL
+.............
+~ it is the signal that can take on of the finite values at any given time
+~ in case of digital signals, we discretize both time and magnitude
+
+PHYSICAL LAYER MEDIA:-
+
+electrical signals copper code
+....................................
+light pulses fibre optic cable 
+....................................
+microwave signals wireless
+...................................
+
+
+COMPARISON OF VARIOUS PHYSICAL MEDIA
+ | MEDIA          |   Physical Components      |    Signal
+ |----------------|----------------------------|----------------------------------
+ | copper calbe   |  -UTP/STP                  | Electromagnetic signal
+ | (wired)        |  -coaxial                  |
+ |                | - connectors               |
+ |                | -NICs                      |
+ |                | -Ports/-Interfaces         |
+ |----------------|----------------------------|-------------------------------
+ | Fibre cable    | -single-mode fiber         | 
+ | (wired)        | -multimate fiber           | - a light pulse equals 1 
+ |                | -connectors                | - no light pulse is 0
+ |                | -NICs and interfaces       | 
+ |                | -Lasers and LEDs           |
+ | ---------------|----------------------------|-------------------------------               
+ | wireless media | - access points            |                     
+ |                | - NICs                     | - radio waves
+ |                | - Radio                    |
+ |                | - Antennae                 | 
+ |-------------------------------------------------------------------------
+*******************************************************************************************************************************************
+CLASS 32
+
+PHYSICAL LAYER AND MEDIA
+
+WIRED MEDIA
+---------------
+~ Copper Cable (Ethernet cable)
+  Unshielded Twisted Pair (UTP)
+  Shielded Twisted Pair (STP)
+~ Copper coaxial cable
+~ Fiber optic cable
+
+Crosstalk
+~ UTP cable does not use shielding to cunter the effects of EMI and RFI
+~ The negative effect of crosstalk can be limited by varying the number of twists per wire pair.
+
+Fiber Optic Media
+~ light waves
+~ high speed transmisison
+
+COPPER VS FIBER OPTIC CABLE
+------------------------------------------------------------------------------------------------------
+|  IMPLEMENTATION            |    COPPER                           | FIBER OPTIC
+------------------------------------------------------------------------------------------------------
+| bandwidth supported        | 10 Mbps - 10 Gbps                   | 10 Mbps - 100 Gbps
+| Range                      | relatively short (upto 100 meters)  | relatively high (upto 100,00 meters)
+| immunity to EMI and RFI    | low                                 | high (completely immune)
+| immunity to eletrical      | low                                 | high (completely immune)
+|                            |                                     |
+|media and connector costs   | lowest                              | highest
+| installation skills        | lowest                              | highest
+| required                   |                                     |
+| safety                     | lowest                              | highest
+---------------------------------------------------------------------------------------------------------
+
+WIRELESS MEDIA
+wireless media has the following areas of concern:
+~ coverage area
+~ interference
+~ security
+
+WIRELESS TECHNOLOGIES
+~ WIFI
+~ Bluetooth
+~ Wi MAX
+*****************************************************************************************************************************************************************
+CLASS 33
+~~~~~~~~~~~~~~~~~~~~~~~
+LINE CONFIGURATION
+~~~~~~~~~~~~~~~~~~~~~~~
+
+PHYSICAL LAYER 
+---------------
+~ It is responsible for transmitting bits overa medium
+~ services provided by physical layer
+physical characteristics of the media
+representation of bits
+data rate
+synchronization of bits
+line configuration
+physical topology
+transmisison mode
+
+LINE CONFIGURATION
+---------------------
+~ in a network, two or more nodes are connected by a communication link
+~ the communication link can be wired or wireless
+~ for visualization purpose, links are imagined as a line drawn b/w two points
+~ for communication to happen, two nodes must be connected to the same link at the same time
+~ this is called as line configuration or connection
+
+TYPES OF LINE CONFIGURATION
+--------------------------------
+~ point-to-point connection
+~ multipoint connection
+
+POINT-TO-POINT CONNECTION
+---------------------------
+~ provides a dedicated link b/w two devices
+~ the entire capacity of the link is reserved for transmission b/w those devices
+
+MULTIPOINT CONNECTION
+---------------------------
+~ it is also called multidrop configuration or broadcast connection
+~ two or more devices share a single link
+~ since more than two devices share the link, the capacity of the channe; is shared now
+~ it can be spatial or temporal
+***************************************************************************************************
+CLASS 34
+~~~~~~~~~~~~~~~~~~~~~~~~
+LINK LAYER SERVICES
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+DATA LINK LAYER
+------------------
+~ It is responsible for moving data (frames) from one node to another.
+
+Services provided by Data Link Layer:-
+~Framing
+~ Physical Addressing 
+~ Flow Control
+~ Error Control
+~ Access Control
+
+FRAMING
+--------------
+~ The data link layer needs to pack bits into frames, so that each frame is distinguished from another.
+~ Our postal system practices a type of framing.
+~ The simple act of inserting a letter into an envelope separates one piece of information from another; the envelope serves as the delimiter.
+
+PHYSICAL ADDRESSING
+-------------------
+~ A frame is the encapsulation of the header and trailer information with the packet.
+~ In the header, the source and the destination MAC address are dealt.
+
+FLOW CONTROL
+----------------
+~ Flow control is one of the duties of data link control sublayer.
+~ The flow control in data link layer is end to end flow control.
+~ Speed matching mechanism.
+~ Flow control coordinates the amount of data that can be sent before receiving an acknowledgement.
+
+ACCESS CONTROL
+-------------
+~ media access control
+
+ERROR CONTROL
+----------------
+~ error detection 
+~ error correction
+*****************************************************************************************************************************************************************************************
+CLASS 35
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SUBLAYERS OF THE DATA LINK LAYER
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. LLC Sublayer
+2. MAC Sublayer
+
+LLC OR DLC SUBLAYER
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~ logical link control sublayer or data link control sublayer 
+~ handles communication b/w upper and lower layers.
+~ Takes the network protocol data and adds control information to help deliver the packet to the destination. (flow control)
+
+MAC SUBLAYER
+~~~~~~~~~~~~~~~~
+~ Constitutes the lower sublayer of the data link layer.
+~ Implemented by hardware, typically in the computer NIC.
+~ Two primary responsibilities:-
+  data encapsulation
+  media access control
+
+Data encapsulation :-
+~ Frame assembly before transmission and frame disassembly upon reception of a frame.
+~ MAC layer adds a header and trailer to the network layer PDU.
+
+Provides three primary functions :-
+~ framing
+~ physical addressing or MAC addressing
+~ error control
+
+~ Responsible for the placement of frames on the media and the removal of frames from the media.
+~ Communicates directly with the physical layer.
+****************************************************************************************************************************************************************************************
+CLASS 36
+~~~~~~~~~~~~
+FRAMING
+~~~~~~~~~~~~
+
+|------------------------                                 |------------------------|
+|   Node A  ----------  |               bits              |  |----------           |
+|           | adapter|  |---------------------------------|  | adapter |   Node B  |
+|           ----------  |                                 |  |----------           |  
+|-----------------------|                                 |------------------------|
+Bits flow between adapters, frames between hosts
+
+
+Protocol: let the start of frame and end of frame be 11011
+
+           1101101110110110110000011011
+ PC1-----------------------------------------PC 2
+***************************************************************************************************************************************************************************************
+
+CLASS 37
+~~~~~~~~~~~~~~~~~~~
+FRAMING
+~~~~~~~~~~~~~~~~~~~
+~ When node A wishes to transmit a frame to node B, it tells its adapter to transmit a frame from the node's memory.
+~ This results in a sequence of bits being sent over the link.
+~ The adapter on node B then collects together the sequence of bits arriving on the link and deposits the corresponding frame in B's memory.
+~ Challenge: What set of bits constitute a frame?
+
+Types of Framing:-
+1. Fixed-Size Framing
+2. Variable-Size Framing
+
+Fixed-Sized Framing
+------------------------
+~ Here the size of the frame is fixed and so the frame length acts as delimiter of the frame.
+~ Consequnetly, it does not require additional boundary bits to identify the start and end of the frame.
+
+Variable-Size Framing
+--------------------------
+~ Here, the size of each frame to be transmitted may be different.
+~ So additional mechanisms are kept to mark the end of one frame and the beginning of the next frame.
+
+Various framing approaches
+1. Bit Oriented
+2. Byte Oriented
+*****************************************************************************************************************************************************************************************
+
+CLASS 38
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+VARIOUS FRAMING APPROACHES
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Bit Oriented Approach
+--------------------------------
+~ It simply views the frame as a collection of bits.
+~ In bit-oriented framing, data is transmitted as a sequence of bits that can be interpreted in the upper layers both as text as well as multimedia data.
+
+Bit Oriented Protocol
+HDLC <--->  High level data link control
+
+Byte Oriented Approach
+---------------------------
+~ One of the oldest approaches to framing
+~ Here each frame is viewed as a collection of bytes (characters) rather than bits.
+~ a.k.a Character Oriented Approach
+
+Byte Oriented Protocol
+BISYNC <--> Binary Synchronous Communication Protocol
+DDCMP <--> Digital Data Communication Message Protocol
+PPP <--> Point-to-point protocol
+
+Clock Based Framing
+~ the third approach to framing is the clock basd framing.
+~ example:- SONET <--> synchronous optical network
+********************************************************************************************************************************************************************************************
+CLASS 39
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+HIGH-LEVEL DATA LINK CONTROL (HDLC)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Bit Oriented Approach
+~ It simply views the frame as a collection of bits.
+
+Bit Oriented Protocol
+HDLC <--> High-Level Data Link Control
+
+HDLC
+-------
+~ The synchronous data link control (SDLC) protocol developed by IBM is an example of a bit-oriented protocol.
+~ SDLC was later standardized by the ISO as the High-Level Data Link COntrol (HDLC) protocol.
+
+HDLC- Frame Format
+Beginning and Ending Sequnces : 0 111111 0
+This sequence is also transmitted during any times that the link is idle so that the sender and receiver can keep their clocks synchronized.
+
+Header: Address and Control Field
+Body: Payload (variable size)
+CRC: Cyclic Redundancy check- Error Detection
+
+--------------------------------------------------------------------------------------------
+| 8                      16                             16       8                          |
+-------------------------------------------------------------------------------------------
+| Beginning sequence    Header     Body               CRC       Ending sequence             |
+---------------------------------------------------------------------------------------------
+
+Types of HDLC Frames :-
+The type of frame is determined by the control field.
+I-Frame: Information Frame
+S-Frame: Supervisory Frame
+U-Frame: Un-numbered Frame
+
+-------------------------------------
+| I-Frame     |  1st bit is 0       |
+| S-Frame     |  1st two bits is 10 |
+| U-Frame     |  1st two bits is 11 |
+-------------------------------------
+****************************************************************************************************************************************************************************8
+CLASS 40
+~~~~~~~~~~~~~~~~~
+BIT STUFFING
+~~~~~~~~~~~~~~~~~
+Bit Oriented Approach
+~ It simply views the frame as a collection of bits.
+
+Bit Oriented Protocol
+HDLC <--> High-Level Data Link Control
+
+HDLC - Frame Format
+--------------------------------------------------------------------------------------------
+| 8                      16                             16       8                          |
+-------------------------------------------------------------------------------------------
+| Beginning sequence    Header     Body               CRC       Ending sequence             |
+---------------------------------------------------------------------------------------------
+
+HDLC protocol: beginning and ending sequence os 01111110
+
+               0111111011110101001111110000001111110
+PC1 _________________________________________________________________________ PC 2 
+
+                                    Bit Stuffing
+                                      |                                        
+                                      |
+               01111110111101010011111010000001111110
+PC1 _________________________________________________________________________ PC 2 
+*************************************************************************************************************************************************************************************
+CLASS 41
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+BINARY SYNCHRONOUS COMMUNICATION PROTOCOL (BSC OR BISYNC)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Byte Oriented Approach
+~ It simply views the frame as a collection of bytes or characters.
+
+Byte Oriented Approach
+BISYNC  <--> Binary Synchronous Communication Protocol
+PPP <--> Point-to-Point Protocol
+DDCMP <--> Digital Data Communication Message Protocol
+
+BISYNC
+--------------
+~ It is a sentinel approach.
+~ developed by IBM.
+~ Also preferred as BSC.
+
+----------------------------------------------------------------------------
+| 8      8         8                      8                      8      16  |
+-----------------------------------------------------------------------------
+|SYN  | SYN  |   SOH |  Header          | STX  |  Body         | ETX  | CRC |
+----------------------------------------------------------------------------
+
+BISYNC - Frame Format
+--------------------------
+Frames transmitted beginning with leftmost field.
+~ Beginning of a frame is denoted by sending a special SYN (synchronize) character.
+~ Data portion of the frame is contained b/w special sentinel character STX (start of text) and ETX (end of text)
+~ SOH: start of header
+~ DLE: data link escape
+~ CRC: cyclic redundancy check
+
+CHARACTER STUFFING
+------------------------
+Byte stuffing or Character stuffing is the process of adding one extra byte whenever there is a flag or escape character in the text.
+
+This is done by DLE in BISYNC protocol
+*************************************************************************************************************************************************************************************
+CLASS 42
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Point-to-Point Protocol (PPP)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Byte Oriented Approach
+~ It simply views the frame as a collection of bytes or characters.
+
+Byte Oriented Approach
+BISYNC  <--> Binary Synchronous Communication Protocol
+PPP <--> Point-to-Point Protocol
+DDCMP <--> Digital Data Communication Message Protocol
+
+PPP
+-----------
+~ PPP is a data link layer protocol.
+~ PPP is a WAN protocol and which is commonly run over Internet links.
+~ It is widely used in broadband communications having heavy loads and high speeds.
+~ It is used to transmit multiprotocol data b/w two directly connected (point-to-point) computers.
+
+PPP- Frame Format
+------------------------------------------------------------------------------------------
+| 8         8             8            16                                 16          8  |
+------------------------------------------------------------------------------------------
+| Flag |  Address  | Control   | Protocl |   Payload                | checksum  |  Flag  |
+------------------------------------------------------------------------------------------
+
+PPP- Frame Format
+~ Flag - 1 byte that marks the beginning and the end of the frame. The bit pattern of the flag is 01111110
+~ Address -1 byte which is set to 11111111 in case of broadcast
+~ Control - 1 byte set to a constant value of 11000000
+~ Protocol - 1 or 2 bytes that define the type of data contained in the payload field.
+~ Payload - This carries the data from the network layer. The maximum length of the payload field is 1500 bytes. However, this may be negotiated b/w the endpoints of communication.
+~ Checksum - error detection
+
+CHARACTER STUFFING
+----------------
+Byte stuffing or character stuffinh is the process of adding one extra byte whenever there is a flag sequence appear in the payload.
+***********************************************************************************************************************************************************************************
+
+CLASS 43
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Digital Data Communication Message Protocol (DDCMP)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Byte Oriented Approach
+~ It simply views the frame as a collection of bytes or characters.
+
+Byte Oriented Approach
+BISYNC  <--> Binary Synchronous Communication Protocol
+PPP <--> Point-to-Point Protocol
+DDCMP <--> Digital Data Communication Message Protocol
+
+DDCMP
+-----------
+~ Byte-oriented communication protocol.
+~ Devised by Digital Equipment Corporation
+~ It is a byte-counting approach
+~ Count field in the frame format
+~ Count: How many bytes are contained in the frame body?
+
+----------------------------------------------------------------
+| 8       8      8        14       42                       16 |
+----------------------------------------------------------------
+| SYN |  SYN  | Class | Count | Header |   Body          | CRC |
+----------------------------------------------------------------
+
+DANGER with the COUNT field
+One danger with this approach is that if tranmission error could corrupt the count field then the end of the frame would not be correctly detected by the receiver.
+
+                                  Count
+                           ___________________________________________
+                          |                    |                     |
+-------------------------------------------------------------------------
+| X | X | X | X | X | X | 6 | X | X | X | X | 4 | X | X | X | X | X | 5 |
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+| X | X | X | X | X | X | 6 | X | X | X | X | 4 | X | X | X | X | X | 5 |
+-------------------------------------------------------------------------
+                                              ^
+                                              |
+                                     Transmisison Error
+
+
+-------------------------------------------------------------------------
+| X | X | X | X | X | X | 6 | X | X | X | X | 7 | X | X | X | X | X | 5 |
+-------------------------------------------------------------------------
+                                             ^
+                                             |
+                                    Modified due to transmission error
+
+
+                 |------------------------------|
+-------------------------------------------------------------------------
+| X | X | X | X | X | X | 6 | X | X | X | X | 7 | X | X | X | X | X | 5 |
+-------------------------------------------------------------------------
+                |-------------------------------|
+                     Frame
+
+
+                 |------------------------------|
+-------------------------------------------------------------------------
+| X | X | X | X | X | X | 6 | X | X | X | X | 7 | X | X | X | X | X | 5 |
+-------------------------------------------------------------------------
+                |-------------------------------|
+                        Framing Error!!!
+***********************************************************************************************************************************************************************************
+CLASS 44
+~~~~~~~~~~~~~~~~~~~~~
+ERROR DETECTION
+~~~~~~~~~~~~~~~~~~~~~
+ERROR:-
+~ Data are transmitted in the network
+~ The data can be corrupted during transmission
+~ Transmission error
+~ For reliable communication, errors must be detected and corrected.
+~ Error detection and correction are implemented either at the data link layer or the transport layer of the OSI model.
+
+TYPES OF ERROR:-
+1. Bit Error
+2. Burst Error
+
+BIT ERROR
+----------
+~ a.k.a single bit error
+~ In a single bit error, only 1 bit in the data unit has been changed.
+
+                         0 changed to 1
+                 |-----------------------------------------|
+---------------------------------         ---------------------------------
+| 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | ----->  | 0 | 0 | 0 | 0 | 1 | 0 | 1 | 0 |
+---------------------------------         ---------------------------------
+           sent                                       received
+
+BURST ERROR
+~ In the burst error, 2 or more bits in the data unit have changed.
+
+
+               length of burst error (8 bits)
+sent        |<----------------------------->|
+-----------------------------------------------------------------
+| 0 | 1 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 | 1 |
+-----------------------------------------------------------------
+              |   |            |           |  corrupted bits
+              |   |            |           |
+-----------------------------------------------------------------
+| 0 | 1 | 0 | 1 | 1 | 1 | 0 | 1 | 0 | 1 | 1 | 0 | 0 | 0 | 1 | 1 |
+-----------------------------------------------------------------
+received
+
+How To Detect The Errors ?
+~ Error detection means to decide whether the received data is correct or not without having a copy of the original message
+~ To detect or correct errors, we need to send some extra bits with the data.
+~ The extra bits are called as redundant bits.
+
+REDUNDANCY
+-------------------------
+   Data                 |
+----------------------  |                                                    |--------------------------------------------
+| 1010000000010101   |  |                                                    |
+----------------------  |                                                    |                       |-------> accept
+        |               |                                                    | checking function ----| 
+ generating function    | sender                                             |                       |-------> reject
+        |               |                                                    |
+     1011101            |                                                    |
+redundancy check        |                                                    |
+-------------------------                                                    | 
+        |..............>------------------------------ --------------------->|
+                       |1011101 | 1010000000010101  |                        |------------------------------------------
+                       ------------------------------                                receiver
+                          Data & redundancy check
+
+ERROR CORRECTION
+It can be handled in two ways:-
+1. Receiver can have the sender retransmit the entire data unit.
+2. The receiver can us an error-correcting code, which automatically corrects certain errors.
+
+ERROR DETECTION/CORRECTION
+
+sender                                                                  receiver
+------------------------                                       ---------------------------------
+               Encoder |                                       | Decoder
+     Message           |                                       |         Message
+        |              |                                       |            | correct or discard
+    Generator          |                                       |          Checker    
+        |              | Unreliable transmission               |             |
+Message and redundancy |-------------------------------------> |   received information
+------------------------                                       |---------------------------------------
+
+ERROR DETECTION TECHIQUES
+Four types of redundancy checks are used in data communications. They are:
+1. Vertical Redundancy Check (VRC)
+2. Longitudinal Redundancy Check (LRC)
+3. Checksum
+4. Cyclic Redundancy Check (CRC)
+*************************************************************************************************************************************
+CLASS 45
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+VERTICAL REDUNDANCY CHECK (VRC)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~ Vertical Redundancy Check 
+                                 VRC: 1; if odd number of 1's
+                                 VRC: 0; if even number of 1'
+~ It is also called as parity check.
+
+            Data 1100001
+                  ⬇                                                  receiver
+            Even Parity Generator                 1    1100001     -----------> 11100001 
+                  ⬇                              data transmitted
+            VRC   1  
+
+PERFORMANCE OF VRC
+~ It can detect single bit error.
+~ It can detect burst error only if the number of errors is odd.
+
+sender: 11100001 --> Transmission Error 10100001 --> receiver rejects this data
+sender: 11100001 --> transmission error 10100101 --> receiver accpets this data
+*********************************************************************************************************************************
+CLASS 46
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+LONGITUDINAL REDUNDANCY CHECK (LRC)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~ In LRC, a block of bits is organized in rows and columns
+~ a.k.a two dimensional parity.
+~ The parity bit is calculated for each column and sent along with the data
+~ The block of parity acts as the redundant bits.
+
+Example
+Find the LRC for the data blocks 11100111 11011101 0011001 10101001 and determine the data that is transmitted?
+
+odd no of 1's     1
+even no of 1'2    0
+  
+        1   1   1   0   0   1   1   1
+        1   1   0   1   1   1   0   1  
+        0   0   1   1   1   0   0   1
+        1   0   1   0   1   0   0   1
+      ---------------------------------------
+LRC --> 1   0   1   0   1   0   1   0
+
+                Direction of movement
+          _____________________________>
+--------------------------------------------------------
+| 10101010 | 10101001 | 00111001 | 11011101 | 11100111 |
+--------------------------------------------------------
+___________     
+LRC                        Data
+
+Performance of LRC :-
+~ LCR increases the likelihood of detecting burst errors.
+~ If two bits in one data units are damaged and two bits in exactly the same positions in another data unit are also damaged, the
+ LRC checker will not detect an error.
+*********************************************************************************************************************************
+CLASS 47
+~~~~~~~~~~~~~~
+CHECKSUM
+~~~~~~~~~~~~~
+~ checksum = check + sum
+~ sender side - checksum creation
+~ receiver side - cecksum validation
+
+CHECKSUM - OPERATION AT SENDER SIDE
+1. Break the original message in to 'k' number of blocks with 'n' bits in each block
+2. Sum all the 'k' data blocks.
+3. Add the carry to the sum, if any
+4. Do 1's complement to the sum = checksum
+
+Section K      Section1
+---------     -------- -------- 
+| n bits| --- |n bits| |n bits|                                            ----------------------------
+-------------------------------                                            |  Section 1   | n bits |  | 
+ |  Section 1   | n bits |  |                                              |  Section 2   | n bits |  | 
+ |  Section 2   | n bits |  |                                              |              ---------   | 
+ |                --------- |          Section k               Section1    |             ----------   |
+ |                --------- |     ---------------      ---------------     |              ----------  | 
+ |  Section K   | n bits |  | --> |n bits|n bits|----- |n bits|n bits|-->  |  Section K   | n bits |  |
+-----------------------------     --------------       ---------------     | Checksum     | n bits |  | 
+ | Sum           |n bits|   |     Checksum                                 ----------------------------
+ | complement      |        |                                              |   Sum                     |
+ |               |n bits|   |                                              |  All 1s, accept           |
+ |             checksum     |                                              | otherwise reject          |
+-----------------------------                                              -----------------------------
+       Sender                                                                    Receiver
+
+
+CHECKSUM - EXAMPLE
+Consider the data unit to be transmitted is:
+10011001111000100010010010000100
+
+10011001               11100010            00100100            10000100
+
+
+
+                         carry    1    1     1    1    1
+                                  1    0     0    0    0     1    0     0
+                                  0    0     1    0    0     1    0     0
+                                  1    1     1    0    0     0    1     0
+                                  1    0     0    1    1     0    0     1
+                    _______________________________________________________
+                      1     0     0    0     1    0    0     0    1     1
+
+                         carry    1    1     1    1    1
+                                  1    0     0    0    0     1    0     0
+                                  0    0     1    0    0     1    0     0
+                                  1    1     1    0    0     0    1     0
+                                  1    0     0    1    1     0    0     1
+                    _______________________________________________________
+                                  0    0     1    0    0     0    1     1
+                                                                  1     0
+                   _________________________________________________________
+                                  0    0     1    0     0    1    0     1
+           1's complement         1    1     0    1     1    0    1     0
+
+now checksum appended
+       
+CHECKSUM - Operation At Receiver Side
+~ Collect all the data blocks including the checksum.
+~ Sum of all the data blocks and checksum.
+~ If the result is all 1's, ACCEPT; Elas, REJECT.
+
+         carry                    1    1     1    1    1
+                                  1    0     0    0    0     1    0     0
+                                  0    0     1    0    0     1    0     0
+                                  1    1     1    0    0     0    1     0
+                                  1    0     0    1    1     0    0     1
+                                  1    1     0    1     1    0    1     0
+                              _______________________________________________________
+                      1     0     1    1     1    1     1    1    0     1
+
+
+         carry                    1    1     1    1    1
+                                  1    0     0    0    0     1    0     0
+                                  0    0     1    0    0     1    0     0
+                                  1    1     1    0    0     0    1     0
+                                  1    0     0    1    1     0    0     1
+                                  1    1     0    1     1    0    1     0
+                              _______________________________________________________
+                                  1    1     1    1     1    1    0     1
+                                                                  1     0
+                              _________________________________________________________
+                                  1    1     1    1     1    1    1     1
+receiver accepts
+
+PERFORMANCE OF CHECKSUM:
+~ The checksum detects all errorsinvolving an odd numbe of bits
+~ It detects most errors involving an even number of bits.
+~ If one or more bits of a segment are damaged and the corresponding bit or bits of opposite values in a second segment are also damaged,
+the sum of those columns will not change and the receiver will not detect the error(s).
+*************************************************************************************************************************************************
+
+CLASS 48
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CYCLIC REDUNDANCY CHECK (CRC)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Error Detection
+                 Error detection methods
+                         |
+     -------------------------------------
+    |           |            |            |
+   VRC         LRC        checksum       CRC
+~~~~~~~~~~~
+CRC
+~~~~~~~~~~
+FInd the CRC for the data 100100 with the divisor 1101?
+
+CRC Generation at Sender Side
+1. Find the length of the divisor 'L'
+2. Append 'L-1' bits to the original message
+3. Perform binary division operation.
+4. Remainder of the division = CRC
+Note: The CRC must be of L-1 bits
+
+-----------------------
+|  A  |  B  | A XOR B |
+-----------------------
+|  0  |  0  |  0      |
+-----------------------
+|  0  |  1  |  1      |
+-----------------------
+|  1  |  0  |  1      |
+-----------------------
+|  1  |  1  |  1      |
+-----------------------
+
+CRC L=4; so, 3 0's are appended to the message
+         1 1 1 1 0 1
+       ___________________________
+1101   |1 0 0 1 0 0 0  0 0 
+        1 1 0 1 | | |  | | 
+        ------- | | |  | |  
+          1 0 0 0 | |  | | 
+          1 1 0 1 | |  | | 
+        --------- | |  | |
+            1 0 1 0 |  | | 
+            1 1 0 1 |  | |
+        ----------- |  | | 
+              1 1 1 0  | |
+              1 1 0 1  | |
+            ---------- | | 
+                0 1  1 0 |
+                0 0 0 0  |
+              ---------- |
+                  1 1  0 0
+                  1 1 0 1
+                -----------
+                   0 0 1
+CRC: 001
+data transmitted : 100100001
+                         ----
+                         CRC
+*****************************************************************************************************************************************************************************************************************
+CLASS 49
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CYCLIC REDUNDANCY CHECK (CRC)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CRC
+         1 1 1 1 0 1
+       ___________________________
+1101   |1 0 0 1 0 0 0  0 1
+        1 1 0 1 | | |  | | 
+        ------- | | |  | |  
+          1 0 0 0 | |  | | 
+          1 1 0 1 | |  | | 
+        --------- | |  | |
+            1 0 1 0 |  | | 
+            1 1 0 1 |  | |
+        ----------- |  | | 
+              1 1 1 0  | |
+              1 1 0 1  | |
+            ---------- | | 
+                0 1  1 0 1
+                  1  1 0 1
+              -------------
+                     0 0 0 - data accepted
+
+All 0's means no transmission error
+******************************************************************************************************************************************************************************************************
+CLASS 50
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CYCLIC REDUNDANCY CHECK (SOLVED PROBLEM)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ques:- The message 11001001 is to be transmitted using CRC polynomial x^3 + 1 to protect it from errors. The message that should be transmitted is:-
+A.. 11001001000
+B. 11001001011
+C. 11001010
+D. 110010010011
+
+
+CRC Generation at Sender Side
+1. Find the length of the divisor 'L'
+2. Append 'L-1' bits to the original message
+3. Perform binary division operation.
+4. Remainder of the division = CRC
+5. Message to be transmitted  = Message + CRC
+
+Note: The CRC must be of L-1 bits
+
+-----------------------
+|  A  |  B  | A XOR B |
+-----------------------
+|  0  |  0  |  0      |
+-----------------------
+|  0  |  1  |  1      |
+-----------------------
+|  1  |  0  |  1      |
+-----------------------
+|  1  |  1  |  1      |
+-----------------------
+
+              1 1 0 1 0 0 1 1 
+             ____________________________
+ 1 0 0 1    | 1 1 0 0 1 0 0 1 0 0 0   
+              1 0 0 1 | | | | | | |
+            --------- | | | | | | | 
+                1 0 1 1 | | | | | |  
+                1 0 0 1 | | | | | |  
+               -------- | | | | | | 
+                  0 1 0 0 0 | | | |
+                    1 0 0 1 | | | |
+                 ---------- | | | |
+                    0 0 0 1 1 0 0 |
+                          1 0 0 1 |
+                       -----------|
+                          0 1 0 1 0 
+                            1 0 0 1
+                           ----------
+                            0 0 1 1 
+
+Message to be transmitted
+---------------------------
+Message to be transmitted = original message + CRC
+message to be transmitted = 11001001 011
+
+Ques:- The message is to be transmitted using CRC polynomial x^3 + 1 to protect it from errors. The message that should be transmitted is:
+A. 11001001000
+B. 11001001011
+C. 11001010
+D. 110010010011
+
+ans:- B
+***********************************************************************************************************************************************************************************************************
+CLASS 51
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+NETWORK PERFORMANCE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+One important issue in networking is the performance of the network - how good is it?
+
+Network performance is measured in following fundamental ways
+~ Bandwidth
+~ Throughput
+~ Latency (Delay)
+
+DERIVATIONS FROM ANALOGY
+The bandwidth is 1000 cars per minute.
+The throughput is 100 cars per minute.
+
+BANDWIDTH
+---------------
+Informal :- Maximum amount of data that can be transmitted per second.
+Formal   :- The bandwidth of a network is given by the number of bits that can be transmitted over the network in a certain period of time.
+
+Bandwidth in bps
+Bandwidth = capability
+ex:- Gigabit ethernet can provide a bandwidth of 1 Gbps
+
+Bandwidth in Hertz
+A range of frequencies used to transmit signals which is measures in hertz.
+
+THROUGHPUT
+----------------
+Informal :- Actual amount of data that passes through the medium
+Formal   :- The throughput is a measure of how fast we can actually send data through a network
+
+Although bandwidth in bits per second and throughpu seem the same, they are different.
+
+A link may have a bandwidth of 'B' bps, but we can only send 'T' bps through this link with T <B always.
+
+We may have a link with a bandwidth of 1 Mbps, but the devices connected to the end of the link may handle only 200 kbps. This means that we 
+cannot send more than 200 kbps through this link.
+
+LATENCY (DELAY)
+The latency or delay defines how long it takes for an entire message to complelety arrive at the destination from the first bit is sent out from
+the source.
+
+COMPONENTS OF LATENCY (DELAY)
+Latency is made of four components:
+1. Transmission delay
+2. Propagation delay
+3. Queueing delay
+4. Processing delay
+
+Latency = transmission delay + propagation delay + queueing delay + processing delay
+*****************************************************************************************************************************************************
+CLASS 52
+~~~~~~~~~~~~~~~~~~~
+LATENCY (DELAY)
+~~~~~~~~~~~~~~~~~~~
+The latency or delay defines how long it takes for an entire message to completely arrive at the destination from the time,
+the first bit is sent out from the source.
+
+COMPONENTS OF LATENCY (DELAY)
+1. Transmission delay
+2. Propagation delay
+3. Queuing delay
+4. Processing delay
+
+TRANSMISSION DELAY
+---------------------
+Time it takes to place the complete data packet on the transmission medium.
+
+device A         intermediate node   intermeditate node         device B
+  |....................|....................|......................|
+
+transmission time = message size
+                     _______________
+                      bandwidth
+
+PROPAGATION DELAY
+---------------------
+Time it takes for a bit to go from device A to device B
+The propagation time is calculated by dividing the distance by the propagation speed.
+
+device A         intermediate node   intermeditate node         device B
+  |....................|....................|......................|
+
+QUEUING DELAY
+----------------
+~ the third component in latency is the queuing time, the time taken for each intermediate or end device to hold the mesage 
+before it can be processed.
+~ The queing time is not a fixed factor; it changs with the load imposed on the network.
+~ When there is heavy traffic on the network, the queuing time increses.
+
+device A         intermediate node   intermeditate node         device B
+  |....................|....................|......................|
+
+PROCESSING DELAY
+---------------
+~ How much time the node takes to process the message?
+
+device A         intermediate node   intermeditate node         device B
+  |....................|....................|......................|
+**********************************************************************************************************************************************************************************************
+CLASS 53
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+LATENCY (DELAY) - SIMULATION
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+search transmision versus propagation delay
+----------------------------------------------------------------------------------------
+CLASS 54
+~~~~~~~~~~~~~~~~~~~~~~~~~`
+BANDWIDTH DELAY PRODUCT
+~~~~~~~~~~~~~~~~~~~~~~~~~
+The bandwidth-delay product defines the number of bits that can fill the link.
+It is the capacity of the link.
+
+example:-
+                💻                                            💻
+              sender                                        receiver
+                 |                                                | 
+After 1s         | 1st bit | ------>                              |
+After 2s         | 2nd bit | 1st bit|--------->                   | 
+After 3s         | 3rd bit | 2nd bit | 1st bit| -------->         | 
+After 4s         | 4th bit | 3rd bit | 2nd bit | 1st bit| ------->|
+After 5s         | 5th bit | 4th bit | 3rd bit | 2nd bit | 1st bit|
+                 --------------------------------------------------
+                 <........> <.......> <.......> <.......> <........>
+                     1s        1s        1s         1s        1s
+
+Bandwidth: 1 bps  Delay: 5 s
+Bandwidth x delay = 5 bits
+here ms = milli sec
+
+example: Consider that the link capacity of a channel is 512 kbps and round - trip delay time is 1000ms.
+solution:
+THe bandwidth delay product = 512 kbps x 1000 ms
+                            = 512 x 1000bits/sec x 1000 x 10^-3sec
+                            = 512,000 bits
+                            = 64,000 bytes
+                            = 62.5 kB
+*******************************************************************************************************************************************************************************************8
+CLASS 55
+~~~~~~~~~~~~~~``
+DELAY
+~~~~~~~~~~~~
+Ques: What is the propagation time if the distanc eb/w the two points is 12,000 km? Assume the propagation speed to be 2.4 x 10^8 m/s in cable.
+given: 
+distance = 12000 km
+propagation speeed = 2.4 x 10^8 m/s
+to find:
+propagation time
+
+answer:-
+propagation time 
+= distance / propagation speed
+= 12000 x 1000 / 2.4 x 10^8 sec
+= 5000 x 1000 / 10^8 sec
+= 5000 x 1000 x 10^-3  sec
+  _____________________
+  10^8        x 10^-3 
+
+= 5000 x 1000 x 1  millisec
+  _______________
+  10^8   x 10^-3
+
+=  5000 x 1000 x 10^3   millisec
+  _____________________
+      10^8 x 1
+
+= 50 x 100 x 1000 x 10^3 millisec
+ _______________________
+     10^8 x 1
+
+propagation time = 50 millisec or 50 ms
+********************************************************************************************************************************************************************************************
+CLASS 56
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ROUND TRIP TIME (RTT)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~ a.k.a Round Trip Delay Time (RTD)
+~ It is the length of time  it takes for a signal to be sent plus the length of time it takes for an 
+acknowledgement of that signal to be received.
+~ This time therefore consists of the propagation times b/w the two point of signal.
+~ If Tp is the propagation time, then
+RTT = 2 x Tp
+
+RTT diagram
+**********************************************************************************************************************************************************
+CLASS 57
+~~~~~~~~~~~~~~~
+FLOW CONTROL
+~~~~~~~~~~~~~~~
+
+Data link layer
+------------------
+it is responsible for moving data(frames) from one node to another
+services provided by the data link layer:-
+~ framing
+~ error control
+~ flow control
+~ physical addressing
+~ access control
+
+FLOW CONTROL
+-----------------
+~ Speed matching mechanism.
+~ Flow control coordinates the amount of data that can be sent before receiving an acknowledgement.
+~ Flow control is a set of procedures that sells the sender how much data it can transmit before it must wait for an acknowledgement from the receiver.
+~ Receiver has a limited speed at which it can process incoming data and a limited amount of memory in which to store incoming data.
+~ Receiver must inform the sender before the limits are reachd and request that the transmitter to send fewer frames or stop temporarily
+
+Flow Control - PROTOCOLS
+                                PROTOCOLS
+             ----------------------|--------------------
+             |                                         |
+    Noiseless channels                             Noisy channels
+~ simplest                                      ~ stop-and-wait ARQ
+~ stop-and-wait                                 ~ go-back-N-ARQ
+                                                ~ selective repeat ARQ
+*******************************************************************************************************************************************************************
+CLASS 58
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+STOP-AND-WAIT PROTOCOL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~ Stop-and-Wait protocol is data link layer protocol for transmission of frames over noiseless channels.
+~ It provides unidirectional data transmission with flow control facilities but without error control facilities.
+~ The idea of stop-and-wait protocol is straightforward.
+~ After transmitting one frame, the sender waits for an acknowledgement before transmitting the next frame.
+
+PRIMITIVES OF STOP-AND-WAIT-PROTOCOL
+--------------------------------------
+Sender Side
+rule 1: send one data packet at a time
+rule 2. send the next packet only after receiving ACK for the previous.
+
+Receiver side
+rule 1: Receive and consume data packet.
+rule 2: After consuming packet, ACK need to be sent (flow control)
+
+PROBLEMS OF STOP-AND-WAIT PROTOCOL
+---------------------------------------
+1. Problems due to lost data
+  ~ Sender waits for ack for an infinite amount of time.
+  ~ Receivr waits for data an infinite amount of time
+2. Problem dut to lost ACK
+  ~ Sender waits for an infinite amount of time for ack.
+3. Problem due to delayed ACK/data
+  ~ After timeout on sender side, a delayed ack might be wrongly considered as ack of some other packet data.
+*****************************************************************************************************************************************
+CLASS 59
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+STOP-AND-WAIT ARQ
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+STOP-AND-WAIT ARQ PROTOCOL
+---------------------------------
+~ Idea of stop-and-wait protocol is straightforward.
+~ After transmitting one frame, the sender waits for an acknowledgement before transmitting the next frame.
+~ If the acknowledgement does not arive after a certain period of time, the sender times out and retransmits the original frame;
+~ Stop-and-wait ARQ = Stop-and-Wait + timeout timer + sequence number
+
+STOP-AND-WAIT ARQ  - DRAWBACKS
+-------------------------------------
+~ One frame at a time
+~ Poor utilization of bandwidth
+~ poor performance
+***************************************************************************************************************************************
+CLASS 60
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SLIDING WINDOW PRTOCOL
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+_________________________
+| Go-Back-N-ARQ          |
+| Selective Repeat ARQ   |-------->> sliding window protocols
+_________________________|
+
+Sliding Window Protocol
+------------------------
+~ Send multiple frames at a time
+~ Number of frames to be sent is based on Window size.
+~ Each frame is numbered -> sequence number.
+*************************************************************************************************************************************
+CLASS 61
+~~~~~~~~~~~~~~~~~~~
+GO-BACK-N-ARQ
+~~~~~~~~~~~~~~~~~~
+'N' is he sender window size
+~ Go-Back-N ARQ uses the concept of protocol pipelining i.e, the sender can send multiple frames before receiving the acknowledgement for the first frame.
+~ There are finite number of frames and the frames are numbered in a sequential manner.
+~ The number of frams that can be sent depends on the window size of the sender.
+~ If the acknowledgement of a frame is not received within an agrred upon time period, all frames in the current window are transmitted. 
+
+~ N -sender's window size
+~ for example, if the sending window size is 4 (2^2), then the sequence numbers will be 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, and so on
+~ The number of bits in the sequence number is 2 to generate the binary sequence 00, 01, 10, 11.
+***********************************************************************************************************************************************************************
+CLASS 62
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+GO-BACK-N-ARQ (Solved Problem - 1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ques:-
+Station A needs to send a message consisting of 9 packets to station B using a sliding window (window size 3) and go-back-n error control strategy. All packets ar ready 
+and immediately available for transmission. If every 5th packet that A trans mits gets lost (but no ACKs from 8 ever get lost), then what is the numbr of packets that
+A will transmit for sending the message to B?
+(A)  12
+(B)  14
+(C)  16
+(D)  18
+
+ans:-
+window size = 3
+packet 1 2 3 send to receiver
+then receiver sends acknowledgement for packet 1
+4th packet send to receiver
+2nd packet acknowledgement to sender 
+5th packet send to receiver
+3rd packet acknowledgement to sender 
+6th packet send to receiver
+4th packet acknowledgement to sender 
+7th packet send to receiver
+5th packet not received
+so 6th and 7th packet cancelled
+5th 6th 7th packet send to receiver
+5th packet acknowledgement to sender
+8th 9th packet send
+6th packet ack send
+7th packet not received 
+8th 9th packet also get cancelled
+7th 8th th packet resend 
+7th packet ack send 
+8packet ack send
+9th packet not received
+9th packet resend 
+9th packet ack send
+
+
+no. of packets transmitted by A(sender) = 16
+*****************************************************************************************************************************************************************************
+CLASS 63
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+GO-BACK-N-ARQ (Solved Problem 2)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ques:- Host A wants to send 10 frames to host B. The host agreed to go with Go-Back-4. Hown many number of frames are transmitted by host A if every 6th frame is transmitted 
+by host Ais either corrupted or lost?
+
+sender window
+------------------------------------------
+| 10 | 9 | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 |
+------------------------------------------
+
+window size
+4
+
+frames transmitted by host A
+-----------------------------------------------------------------------------------------------------------------------
+|   |   |   |   |   ||||| 10  |  9  |  8 | 10  | 9  |||8||| 7  | 6  | 9  |  8 |  7  |||6|||| 5   | 4  |  3  |  2 |  1 |    
+-----------------------------------------------------------------------------------------------------------------------
+
+Frames acknowledged by host B
+----------------------------------------------------------------------------------------
+|   |    |    |    |   |    | 10  |  9  | 8  |  7  |  6  |  5   | 4  |  3  |  2  |  1  |   
+----------------------------------------------------------------------------------------
+Number of frames transmitted by Host A = 17
+************************************************************************************************************************************************************************
+CLASS 64
+~~~~~~~~~~~~~~~~~~~~~~~~
+SELECTIVE REPEAT ARQ
+~~~~~~~~~~~~~~~~~~~~~~~~
+Sliding Window Protocols
+                                 Protocols
+                    ----------------|-----------------
+                   |                                 |
+      Noiseless channels                        Noisy channels
+    ~ Simplest                                ~ Stop-and-wait ARQ
+    ~ Stop-and-wait                           ~ Go-back-N-ARQ   -------------|
+                                              ~ Selective repeat ARQ --------| sliding window protocols
+
+NACK = negative acknowledgement
+
+SELECTIVE REPEAT ARQ
+----------------------------
+~ In selective repeat ARQ, only the errneous or lost frames are retransmitted, while correct frames are recevied and buffered
+~ The receiver while keeping track of sequence numbers, buffers the frams in memory and sends NACK for only frame which is missing
+or damaged.
+~ The sender will send/retransmit packet for which NACK is received.
+***********************************************************************************************************************************
+CLASS 65
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SELECTIVE REPEAT ARQ (SOLVED PROBLEM 1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ques:- 
+In SR protocol, suppose frames through 0 to 4 have been transmitted, Now, imagine that 0 times out, 5(a new frame) is transmitted, 
+1 times out, 2 times out and 6 (another new frame) is transmitted. At this point, what will be outstanding packets in sender's window?
+(a) 341526
+(b) 3405126
+(c) 0123456
+(d) 654321
+(e) none of the above
+
+ans:- (b)
+************************************************************************************************************************************
+CLASS 66
+Ques:- 
+Host A wants to send 10 frames to Host B. The hosts agreed to go with SR ARQ. How many number of frames are transmitted by Host A if
+every 6th frame is transmitted by host A it either corrupted or lost? Also compare the number of transmission of SR ARQ with Go-Back-4 ARQ.
+ans:= 
+No f transmission with Go-Back-4 ARQ = 17
+Number of frames transmitted by Host A: 11
+***********************************************************************************************************************************
+CLASS 67
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SLIDING WINDOW PROTOCOL (Solved problem)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ques:-
+Station A uses 32 bytes to transmit message to station B using a sliding window protocol. The round trip delay b/w A and B is 80 milliseconds
+and the bottleneck bandwidth on the path b/w  A and B is 128 kbps. What is the optional window size that A should use?
+(a) 20
+(b) 40
+(c) 160
+(d) 320
+
+Given:
+delay = 80 milliseconds
+bandwidth = 128 kbps
+packet size = 32 bytes
+Bandwidth-delay product
+= bandwidth x delay
+= 128 kbps x 80 millisecnds
+= 128 x 1024 x 80 milliseconds
+= 128 x 1024 x 80 x 10^-3 bits
+= 128 x 1024 x 80 x 10^-3   bytes
+  __________________________
+         8
+optimal window size = 128 x 1024 x 80 x 10^-3   bytes
+                      ________________________
+                            8 x 32
+optimal window size = 40
+************************************************************************************************************************************************
+CLASS 68
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SLIDING WINDOW PROTOCOL 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+QUES:-
+The distance b/w two stations M and N is L kilometers. All frames are K bits long. The propagation time per kilometer is t seconds. Let R bts/second be 
+the channel capacity. Assuming the processing delay is negligible, the minimum number of bits for the sequence number field in a frame for maximum
+utilization, when the sliding window protocol is used as:
+A. log2(2L + R + 2K  /  K)
+B log2 (2L  + R  /   K)
+C. log2 (2L + R + K   /  k)
+D. log2 (2L + R + K   /   2K)
+
+Ans:-
+Let pro[agation delay = Lt sec
+Round trip time = 2 x propagation delay
+Round Trip Time = 2 x Lt sec
+Round Trip time = 2 Lt sec
+No. of bits transmitted in round trip = 2 LtR bits
+         
+No. of frames = (2L + R / K)
+Let the bits in the sequence numbers be b.
+2^b = (2L + R / K)
+Take log on both sides, we get
+b = log^2(2L + R / K)
+(B.)
+***************************************************************************************************************************************************
+
+CLASS 69
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+MULTIPLE ACCESS PROTOCOLS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Why Multiple Access Protocols ?
+~ If there is a delayed link b/w the sender and receiver then data link control layer is sufficient, however if there is no dedicated link present 
+then multiple stations can access the channel simultaneously.
+~ Hence multiple access protocols are rquired to decrease collision and avoid crosstalk.
+
+Multiple Access Protocols
+                                       Multiple-access protocols
+                                                 |
+     ----------------------------------------------------------------------------------------------
+     |                                           |                                                |
+Random access protocols                 Controleed-access protocols                   Channelization protocols
+      |                                          |                                                 |
+1. ALOHA                                 1. Reservation                                         1 FDMA
+2. CSMA                                  2. Polling                                             2. TDMA
+3. CSMA / CD                             3. Token passing                                       3. CDMA
+4. CSMA / CA
+
+RANDOM ACCESS PROTOCOLS
+--------------------------------
+~ In this, all situations have same superiority that is no station has more priority than another station. Any station can send data depending on medium's 
+state (idle or busy).
+~ In a random access method, each station has the right to the medium without being controlled by any other station.
+~ If more than one station tries to send, there is an access conflict (COLLISION) and the frames will be wither destroyed or modified.
+
+
+To avoid access conflict, each station follows a procedure.
+~ When can the station access the medium?
+~ What can the station do if the medium is busy ?
+~ How can the station determine the success or failure of the transmission ? 
+~ What can the station do if there is an access conflist ? 
+
+RANDOM ACCESS PROTOCOLS
+1. ALOHA
+2. CSMA
+3. CSMA / CD
+4. CSMA / CA
+
+CONTROLLED ACCESS PROTOCOLS
+------------------------------
+~ In controlled access. the stations consult one another to find which station has the right to send.
+~ A station cannot send unless it has been authorized by other stations.
+
+Controlled-acces protocols
+1. Reservation
+2. Polling 
+3. Token Passing
+
+CHANNELIZATION PROTOCOLS
+---------------------------
+Channelization is a mulitple-access method in which the available bandwidth of a link is shared in time, frequency or through code b/w different stations.
+
+Channelization Protocols
+1. FDMA
+2. TDMA
+2. CDMA
+****************************************************************************************************************************************************************************************************************
+
+CLASS 70
+~~~~~~~~~~~~~~~~~~
+PURE ALOHA
+~~~~~~~~~~~~~~~~~~
+
+                                       Multiple-access protocols
+                                                 |
+     ----------------------------------------------------------------------------------------------
+     |                                           |                                                |
+Random access protocols                 Controleed-access protocols                   Channelization protocols
+      |                                          |                                                 |
+1. ALOHA                                 1. Reservation                                         1 FDMA
+2. CSMA                                  2. Polling                                             2. TDMA
+3. CSMA / CD                             3. Token passing                                       3. CDMA
+4. CSMA / CA
+
+ALOHA
+~~~~~~~~~
+~ Aloha is a random access protocol.
+~ It was actually designed for WLAN but it is also applicable for shared medium.
+~ In this, multiple stations can transmit data at the same time and can hence lead to collision and data being garbled.
+
+Collision 
+
+Pc A --------------------BOOM---------------------PC B
+                  COLLISION
+                 frame lost / corrupted
+
+Types of ALOHA:-
+~ Pure Aloha
+~ Slotted Aloha
+
+Pure Aloha
+Station 1 -------| Frame 1.1 |----------| Frame 1.2 |-----------------------------------------------------> Time
+
+Station 2 ----------------------| Frame 2.1 |----------------| Frame 2.2 |--------------------------------> Time
+
+Station 3 ---------------| Frame 3.1 |---------------------------------------| Frame 3.2 |----------------> Time
+
+Station 4 -----------------------| Frame 4.1 |------------------------| Frame 4.2 |-----------------------> Time
+                      
+                         |  collision       |                         | collision |
+                         | duration         |                         | duration  |
+
+PURE ALOHA
+~~~~~~~~~~~~~~
+~ Pure ALOHA allows stations to transmit whenever they have data to be sent.
+~ When a station sends data it waits for an acknowledgement 
+~ If the acknowledgement doesn't come within the alloted time then the station waits for a random amount of time called back-off
+time (Tb) and re-sends the data.
+~ Since different stations wait for different amount of time, the probability of further collision decreases.
+~ The throughput of pure aloha is maximised when frames are of uniform length
+
+~ Whenever two frames try to occupy the channel at the same time, there will be a collision and both will be
+garbled.
+~ If the first bit of a new frame overlaps with just the last bit of a frame almost finished, both frams will be totally
+destroyed and both will have to be retransmitted later.
+
+             
+
+
+
+|    ------------------------
+|   | Begin    B     End | 
+|  
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
