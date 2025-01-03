@@ -158,6 +158,206 @@ ADT provies ABSTRACTION.
 CLASS 3
 *******************
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data Structure definition and advantages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What is a Data Structure?
+A stack ADT can be implemented using arrays or linked lists.
+                                       |          |
+                                    Data Structures
+
+A data structure is the organisation of the data in a way so that it can be used efficiently.
+In other words, it is used to implement an ADT.
+
+For example, in order to implement stack ADT, we can use an array data structure or linked list data structure.
+
+ADT tells us what is to be done and data structures tells us how to do it.
+
+
+How to know which data structure to use for a particular ADT ?
+
+Which Data Structure ?
+In reality, different implementations of ADT are compared for time and space efficiency. 
+The one best suited according to the current requirement of the user will be selected.
+
+Example:
+                                      Stack ADT
+                -------------------------------------| |-----------------------------------
+                | can be implemented using                     can be implemented using   |
+                ⬇                                                                         ⬇
+               Arrays                                                                Linked List
+
+
+Advantages of Data Structures :-
+Efficiency - proper choice of data strucutres make program efficient in terms of space and time.
+Reusability - one implementation can be used by multiple client programs.
+Abstraction - Data structure is specified by an ADT which provides a level of abstraction. The client program doesn't have to worry about
+              the implementation details.
+
+
+
+******************
+CLASS 4
+******************
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TYPES OF DATA STRUCTURES
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. Linear Data Structures
+2. Non Linear Data Structures
+
+
+LINEAR DATA STRUCTURES
+----------------------------------
+A data structure is linear when all the elements are arranged in a linear (sequential) order.
+
+-------------------------------
+|  1  |  2  |  3  |  4  |  5  |  ARRAY
+-------------------------------
+
+----------------------------
+   |  1  |  1  |  1  |             QUEUE
+----------------------------
+
+|         |
+|         | STACK
+|_________|  
+
+--------------      ---------------
+| data | adr |      | data | addr |  LINKED LIST
+--------------      ---------------
+
+
+NON LINEAR DATA STRUCTURES
+--------------------------------
+A data strucutre is non linear when all the elements are not arranged in a linear (sequential) order. 
+There is no linear arrangement of the elements.
+
+                 ------
+                 |    |
+                 ------
+                   |
+             ------|-------     
+        |----|          |----|
+        |    |          |    |
+        ------          ------
+     -----|----
+  |----|   |----|
+  |    |   |    |          TREE
+  |----|   |----|  
+
+
+lice------jo
+|          |
+ace--------som
+
+GRAPH
+
+
+Compile time = when we are creating the code
+
+
+STATIC DATA STRUCUTRES
+--------------------------
+In these type of data structures, the memroy is allocated at compile time.
+Therefore, maximum size is fixed.
+
+advantage: fast access
+disadvantage: slower insertion and deletion
+
+-------------------------------
+|  1  |  2  |  3  |  4  |  5  |  ARRAY
+-------------------------------
+
+DYNAMIC DATA STRUCTURES
+------------------------------
+In these type of data strucutres, the memory is allocated at run time. Therefore, maximum size is flexible.
+
+advantage: faster insertion and deletion
+disadvantage: slower access
+
+--------------      ---------------
+| data | adr |      | data | addr |  LINKED LIST
+--------------      ---------------
+
+
+*****************
+CLASS 5
+*****************
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+BASICS OF ASYMPTOTIC ANALYSIS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A data strucutre is the organisation of the data in a way so that it can be used efficiently.
+In order to use data efficiently, we have to store it efficiently.
+
+EFFICIENCY
+Efficiency of data structures is always measured in terms of time and space.
+
+An ideal data structure could be the one that takes the least possible time for all its operations and consumes the least memory space.
+
+Our focus will be on finding the time complexity
+
+Q. On what basis, we could compare the time complexity of the data structures?
+A. On the basis of operations performed on them.
+
+ex:- 
+    ----------------------------------------------------
+arr |  1  |  2  |  6  |  3  |  8  |  56  |  32  |  34  |  ARRAY 
+    ----------------------------------------------------
+
+Target: add data at the beginning of the list
+
+    ----------------------------------------------------
+arr |  1  |  2  |  6  |  3  |  8  |  56  |  32  |  34  |  
+    ----------------------------------------------------
+      ⬆
+  ------
+  | 4  |
+  ------
+
+Shift all the elements towards right.
+
+    -----------------------------------------------------------
+arr |  4  |   1  |  2  |  6  |  3  |  8  |  56  |  32  |  34  |   ARRAY 
+    -----------------------------------------------------------
+
+  Head
+    ⬆
+------------       ------------         ------------
+| 1 | 2000 | ----> | 2 | 3000 | ------> | 6 | NULL |  
+------------       ------------         ------------
+ 1000                2000                  3000            LINKED LIST
+
+------------
+| 4 | NULL |
+------------
+  4000
+
+
+ Head
+    ⬆
+------------      ------------  ------------         ------------
+| 4 | 1000 | ---->| 1 | 2000 |  | 2 | 3000 | ------> | 6 | NULL |  
+------------      ------------  ------------         ------------
+ 4000                1000          2000                  3000       
+
+
+CONCLUSION :-
+Inserting an element at the beginning of the list is way faster in the linked list that arrays.
+In this way, we can compare data structures, and this will ultimately give the idea to select the best possible data strucutre for a particular operation.
+
+
+*******************
+CLASS 6
+******************
+
+
+
+
+
 
 
 
