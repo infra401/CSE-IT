@@ -81,6 +81,8 @@ On completion, CPU resumes the interrupted computation.
 CLASS 3
 *********************
 STORAGE STRUCTURE
+*********************
+
                                    Registers
                                     ⬆   ⬇
                                     Cache                 ^
@@ -115,9 +117,9 @@ class 4
 INPUT/OUTPUT STRUCTURE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 ~ storage is only one of many types of I/O devices within a computer
-~ a large portion of OS code is dedicated to managing I/O, both because of its importance to reliability and performance of a system and becausepf varying nature
+~ a large portion of OS code is dedicated to managing I/O, both because of its importance to reliability and performance of a system and because of varying nature
 of devices.
-~ a general-purpose computer system consists of CPUs and multiple devices controllers that are conncected through a common bus.
+~ a general-purpose computer system consists of CPUs and multiple device controllers that are conncected through a common bus.
 ~ Each device controller is in charge of a specific type of device
       |................|
           |
