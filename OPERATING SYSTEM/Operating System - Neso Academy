@@ -33,8 +33,8 @@ GOALS OF OS:-                 FUNCTIONS OF OS:
 CLASS 2
 ******************
 
-COMPUTER SYSTEM OPERATION
-a modern general-purpose computer system consists of one or more CPUs and a number of device controllers  connected through a common bus 
+COMPUTER SYSTEM OPERATION :-
+A modern general-purpose computer system consists of one or more CPUs and a number of device controllers  connected through a common bus 
 that provides access to shared memory.
 
        DISKS                   MOUSE       KEYBOARD        PRINTER                 MONITOR
@@ -43,8 +43,8 @@ that provides access to shared memory.
 CPU   disk controller                     USB controller                          VIDEO ADAPTER
 |       |                                    |                                        |
 |.......|....................................|........................................|
-                                             |
-                                             |
+                                             |                       
+                                             |         
                                            MEMORY
 
 each device controller is incharge of a specific type of device.
@@ -263,7 +263,7 @@ TIME SHARING (MULTITASKING)
 ~ time sharing requires an interactive (or hands-on) computer system, which provides direct communication b/w user and system
 ~ a time-shared operating system allows many users to share the computer simultaneously
 
-~uses CPU scheduling and multiprogramming to provide each user with a small portion of a time-shared computer.
+~ uses CPU scheduling and multiprogramming to provide each user with a small portion of a time-shared computer.
 ~ each user has at least one separate program in memory.
 ~ a program loaded into memory and executing is called a "PROCESS".
 ******************************************************************************************************************************************************************
