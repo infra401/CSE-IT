@@ -353,19 +353,172 @@ In this way, we can compare data structures, and this will ultimately give the i
 *******************
 CLASS 6
 ******************
+BASICS OF ASYMPTOTIC ANALYSIS
 
+What we learned so far?
+Discussed, what is efficiency in terms of data structures.
+On what basis, we could compare the time complexity of the data structures?
 
+But how to find the time complexity or running time of an operation performed on data structures?
 
+HOW To Find The Time Complexity ?
 
+Method #1 : 
+Examine the exact running time
 
+Pick up some machine and turn the timer on Run the operation for different inputs on the data strucutres 
+you want to compare one by one and see how much time a particular operation will take on these data structures.
+The one who takes lee time is the best performer.
 
+For better analysis, you can compare the data structures on different machines.
 
+Problems with this approach:
+It might be possible that for some input size, first data structure gives the best performance and for the other input size,
+the second gives the best performance.
+It might also be possible that in some machine for some input size of data structure, it is performing well while in the
+other machine, the second data strucutre is performing well with a different size.
 
+Therefore, 
+Examining the exact running time is not the best solution to calculate the time complexity.
 
+************
+CLASS 7
+************
+BASICS OF ASYMPTOTIC ANALYSIS
 
+So, what is the best solution to this problem?
 
+Points to be noted:
+Measuring the actual running time is not practical at all.
+The running time generally depends on the size of the input.
 
+Ex :
+    -------------
+arr | 4 | 1 | 2 | 
+    -------------
+we want to add one more element to the beginning of the list
+If one shift takes 1 unit of time then 3 shifts will take 3 units of time
+    -----------------
+arr | 3 | 4 | 1 | 2 |
+    -----------------
 
+But what if we have 10000 elements in an array?
+
+In that case, we have to make 10000 shifts which will take 10000 units of time.
+This clearly shows that the running time generally depends on the size of the input.
+
+Therefore, if the size of the input is n, f(n) is a function of n denotes the time complexity.
+In other words, f(n) represents the number of instructions executed for the input value n.
+
+for example:
+ for(i=0; i<n; i++) {
+    printf("Hello World");  <------- Assuming, this instruction will take 1 unit of time
+ } 
+
+printf instruction is executed n number of times
+therefore, f(n) = n
+
+But, how to fin f(n) ?
+
+FINDING F(N)
+We can compare two data strucutres for a particular operation by comparing their f(n) values.
+We are interested in growth rate of f(n) with respect to n because it might be possible that for smaller input size, 
+one data strucutre may seem better than the other but for larger input size it may not.
+
+This concept is applicable in comparing the two algorithms as well.
+
+Ex:
+f(n) = 5n^2 + 6n + 12
+
+for n = 1
+% of runnning time due to 5n^2 = 5 / 5+6+12 * 100 = 21.74%
+% of running time due to 6n = 6 / 5+6+12 * 100 = 26.09%
+% of running time due to 12 = 12 / 5+6+12 * 100 = 52.17%
+
+----------------------------------------
+| n   | 5n^2    |   6n     |   12      |
+----------------------------------------
+| 1   | 21.74%  | 26.09%   | 52.17%    |
+----------------------------------------
+| 10  | 87.41%  | 10.49%   | 2.09%     |
+----------------------------------------
+| 100 | 98.79% | 1.19%     | 0.02%     |
+----------------------------------------
+| 1000| 99.88%  | 0.12%    | 0.0002%   |
+----------------------------------------
+
+It is clear observation that for larger values of n, the squared term consumes almost 99% of time
+So ,there is no harm if we can eliminate the rest of the terms as they are not contributing much to the time.
+
+f(n) = 5n^2
+We are getting the approximate time complexity and we are satisfied with this result because this approximate result
+is very near to the actual result.
+
+**************
+CLASS 8
+***************
+BASICS OF ASYMPTOTIC ANALYSIS 
+
+BIG O NOTATION :
+It is used to measure the performance of any algorithm by providing the order of growth of the function.
+It gives the upper bound on a function by which we can make sure that the function will never grow faster that its upper bound.
+
+We want the approximate runtime of the operations performed on data structures.
+We are not interested in the exact runtime.
+Big O notation will help us to achieve the same.
+
+BIG O NOTATION
+If f(n) anf g(n) are two functions, then
+ f(n) = Og((n))
+If there exists constants c and no such that 
+ f(n) <= c.g(n) , for all n >= no
+This simply means that f(n) does not grow faster than g(n)
+
+Examples:
+f(n) = n    g(n) = 2n
+is f(n) = O(g(n))?
+f(n) <= c.g(n)
+n <= c.2n
+for c = 1 and no = 1
+
+f(n) = 4n+3  g(n) = n
+if f(n) = O(g(n))?
+f(n) <= c.g(n)
+4n+3 <= c.n
+take c = 5
+4n+3 <= 5n
+3 <= 5n - 4n
+n > 3
+therefore, f(n) <= c.g(n)
+for all n >= 3
+where c = 5 and no = 3
+f(n) = O(n)
+
+------------------------------
+| n      |  f(n)    |  g(n)  |
+------------------------------
+| 1      | 7        | 5      | 
+------------------------------
+| 2      | 11       | 10     | 
+------------------------------
+| 3      | 15       | 15     | 
+------------------------------
+| 4      | 19       | 20     | 
+------------------------------
+| 5      | 23       | 25     | 
+------------------------------
+| 6      | 27       | 30     | 
+------------------------------
+| 7      | 31       | 35     | 
+------------------------------
+| 8      | 35       | 40     | 
+------------------------------
+| 9      | 39       | 45     | 
+------------------------------
+
+****************
+CLASS 9
+***************
 
 
 
