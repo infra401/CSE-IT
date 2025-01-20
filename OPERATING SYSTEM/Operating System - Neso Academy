@@ -55,7 +55,7 @@ To ensure orderly access to shared memory, a memory controller is provided whose
 SOME IMPORTANT TERMS:-
 ----------------------------------
 
-BOOTSTRAP PROGRAMS
+BOOTSTRAP PROGRAMS :
 initial program that runs when a computer is powered up or rebooted.
 it is stored in ROM
 it must know how to load the OS and start executing that system.
@@ -119,7 +119,7 @@ INPUT/OUTPUT STRUCTURE
 ~ storage is only one of many types of I/O devices within a computer
 ~ a large portion of OS code is dedicated to managing I/O, both because of its importance to reliability and performance of a system and because of varying nature
 of devices.
-~ a general-purpose computer system consists of CPUs and multiple device controllers that are conncected through a common bus.
+~ a general-purpose computer system consists of CPUs and multiple device controllers that are connected through a common bus.
 ~ Each device controller is in charge of a specific type of device
       |................|
           |
@@ -161,15 +161,15 @@ request  |    interrupt                                                |
   device <.......................DMA...................................>
 
 ~ To start an I/O operation, the device driver loads appropriate registers within the device controller.
-~ the device controller, in turn, examines the contents of these registers to dtermine what action to take.
-~ the controller starts the transfer of data from th device to its locall buffer.
-~ once the transfer of data in complete, the device controller informs the device driver via an interrupt that it has finished its operation
+~ the device controller, in turn, examines the contents of these registers to determine what action to take.
+~ the controller starts the transfer of data from the device to its local buffer.
+~ once the transfer of data is complete, the device controller informs the device driver via an interrupt that it has finished its operation
 ~ the device driver then returns control to the operating system.
 
-this form of interupt-driven I/O is fine for moving small amounts of data but can produce high overhead when used for bulk data movement.
+this form of interrupt-driven I/O is fine for moving small amounts of data but can produce high overhead when used for bulk data movement.
 ~ after setting up buffers, pointers, and counters for I/O device, the device controller transfers an entire block of data directly
 to or from its own buffer storage to memory, with no intervention by the CPU.
-~ only one interrupt is generated per block, to tell the device driver that the operatiob has completed.
+~ only one interrupt is generated per block, to tell the device driver that the operation has completed.
 ~ while the device controller is performing these operations, the CPU is available to accomplish other works.
 ****************************************************************************************************************************************************************
 CLASS 5
@@ -194,7 +194,7 @@ MULTIPROCESSOR SYSTEMS:-
 devices
 
 advantages:
-~ increased thorughput (measure of performance of system)
+~ increased throughput (measure of performance of system)
 ~ economy of scale
 ~ increased reliability
 
@@ -216,7 +216,7 @@ Asymmetric Multiprocessing
   slave1           slave2            slave3
      |               |                |
      P1              P2               P3
-In asymmetric , one of the CPU acts as master and other act a sslave
+In asymmetric , one of the CPU acts as master and other act as slave
 Master monitor other processor and assign them tasks.
 
 CLUSTERED SYSTEMS:-
