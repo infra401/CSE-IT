@@ -243,10 +243,10 @@ time sharing (multitasking)
 
 MULTIPROGRAMMING
 ...................
-~ a single user cannot, keep either the CPU or I/O devices bust at all times.
+~ a single user cannot, keep either the CPU or I/O devices busy at all times.
 ~ multiprogramming increases CPU utilization by organizing jobs (code and data) so that the CPU always has one to execute.
 
-Operatin system
+Operating system
 Job 1
 Job 2
 Job 3
@@ -315,14 +315,14 @@ COMMAND INTERPRETER
 ~ on systems with multiple command interpreter to choose from, the interpreters are known as shells.
 ~ eg:- bourne shell, c shell, bourne-again shell (BASH), karn shell etc
 
-To open terminal in linux (ctrl+ alt + t)
+To open terminal in linux (ctrl + alt + t)
 on windows , open cmd
 ********************************************************************************************************************************************************************
 CLASS 9
 ~~~~~~~~~~~~~~~~~
 SYSTEM CALLS
 ~~~~~~~~~~~~~~~~
-system call is the programmatic way in which a computer program requests a service from the kerne; of the operating system
+system call is the programmatic way in which a computer program requests a service from the kernel of the operating system
 these calls are generally available as routines written in C and C++
 
 provide an interface to the services made available by an Operating system
@@ -373,8 +373,7 @@ create process, terminate process
 get process attributes, set process attributes
 wait for time
 wait event, signal event
-allocate and free
-memory
+allocate and free memory
 
 2. FILE MANAGEMENT
 create file, delete file
