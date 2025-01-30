@@ -411,17 +411,17 @@ SYSTEM PROGRAMS
 word processor  spreadsheet  compilers  text editor             web browsers
 
            .....Application Programs..................
-                 system programs
-                   OPERATING SYSTEM
-                      computer hardware...........> resouces lke CPU, memory, I/O devices
+                system programs
+                OPERATING SYSTEM
+                computer hardware...........> resouces lke CPU, memory, I/O devices
 
-~ system programs provice a convenient environment for program development ans execution
+~ system programs provide a convenient environment for program development and execution
 ~ some of them are simply user interfaces to system calls 
 ~ others are considerably more complex
 
 categories of system calls:-
 -------------------------------
-1. FILE MANAGEMENT :- create, delete, copy, rename, print, dump, ist and generally manipulate files and directories
+1. FILE MANAGEMENT :- create, delete, copy, rename, print, dump, list and generally manipulate files and directories
 
 2. STATUS INFORMATION :- ask the system for : date, time, amount of available memory or disk space, number of users, detailed
                           performance, logging, and debugging information etc.
@@ -435,9 +435,9 @@ compilers, assemblers, debuggers, interpreters
 for common programming languages (C, C++, Java, Visual Basic, PERL) are often provided to user with operating system
 
 5. PROGRAM LOADING AND EXECUTION :-
-once a program is assembles or compiled, it must be loaded into memory to be executed
+once a program is assembled or compiled, it must be loaded into memory to be executed
 system may provide absolute loaders, relocatable loaders, linkage editors, overlay loaders
-Debugging systems for either high-level languages or machine language areneeded as well.
+Debugging systems for either high-level languages or machine language are needed as well.
 
 6. COMMUNICATIONS :-
 these programs provide the mechanism for:
@@ -448,7 +448,7 @@ to send electronic-mail messages
 to log in remotely or to transfer files from one machine to another
 
 
-In additonal to system programs, most operating systems are supplied with programs that are useful in solving common problems or performing common 
+In additional to system programs, most operating systems are supplied with programs that are useful in solving common problems or performing common 
 operations.
 
 web browsers................|
@@ -467,7 +467,7 @@ DESIGN GOALS:-
 1st Problem:- defining goals and specifications
 ~ choice of hardware
 ~ type of system
-beyond this highest design level, the requirements may by much harder to specfy.
+beyond this highest design level, the requirements may by much harder to specify.
 
 requirements:-
 ~ User goals
@@ -500,7 +500,7 @@ Advantages of writing high level languages:-
 ~ easier to port
 
 Eg:- MS-DOS was written in Intel 8088 assembly language. Consequently, it is available on only the Intel family of CPUs
-Linux operating system, in contrast, is written mostly in C and is available as a number of diffeent CPUs, including Intel 80X86, Motorola 680X0 and MIPS RX000
+Linux operating system, in contrast, is written mostly in C and is available as a number of different CPUs, including Intel 80X86, Motorola 680X0 and MIPS RX000
 ******************************************************************************************************************************************************************
 
 CLASS 13
@@ -623,7 +623,7 @@ Firmware = kind of rom
 
 SYSTEM BOOT
 ..............
-~ the procedure of startinga computer by loading the kernel is known as booting the system
+~ the procedure of starting a computer by loading the kernel is known as booting the system
 ~ on most computer system, a small piece of code known as bootstrap program or bootstrap loader loads the kernel.
 ~ this program is in the form of read-only memory (ROM), because the RAM is in an unknown state at system startup. ROM is convenint bcoz
 it needs no initialization and cannot be affected by a computer virus.
@@ -635,6 +635,7 @@ in EPROM by giving some explicit commands it can be made writable.
 When the full bootstrap program has been loaded. it can traverse the file system to find the operating system kernel, load into memory and
 start its execution . It is only at this point that the system is said to be RUNNING.
 ****************************************************************************************************************************************
+
 CLASS 16
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 PROCESS MANAGEMENT (Processes and Threads)
