@@ -33,7 +33,7 @@ ELEMENTS:
 1.Message encoding
 message source ->  encoder(signal) -> transmitter -> receiver -> decoder(signal) -> message destination
 2.Message formatting and encapsulation
-agredd format; encapsulate the information to identify the sendrer and receiver tightly
+agreed format; encapsulate the information to identify the sender and receiver tightly
 3.Message timing
 flow control; response timeout
 4.Message size
@@ -45,19 +45,19 @@ unicast, multicast, broadcast
 PEER TO PEER NETWORK
 no centralized administration , all peers are equal , simple sharing applications not scalable
   comp1 -----------comp2
-*********************************************************88
+*********************************************************
 CLIENT SERVER NETWORK 
-centralized administration, request-response model, scalable, sever may be overloaded
+centralized administration, request-response model, scalable, server may be overloaded
                   comp1------------central adminis--------------comp2
                                         |
                                         |
-                                    comp3
+                                      comp3
 ***********************************************************************************************************************
 
 COMPONENTS OF COMPUTER NETWORK
 1. NODE
 end nodes(end devices) and intermediary nodes
-End Nodes- computer, printers , phones, telepresence endpoint, security cameras, smart phones.tablets, PDAs, wireless debit/credit card reader,
+End Nodes- computer, printers , phones, telepresence endpoint, security cameras, smart phones, tablets, PDAs, wireless debit/credit card reader,
 barcode scanner
 Intermediary Nodes - switches, wireless access point, routers, security devices(firewall), bridge , hub, repeaters, cell towers
 
@@ -90,7 +90,7 @@ wireless LAN (eg: wifi)
                                           comp4
 
 2. METROPOLITAN AREA NETWORK (MAN)
-interconnects computers within a in a geographic region of sixe of a metropolitan area(city)
+interconnects computers within a geographic region of size of a metropolitan area(city)
 MAN devices
 switches/hubs   routers/bridges
                                          LAN1
