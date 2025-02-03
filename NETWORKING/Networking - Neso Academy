@@ -175,9 +175,9 @@ increase in load , decrease in performance
 no security
 
 3. STAR
-every node connected to cenral node(hub or switch)
+every node connected to central node(hub or switch)
 centralized management
-all traffic must pass through hu or switch
+all traffic must pass through hub or switch
                           comp1
                              |
             comp2...........central..........comp3
@@ -213,7 +213,7 @@ advantages:-
 ~reliable
 disadvantages:-
 ~issues with broadcasting messages
-~expensive and impractical for lorge networks
+~expensive and impractical for large networks
 
 5. HYBRID
    bus topology...................star topology...................mesh topolgy
@@ -272,7 +272,7 @@ MAC = media access control
 ~representation in hexadecimal
 ~ very important in LAN
 example:- 70-20-84-ED-FC (48 bits)
-~separator: hyphen(-), period() and colon(:)
+~separator: hyphen(-), period(.) and colon(:)
 ~IP address (router friendly addresses)= location of person
 ~Mac address(switch friendly addresses) = name of person
 
