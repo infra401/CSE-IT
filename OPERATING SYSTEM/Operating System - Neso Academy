@@ -295,7 +295,7 @@ every file not accessible by all uses ; this restriction of access is also contr
 5. Communications
 6. Error Detection
 7. Resource Allocation
-8. Accounting (we want to keep track of which user use how much and what king of resources)
+8. Accounting (we want to keep track of which user use how much and what kind of resources)
 9. Protection and Security
 *****************************************************************************************************************************************************************
 CLASS 8
