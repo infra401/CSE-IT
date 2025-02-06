@@ -562,7 +562,7 @@ MODULES:-
                                           ..............
             miscellaneous.................| core kernel |.............loadable system calls
                modules                    ..............
-                                          |    |    |    |..........executale formats
+                                          |    |    |    |..........executable formats
                                           |    |    |.......stream modules
                                           |    |...device & bus drivers
                                           |......file systems
@@ -625,7 +625,7 @@ SYSTEM BOOT
 ..............
 ~ the procedure of starting a computer by loading the kernel is known as booting the system
 ~ on most computer system, a small piece of code known as bootstrap program or bootstrap loader loads the kernel.
-~ this program is in the form of read-only memory (ROM), because the RAM is in an unknown state at system startup. ROM is convenint bcoz
+~ this program is in the form of read-only memory (ROM), because the RAM is in an unknown state at system startup. ROM is convenient bcoz
 it needs no initialization and cannot be affected by a computer virus.
 
 EPROM
@@ -653,7 +653,7 @@ thread| thread | thread |
 to see programs which are loaded and which processes are running in our system
 open task manager see under application and processes
 
-To see thread which are also running in your syste, use
+To see thread which are also running in your system, use
 process explorer program (you can download it)
 right click ; properties; you will see threads
 
