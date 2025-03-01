@@ -444,6 +444,40 @@ Providing Application Flexibilty with Relational Databases
 
 Object-Oriented Applications and the Need for More COmplex Databases
 ---------------------------------------------------------------------------
+~ Emergence of object-oriented programming languages --> the developemnt of object-oriented databases.
+~ Incorporated many of the useful object-oriented features --> data abstraction, encapsulation, inheritance
+~ Mainly used in specialized applications --> engineering design, manufacturing systems etc.
+
+Interchanging Data on the Web for E-Commerce
+-------------------------------------------------
+~ WWW (world wide web) --> large network of interconnected computers.
+~ Users --> create documents using HTML (hyper text markup language) --> stores them on web servers.
+~ Documents can be linked together through hyperlinks.
+~ E-commerce (1990s)  - major web applications
+~ Information on e-commerce web pages --> ynamically extracted data from DBMS (interchange of data)
+~ Now XML (extended makrup language) --> primary standard for interchanging data
+
+Extending Database Capabilities for New Applications
+-----------------------------------------------------------
+~ Scientific applications --> store large amounts of data from scientific experiments
+~ Storage & retrieval of images
+~ Storage & retrieval of videos
+~ Data mining applications --> analyzing large amounts of data
+~ Spatial applications --> weather information
+~ Time series applications --> eg: daily sales information
+
+~ Basic relational model --> not suitable
+~ Reasons:
+   More complex data structures were needed
+   New data types were required
+   New query language
+   New storage & indexing techniques were needed
+
+
+**************
+CLASS 6
+**************
+
 
 
 
