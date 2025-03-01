@@ -477,6 +477,60 @@ Extending Database Capabilities for New Applications
 **************
 CLASS 6
 **************
+Fundamentals of Database Systems
+
+Outlines
+----------------
+Data Models
+  * Categories of Data Models:
+     1. High-level or cenceptual data models
+     2. Representational or implementational data models
+     3. Low-level or physical data models
+  * Terminologies
+
+
+Data Models
+------------------------
+✡ Data Model --> used to describe the structure of the databases --> helps to achieve data abstraction
+✡ Includes a set of basic operations for specifying retrievals or updates on the database.
+✡ Also includes concepts to specify the behaviour of a database application.
+
+Categories of Data Models
+-------------------------------------
+✡ High-level or conceptual Data Model:
+  ➡ Provides concepts that are close to the way many users perceive data.
+  ➡ Use concepts suchas entities, attributes, and relationships.
+  ➡ Entities --> represent real world object or concept
+  ➡ Attributes --> further describe an entitiy
+  ➡ Relationships --> association among 2 or more entities
+
+✡ Low-level or Physical Data Model:
+  ➡ Describes how data is stored in the computer
+  ➡ Access path --> structure for efficient searching of database records.
+
+✡ Representational (or implementation) Data Model:
+➡ Represent data using record structures --> record-based data models
+
+✡ Terminologies
+  ➡ Database Schema: Description of a database
+  ➡ Schema Diagram: Displayed schema
+
+STUDENT
+______________________________________
+| NAME | ROLL No. | BRANCH | ADDRESS |
+_____________________________________
+
+  ➡ Schema Construct: Each object within the schema
+     ex: STUDENT, COURSE etc.
+
+  ➡ Databse State (or instance or snapshot): The data in the database at a particular moment
+
+*****************
+CLASS 7
+****************
+Three-Schema Architecture & Data Independence
+
+
 
 
 
