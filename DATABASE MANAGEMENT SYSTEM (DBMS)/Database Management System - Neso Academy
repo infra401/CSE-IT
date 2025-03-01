@@ -274,9 +274,130 @@ Workers Behind The Scene
 ******************
 CLASS 4
 ******************
+Advantages & Disadvantages Of DBMS
+
+Advantages Of DBMS Approach
+--------------------------------
+~ Controlling Redundancy 
+~ Restricting Unauthorized Access
+~ Proviidng Persistent Storage for Program Objects
+~ Providing Storage Structures for efficient query processing 
+~ Providing backup & recovery
+~ Providing multiple user interfaces 
+~ Representing complex relationships among data
+~ Enforcing integrity constraints
+~ Permitting inferencing and actions using rules
+
+✡ Controlling Redundancy
+ ~ In traditional file system, each user group maintains its own files.
+
+                            Accounts Dept.
+                                  |
+           ----------------------------------------
+           ⬇             ⬇           ⬇            ⬇
+      Roll_No          Name     Fees Paid      Fees Due
 
 
-  
+                             Exam Dept.
+                                  |
+           ----------------------------------------
+           ⬇             ⬇           ⬇            ⬇
+      Roll_No          Name       Course      Fees Due
+
+ ~ This will lead to wastage of storage, space, inconsistency
+ ~ In the database approach, views of different users --> integrated
+ ~ All the data stored in only one place of the database
+ ~ This ensures consistency & saves storage space.
+
+✡ Restricting Unauthorized Access
+  ~ When multiple users share a large database, the type of access operation must be controlled
+  ~ DBMS must provide security and authorization subsystem
+  ~ DBA --> creates accounts & specifies account restrictions
+  ~ Parametric users --> allowe to access database only through canned transactions.
+
+✡ Providing Persistent Storage for Program Objects
+                                           
+Traditional FIle Systems                      |          DBMS            
+----------------------------------------------|------------------------------------------------------
+ ~ Once program terminates                    | ~  Once program terminates
+              ⬇                               |             ⬇
+    values of program variables               |    values of program variables
+              ⬇                               |             ⬇
+         discarded                            |    not discarded --> stores objects permanently. Such an object is said to be persistent         
+                                              |
+~ Must be explicitly stored in separate       |  ~ BUT DBMS recognizes data structure of
+  permenent files --> involves conversion     |    programming languages like java, C++ --> 
+                                              |    automatically converts
+                                              |
+
+✡ Providing Storage Structures for Efficient Query Processing
+  ~ Database systems must provide capabilities for efficiently executing queries and updates.
+  ~ Since database is stored on disk, DBMS must provide specialized data structures (indexes) to speed up disk search
+  ~ Query processing and optimization module --> responsible for efficient query execution
+
+✡ Providing Backup and Recovery
+  ~ The backup and recovery subsystem of DBMS --> responsible for recovery --> in case of hardware or software failures
+  ~ ex: if the computer crashes during a complex transaction, the recovery subsystem --> responsible for ensuring that transaction resumes from 
+        where it is interrupted or atleast restore to the state it was before transaction started executing.
+
+✡ Providing Multiple User Interface
+  ~ Multiple users --> different levels of technical knowledge --> so BMS should provide a variety of user interfaces
+  ~ Ex: Query languages --> casual users, programming language interface --> application programmers, forms --> parametric users, menu-driven interfaces --> stand-alone users
+  ~ Form-style interfaces and menu-driven interfaces --> Graphical user interfaces (GUIs)
+
+✡ Representing COmplex Relationships among Data
+  ~ A databse may have variety of data -> interelated in many ways.
+  ~ DBMS must be capable of:
+    --> Representing complex relationships among data
+    --> Retrieve and update related data easily and efficiently
+
+✡ Enforcing Integrity Constraints
+~ Simplest type of integrity constraint --> specifying data type for each ata item
+~ Another type of constraint --> uniqueness of data item values
+~ Responsibility of Databse designers --> identifying integrity constraints during databse design
+
+✡ Permititng Inferencing and Actions Using Rules
+~ atabse systems must provide capabilities for defining deduction rules for inferencing new information
+~ Such systems --> deductive database systems
+~ Active databse systems --> provides active rules that automatically initiate actions when certain events and conditions occur
+
+✡ Additonal Implications of Using Databse Approach
+   ➖ Potential for Enforcing Standards:
+       ➡ DBA can define and enforce standards among database users.
+       ➡ This facilitates communication & co-operation within the organization 
+
+   ➖ Reduced Application Developemnt Time:
+      ➡ Important feature of databse approach --> developing a new application takes away very little time
+
+   ➖ Flexibility: 
+      ➡ Modern DBMS allow certain types of changes to the structure of database without affecting the stored data and existing application programs
+
+   ➖ Availability of Up-to-Date Information:
+      ➡ One user's update --> all other users can immediately see this update
+      ➡ Essential for many transaction-processing applications
+      ➡ Made possible by concurrency control and recovery subsystems of DBMS
+ 
+   ➖ Economies of Scale:
+     ➡ By considering data and applications, wasteful overlap of resources can be avoided
+     ➡ Reduces overall costs of operation and management
+
+When Not TO Use DBMS
+---------------------------------
+✡ Overhead costs of using DBMS: 
+   The overhead cost is the ongoing cost to run the DBMS
+   ➡ High initial investment
+   ➡ Overhead for proviing security, concurrency control, recovery
+
+✡ Databse & applications --> simple, well defined and no changes expected
+✡ Multiple-user access --> not required
+
+***********
+CLASS 5
+***********
+
+
+
+
 
 
 
