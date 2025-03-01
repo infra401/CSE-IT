@@ -377,7 +377,7 @@ Traditional FIle Systems                      |          DBMS
       ➡ Essential for many transaction-processing applications
       ➡ Made possible by concurrency control and recovery subsystems of DBMS
  
-   ➖ Economies of Scale:
+   ➖ Economies of Scale
      ➡ By considering data and applications, wasteful overlap of resources can be avoided
      ➡ Reduces overall costs of operation and management
 
@@ -394,10 +394,60 @@ When Not TO Use DBMS
 ***********
 CLASS 5
 ***********
+History of Database Applications
+
+Early Database Applications Using Hierarchical & Network Systems
+----------------------------------------------------------------------
+✡ Early systems --> based on 3 database models:
+                    Hierarchical systems
+                    Network model based systems
+                    Inverted file systems
 
 
 
+                                 Hierarchical Datababe Model
 
+                                        Root
+                                          |
+    -------------------------------------------------------------------------------
+    ⬇                                     ⬇                                       ⬇
+Level 1                              Level 1                                   Level 1
+    |                                     |                                       |
+---------------                          -----------                          -------------
+⬇             ⬇                          ⬇         ⬇                         ⬇            ⬇
+Level 2     Level 2                  Level 2     Level 2                Level 2        Level2
+
+
+
+     Network Database Model
+               
+         -------------Store------------
+        |               |             |
+   Client         Supervisor       Worker
+       |             |             |   |
+       |-------------|-------------|   |
+                     |                 |
+                 order               Item
+
+✡ Main problem of early database systems --> not flexible to develop new queries and reorganizing data was difficult
+✡ Another drwaback --> provided only programming language interfaces.
+✡ Implemented in the mid-1960s, through 1970s and 1980s on large & expensive mainframe computers.
+
+Providing Application Flexibilty with Relational Databases
+-------------------------------------------------------------------
+✡ Relational atabases (RDBMS) --> proposal by E.F Codd --> organizes data into tables which can be linked or related
+✡ High-level query language --> introduces in relational data model
+✡ Provides flexibility --> to quickly develop new queries & reorganize the databse as per the change in requirements.
+✡ Early experimental relational systems (developed in 1970s) & the commercial RDBMS (developed in 1980s) --> quite slow
+✡ Development of new storage & indexing techniques, better query processing --> performance of RDBMS improved
+✡ Relational databases --> dominant type of database systems.
+
+Object-Oriented Applications and the Need for More COmplex Databases
+---------------------------------------------------------------------------
+
+
+
+        
 
 
 
