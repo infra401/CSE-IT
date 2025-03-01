@@ -214,11 +214,69 @@ ________________________________________________________________________________
    i Isolation
    ii Atomicity
 
+
 *************
 CLASS 3
 *************
+Database Users
+
+Actors on the scene
+ ~ Database Administrators
+ ~ Database Designers
+ ~ End Users
+ ~ System Analysts & Application Programmers (software engineers)
+
+Workers Behind the Scene
+ ~ System designers & implementers
+ ~ Tool developers
+ ~ Operators & maintenance personnel
 
 
+Actors on the Scene
+---------------------------------
+ ✡ Databse Administrators
+   ➡ in databse environment, primary resource --> databse, secondary resource --> DBMS & related software
+   ➡ Database administrator (DBA) responsibilities :
+        1. Administering primary/secondary resources
+        2. Authorizing access to the database
+        3. Co-ordinating & monitoring use of database.
+        4. Acquiring hardware & software resources needed.
+
+✡ Database Designers:
+   ➡ Responsible for:
+      1. Identifying the data to be stored in the database.
+      2. Choosing appropriate structures to represent and store data
+      3. Communicating with database users --> understand their requirements --> designs database
+
+✡ End Users:
+   ➡ End Users --> people whose jobs require access to the database --> for querying, updating, generating reports.
+   ➡ Several categories of end users:
+       ✡ Casual end users: Accesses database occasionally 
+         --> typically middle or high-levl managers or other occasional browsers
+       ✡ Naive or parametric end users: constantly querying and updating database using canned transactions
+       ✡ Sophisticated end users: Engineers, scientists, business analysts.
+       ✡ Stan-alone users: Maintains personal databases --> using ready-made program packages.
+
+✡ System Analysts & Application Programmers (Software Engineers):
+  ➡ System Analysts --> determine the requirements of end users --> develop specification for canned transactions
+  ➡  Application Programmers --> test, debug, document an mainain these canned transactions. 
+      
+
+Workers Behind The Scene
+-----------------------------------
+✡ System designers and implementers: Design and implement DBMS modules & interfaces as a package
+✡ Tool Developers: Persons who design and implement tools
+                                                      ⬇
+                                             software packages
+✡ Operators and maintenance personnel: Responsible for actual running and maintenance of hardware & software
+
+
+******************
+CLASS 4
+******************
+
+
+  
 
 
 
