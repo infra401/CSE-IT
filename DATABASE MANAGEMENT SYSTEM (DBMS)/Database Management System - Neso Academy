@@ -1,1 +1,131 @@
+*******************
+CLASS 1
+*******************
+INTRODUCTION TO DATABASE MANAGEMENT SYSTEMS
 
+Information
+--------------------------
+These unprocesses facts or otherwise called as data when they are processed to make a meaningful context then it is called information or in words a processed data.
+ex:  The age os Suresh is 25.
+here, we take raw or unprocessed facts process it to make a meaningful context, that is called information
+
+Database
+-----------------------
+collection or related data 
+random collection of data cannot be database
+ex: online banking system, library management system
+
+Metadata
+-------------------------
+it is database definition 
+complete description of a database
+it defines the database
+information like sotrage format, ata type of data we are going to store in database or constraints on data all these information are metadata
+
+Database Management System
+-------------------------------------------------------------
+
+Database Management System
+-------------------------------------------------------------
+
+Definition:-
+- - - - - - - - - -
+It is a system or software or collection of programs that enable users to create and maintain the database.
+
+Functionalities:--
+ - - - - - - - - - -   - - - -
+Allows users to define, construct, manipulate and share the database
+Define: Specifying the data type, structures and constraints for the data to be stored
+constraints are limits on data 
+Construct:  Process of storing data on some storage medium
+Manipulate: Querying the database to retrieve specific data, updating database and generating reports
+Share: Allows multiple users and programs to access the database concurrently or simultaneously
+
+other functionalities include protection of database from unauthorized access, from hardware or software failures, also maintainance of the database for a long period of time 
+
+Properties of database   
+ - - - - - - - - - - - - - - - - - - -  - - 
+1. A database represents some aspects of the real world (miniworld).
+2. A database is a logically coherent collection of data with some inherent meaning.
+3. A database is designed, built and populated with data for a specific purpose.
+
+
+DB System Environment
+ - - - - - - -  - - - -  -
+                                                              Users/Programmers
+                                                                      |
+                                                                      |
+                                                                      ⬇
+ Database system                                        Application Programs/ Queries 
+                                                                      |
+                                                                      |
+                                                                      ⬇
+                 DBMS software                     Software to process queries/programs
+                                                                      |
+                                                                      ⬇
+                                                 Software to access stored data  
+                                                                      |
+                                                                      |
+                                         ---------------------------------------------------------                    
+                                         ⬇                                                        ⬇
+                 Stored Db Definition (Metadata)                                          Stored Database
+
+
+A database that stores student and course information
+ - - - - -  --  -  - - - - - - - - - - - -  - - - - - - 
+
+  ______________________________________________________
+  | STUDENT |     Name   |  Roll_No  |  Class  | Major |  ----> These columns are called as data elements
+  ______________________________________________________
+            |    Smith   |     17    |    1    |    CS |
+            ___________________________________________ 
+            |    Brown   |     8     |    2    |    CS |
+            ___________________________________________ 
+
+  _____________________________________________________________
+  | COURSE |     CourseName          |  CourseNo    |  Dept   | 
+  _____________________________________________________________
+           |    Data Structures      |     CS1310   |    CS   |    
+            ___________________________________________________ 
+           |   Discrete Mathematics  |     MATH2410 |    MATH |    
+            ___________________________________________________ 
+           |   Database              |     CS380    |    CS   |    
+            ___________________________________________________ 
+
+  ________________________________________________________
+  | GRADE_REPORT   |  Roll_No   |  CourseNo    |  Grade  | 
+  ________________________________________________________
+                   |    17     |    MATH2410   |    B    |    
+                   _______________________________________
+                   |   17      |    CS1310     |    A    | 
+                  ________________________________________  
+                  |   8        |     CS1310    |    A   |    
+                  _______________________________________
+
+
+***************
+CLASS 2
+***************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
