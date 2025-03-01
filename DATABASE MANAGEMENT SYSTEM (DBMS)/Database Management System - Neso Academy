@@ -106,13 +106,117 @@ A database that stores student and course information
 ***************
 CLASS 2
 ***************
+Characteristcis Of DBMS
+
+File System Approach
+----------------------------
+
+                            Accounts Dept.
+                                  |
+           ----------------------------------------
+           ⬇             ⬇           ⬇            ⬇
+      Roll_No          Name     Fees Paid      Fees Due
+
+
+                             Exam Dept.
+                                  |
+           ----------------------------------------
+           ⬇             ⬇           ⬇            ⬇
+      Roll_No          Name       Course      Fees Due
 
 
 
+ DBMS Approach
+----------------------
+data is stored in a single repository an multiple users can access the data based on their interests
+
+Characteristics of DBMS Approach
+-----------------------------------
+1. Self-Describing nature of a database system
+ ~ Database system -> Database + Meta-data (DB definition)
+                                      ⬇
+                               Stored in: DBMS catalog
+                                      ⬇
+                             Used by: DBMS Software & Database Users
+ We have seen an example of database that store student and course information
+
+An example of database catalog
+
+Relations
+__________________________________
+| Relation_Name  | No_of_Columns |
+__________________________________
+|   STUDENT      |        4      |
+__________________________________
+|   COURSE       |        3      |
+__________________________________
+| GRADE_REPORT   |        3      |
+__________________________________
+
+COLUMNS
+____________________________________________________________
+| Col_Name      |  Data_Tpye         | Belongs_to_Relate   |
+____________________________________________________________
+| Name          |  Charater(30)      |       STUDENT       |
+____________________________________________________________
+| Roll_No       |  Integer(4)        |       STUDENT       |
+____________________________________________________________
+| Class         |  Integer(1)        |       STUDENT       |
+____________________________________________________________
+| Major         |  Major_type        |       STUDENT       |
+____________________________________________________________
+| CourseName    |  Charater(0)       |       COURSE        |
+____________________________________________________________
+|   .....       |     ......         |     ........        |
+____________________________________________________________
+|   .....       |     ......         |     ........        |
+____________________________________________________________
+|   .....       |     ......         |     ........        |
+____________________________________________________________
+| Grade         |  Charater(1)       |     GRADE_REPORT    |
+____________________________________________________________
 
 
+ ~ DBMS software must work equally well with any number of database applications.
+ ~ In traditional file processing, data definiiton --> part of application programs  -->  work with only one specific DB
+2. Insulation between programs and data, and data abstraction 
+ ~ In traditional file processing --> structure of data files is embedded in the application programs
+ ~ In database approach --> structure of data files is stored in the DBMS catalog --> separate from access programs
+    (program-data independence)
 
 
+Internal storage format for a STUDENT Record 
+_______________________________________________________________________________
+| Data Item Name  | Starting Position in Record | Length in Characters (bytes) |
+________________________________________________________________________________
+|    Name         |                1             |             30              |
+________________________________________________________________________________
+|    Name         |                31            |             4               |
+________________________________________________________________________________
+|    Name         |                35            |             4               |
+________________________________________________________________________________
+|    Name         |                39            |             4               |
+________________________________________________________________________________
+
+ ~ THe characteristic that allows program-data independence is called data abstraction
+ ~ DBMS provides users with conceptual representation of data.
+ ~ Data model --> type of data abstraction --> provides conceptual representation
+
+3. Support of multiple views of the data
+ ~ A database has many users, each of whom may require a different view of database.
+ ~ A view -> subset of databse --> contains virtual data derived from database (not explicitly stored)
+
+4. Sharing of data and multiuser transaction processing
+ ~ A multiuser DBMS allows multiple users to access the database at the same time.
+ ~ DBMS must include concurrency control.
+ ~ OLTP (Online Transaction Processing) --> major part of atabase application
+ ~ DBMS must enforce several transaction properties: 
+   i Isolation
+   ii Atomicity
+
+*************
+CLASS 3
+*************
 
 
 
