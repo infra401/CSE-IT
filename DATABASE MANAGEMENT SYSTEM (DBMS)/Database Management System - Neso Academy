@@ -530,18 +530,156 @@ CLASS 7
 ****************
 Three-Schema Architecture & Data Independence
 
+Three-Schema Architecture
+-----------------------------------------
+✡ Goal: to separate the user applications and the physical database.
 
 
+___________________________________________________________________________________
+|   
+|    EXTERNAL LEVEL     ------------     END USERS      ------------
+|                       | EXTERNAL |      .......       | EXTERNAL |   
+|                       | VIEW     |                    | VIEW     |             
+|                       ------------                    ------------
+|                           ⬆                                ⬆
+|                           |                                | 
+|                           ⬇                                ⬇
+|  CONCEPTUAL LEVEL     ---------------------------------------------
+|                       |          CONCEPTUAL SCHEMA                |
+|                       ---------------------------------------------
+|                                         ⬆
+|                                         |  
+|                                         ⬇
+|  INTERNAL LEVEL       ---------------------------------------------
+|                       |          INTERNAL SCHEMA                  |
+|                       ---------------------------------------------
+|                                         ⬆
+|                                         |  
+|                                         ⬇
+|                               ----------------------
+|                               |       |            |
+|                               db      db           db
+|--------------------------------------------------------------------------
+
+✡  3 Levels:
+     Internal Level:
+     -> Describes the physical storage structure of the database.
+     -> Describes complete details of data storage and access paths.
+     Conceptual Level:
+     -> Hides the detals of the physical storage structure and concentrates on describing entities, data types, relationships, constraints etc.
+     External Level:
+     -> Describes the part of the database that a user is interested in and hides the rest of the database from the user group
 
 
+Data Independence
+-----------------------------
+✡ Definition: Capacity to change the schema at one level of a database system without having to change the schema at the next higher level.
 
-        
+✡  Logical Data Independence:
+  -> Able to modify the conceptual schema without changing the external schemas or application programs.
+✡  Physical Data Independence:
+  -> Ability to moify the internal schema without changing the conceptual schema.
+  -> Changes may be neede -> to improve performance
 
+************
+CLASS 8
+************
+DBMS Languages, Interfaces & Classification 
 
+DBMS Languages
+----------------------
+✡ In DBMS, where no strict separation of levels is maintained, Data Definition Language (DDl) is used to 
+   define the internal and conceptual schemas.
+✡  In DBMS, where a clear separation is maintained between conceptual and internal levels:
+    DDL --> used to specify the conceptual schema only.
+    Storage Definition Language (SDL) --> used to specify the internal schema.
+✡ View Definition Language (VDL) --> specify user views and their mappings to the conceptual schema.
+✡  Data Manipulation Language(DML) --> for manipulation of data in the database.
 
+✡  Types of DMLs
 
+ High-level (or non-procedural DML):  |  Low-level (or procedural DML):
+--------------------------------------|----------------------------------------
+-> used to specify complex database   | -> Embedded in a general purpose programming language.
+   operations in a concise manner     |
+-> Also called set-at-a-time DMLs     | -> Also called record-at-a-time DMLs
+                                      |
 
+✡ Menu-Based Interfaces:
+  -> These interfaces present the users with a list of options (menus).
+  -> Most popular -> Pull-down menus.
 
+✡ Forms-Based Interfaces:
+  -> Displays a form to each user.
+  -> Designed and programmed for the naive users.
+
+✡ Graphical User Interfaces:
+  -> Displays a schema to the user in diagrammatic form.
+  -> Utilizes both menus and forms.
+  -> Uses a pointing device to pick certain parts of the displayed diagram.
+
+✡ Natural Language Interfaces:
+  -> Has its own schema and dictionary.
+  -> Refers to them while interpreting a request.
+  -> If interpretation is successful -> high-level query generated
+                                                 ⬇
+                                           Query processing
+  -> Otherwise, a ailogue is started with the user for further clarification.
+
+✡ Interfaces for Parametric Users:
+  --> Parametric users -> have a small set of operations that they must perform repeatedly
+  --> System analysts and programmers -> design & implement a special interface for these users.
+
+✡ Interfaces for the DBA:
+  --> Privileged commands (like for creating accounts, granting access) that can be used only by the DBA's staff
+
+✡ Classification of DBMS
+
+ #  Several crieria used to classify DBMS:
+    Data model
+    Number of users
+    Cost of DBMS
+    Number of sites
+    Types of access path
+    Generality
+
+  # Data Models:
+    -> Relational data model: represents databse as a collection of tables
+
+                    Relational Database Management System
+                            ⬇                     ⬇
+                       Database                Database
+                         |                        |
+              --------------------          -----------------
+              ⬇         ⬇        ⬇          ⬇               ⬇
+           table       Table   Table     Table          Table
+             ⬇           ⬇       ⬇         ⬇              ⬇
+        |- Table         Field  Field    Field           Field-|
+  record| Field         Field   Field    Field           Field | record
+        |- Field                Field                    Field-|
+                                Field
+
+   -> Object-oriented database model: efines database in terms of objects, their properties & their operations
+
+   -> hierarchical model: represents data as tree structures
+   -> Network model: represents objects and their relationships in the form of graph
+
+   -> Number of Users: 
+      Single-user systems: supports only one user at a time
+      Multiuser systems: supports multiple users concurrently
+
+   -> Cost of DBMS
+     Low cost: cost of these systems -> between $100 & $3000
+     Medium cost: cost varies between  $10,000 & $100,000
+     High cost: cost of these systems -> more than $100,000
+
+   -> Number of sites: 
+       Centralized database systems: DBMS & the databse -> reside at a single computer site,
+       Distributed database system: DBMS & the atabase -> distributed over many sites, connected by a computer network
+
+*****************
+CLASS 9
+*****************
 
 
 
