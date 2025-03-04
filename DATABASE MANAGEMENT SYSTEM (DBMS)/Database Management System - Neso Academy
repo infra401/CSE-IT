@@ -680,6 +680,104 @@ DBMS Languages
 *****************
 CLASS 9
 *****************
+Database System Environment
+
+DBMS Component Modules
+------------------------------------------
+_________________________________________________________________________________________________________________
+| Users:     DBS Staff             Casual Users              Application               Parametric Users
+|             |      |                   |                   Programmers                    |                                                    
+|             ⬇      ⬇                   ⬇                         ⬇                        | 
+|           DDL     Privileged     Interactive               Application                    |                
+|     Statements    Commands         Query                      Query                       |
+|            |        |                 |                         |                         |
+|            ⬇        |                 ⬇                         ⬇             Host        | 
+|          DDL        |            Query Compiler          Pre Compiler ----> Language      |  
+|        Compiler     |                 |                         |           Compiler      |       
+|           |         |                 ⬇                         ⬇               ⬇         |   
+|           |         |              Query                      DML          Compiled    <--|   
+|           |         |             Optimizer                 Compiler-----> Transaction  
+|           |         |              ⬆  |                         ⬆              |          
+|           |         |              |  |                         |              | 
+|           |         |              |  |                         |              |
+|           |         |              |  |                         |              |
+|           |         |              |  ⬇       |-----------------|              |
+|           |         |--------------|->☮ <----|----------------------------------|
+|___________|___________________________|_______|_________________________________________________
+____________|__|------------------------|-------|_____________________________________________
+|           |  | -------------------- ➡|             DBA COmmands Queries & Transactions                  
+|           |  | |                      ⬇                         
+|           ⬇  ⬇ ⬇              Runtime Database <----------------------------->  Stored Data              
+          System Catalog/<--------> Processor                                        Manager 
+            Data Dictionary            |------------Concurrency Control/               ⬆
+                                       |             Backup/Recovery                   |
+      Query & Transaction              ⬇                Subsystems                     |
+         Execution:                Stored <--------------------------------------------|  Input/Output
+                                  Database                                                 from Database
+
+
+⏺ DDL Compiler --> processes schema definition --> stores it in the catalog
+⏺ Query compiler --> handles high-level queries
+⏺ Pre-compiler --> extracts DML commands from an application program.
+⏺ DML compiler --> compilation of DML commands into object code
+⏺ Runtime database processor --> hanles database accesses at runtime
+⏺ Stored data manager --> data transfer between disk & main memory
+
+
+Database SYstem Utlities
+----------------------------------------
+
+🔯 Common utilities have the following types of functions:
+
+  ⏺ Loading:
+  i. Used to load existing data files into the database
+  ii. The source file format and the target data file structure are mentioned to the utility
+                                  ⬇
+                   Automatically reformats the data
+                                  ⬇
+                       stores it in the database
+
+ ⏺ Backup:
+  i. Creates a backup copy of the database
+ ii Incremental backups are often used. Though it is complex. it saves space.
+
+ ⏺ File reorganizations:
+  i. Used to reorganize a database file into a different file organization
+
+ ⏺ Performance monitoring:
+  i. Monitors database usage and provides statistics to the DBA.
+
+🔯 Other tools
+
+ ⏺ CASE tools --> used uring the design of the database.
+ ⏺ Data DIctionary (also data repository) system --> storing catalog information.
+ ⏺ Application Development Environments --> provides an environment for developing database applications.
+      Ex: JBuilder, PowerBuilder system.
+ ⏺ Communications software --> remote access to the database.
+
+*****************
+CLASS 10
+*****************
+DBMS Architecture
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
